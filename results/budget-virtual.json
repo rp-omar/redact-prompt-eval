@@ -1,0 +1,191 @@
+{
+  "limits": {
+    "coldEntryJs": 150000,
+    "routeJs": 50000,
+    "firstViewCss": 20000
+  },
+  "builds": {
+    "redact": {
+      "distDir": "dist-redact-virtual",
+      "routes": {
+        "/": {
+          "coldEntryJs": {
+            "bytes": 66988,
+            "files": [
+              "assets/api-D05-eIbR.js",
+              "assets/compiler-runtime-BSWfaqYf.js",
+              "assets/dom-BLIyCMmo.js",
+              "assets/index-BsvxSdEq.js",
+              "assets/preload-helper-CTB-3vUV.js",
+              "assets/routes-BwA_eJ39.js",
+              "assets/useSuspenseQuery-CDt-Dl7e.js"
+            ]
+          },
+          "routeJs": {
+            "bytes": 14110,
+            "files": [
+              "assets/dom-BLIyCMmo.js",
+              "assets/routes-BwA_eJ39.js",
+              "assets/useSuspenseQuery-CDt-Dl7e.js"
+            ]
+          },
+          "firstViewCss": {
+            "bytes": 1075,
+            "files": [
+              "assets/index-DPQ9m7we.css"
+            ]
+          }
+        },
+        "/items/$id": {
+          "coldEntryJs": {
+            "bytes": 57217,
+            "files": [
+              "assets/api-D05-eIbR.js",
+              "assets/compiler-runtime-BSWfaqYf.js",
+              "assets/index-BsvxSdEq.js",
+              "assets/items._id-CTLREMr8.js",
+              "assets/preload-helper-CTB-3vUV.js",
+              "assets/useSuspenseQuery-CDt-Dl7e.js"
+            ]
+          },
+          "routeJs": {
+            "bytes": 4339,
+            "files": [
+              "assets/items._id-CTLREMr8.js",
+              "assets/useSuspenseQuery-CDt-Dl7e.js"
+            ]
+          },
+          "firstViewCss": {
+            "bytes": 1075,
+            "files": [
+              "assets/index-DPQ9m7we.css"
+            ]
+          }
+        }
+      },
+      "files": {
+        "assets/index-BsvxSdEq.js": {
+          "raw": 73680,
+          "brotli": 24557
+        },
+        "assets/api-D05-eIbR.js": {
+          "raw": 9191,
+          "brotli": 3259
+        },
+        "assets/compiler-runtime-BSWfaqYf.js": {
+          "raw": 2422,
+          "brotli": 944
+        },
+        "assets/preload-helper-CTB-3vUV.js": {
+          "raw": 75901,
+          "brotli": 24118
+        },
+        "assets/routes-BwA_eJ39.js": {
+          "raw": 41173,
+          "brotli": 11363
+        },
+        "assets/useSuspenseQuery-CDt-Dl7e.js": {
+          "raw": 7999,
+          "brotli": 2715
+        },
+        "assets/dom-BLIyCMmo.js": {
+          "raw": 28,
+          "brotli": 32
+        },
+        "assets/index-DPQ9m7we.css": {
+          "raw": 4412,
+          "brotli": 1075
+        },
+        "assets/items._id-CTLREMr8.js": {
+          "raw": 4138,
+          "brotli": 1624
+        }
+      }
+    },
+    "react-dom": {
+      "distDir": "dist-react-dom-virtual",
+      "routes": {
+        "/": {
+          "coldEntryJs": {
+            "bytes": 105167,
+            "files": [
+              "assets/api-Coxmj2me.js",
+              "assets/compiler-runtime-8yHzpnUu.js",
+              "assets/index-C7KJbEw_.js",
+              "assets/routes-DkYrpA6j.js",
+              "assets/useSuspenseQuery-0d462xj4.js"
+            ]
+          },
+          "routeJs": {
+            "bytes": 14132,
+            "files": [
+              "assets/routes-DkYrpA6j.js",
+              "assets/useSuspenseQuery-0d462xj4.js"
+            ]
+          },
+          "firstViewCss": {
+            "bytes": 1075,
+            "files": [
+              "assets/index-DPQ9m7we.css"
+            ]
+          }
+        },
+        "/items/$id": {
+          "coldEntryJs": {
+            "bytes": 95370,
+            "files": [
+              "assets/api-Coxmj2me.js",
+              "assets/compiler-runtime-8yHzpnUu.js",
+              "assets/index-C7KJbEw_.js",
+              "assets/items._id-CRSHIKfx.js",
+              "assets/useSuspenseQuery-0d462xj4.js"
+            ]
+          },
+          "routeJs": {
+            "bytes": 4335,
+            "files": [
+              "assets/items._id-CRSHIKfx.js",
+              "assets/useSuspenseQuery-0d462xj4.js"
+            ]
+          },
+          "firstViewCss": {
+            "bytes": 1075,
+            "files": [
+              "assets/index-DPQ9m7we.css"
+            ]
+          }
+        }
+      },
+      "files": {
+        "assets/index-C7KJbEw_.js": {
+          "raw": 308531,
+          "brotli": 85138
+        },
+        "assets/api-Coxmj2me.js": {
+          "raw": 8089,
+          "brotli": 2891
+        },
+        "assets/compiler-runtime-8yHzpnUu.js": {
+          "raw": 8951,
+          "brotli": 3006
+        },
+        "assets/routes-DkYrpA6j.js": {
+          "raw": 41555,
+          "brotli": 11404
+        },
+        "assets/useSuspenseQuery-0d462xj4.js": {
+          "raw": 8096,
+          "brotli": 2728
+        },
+        "assets/index-DPQ9m7we.css": {
+          "raw": 4412,
+          "brotli": 1075
+        },
+        "assets/items._id-CRSHIKfx.js": {
+          "raw": 4315,
+          "brotli": 1607
+        }
+      }
+    }
+  }
+}

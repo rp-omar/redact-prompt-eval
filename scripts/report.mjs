@@ -2,6 +2,13 @@
 // results/summary.json, and applies the ship rule recorded in FINDINGS.md.
 import { existsSync, readFileSync, writeFileSync } from 'node:fs'
 
+// node scripts/report.mjs            -> run 1 (results/raw/*.json, results/summary.md)
+// node scripts/report.mjs <label>    -> results/raw/<label>/*.json, results/summary-<label>.md
+// VARIANT picks the matching budget file (results/budget-<variant>.json).
+const LABEL = process.argv[2]
+const RAW = LABEL ? `results/raw/${LABEL}` : 'results/raw'
+const OUT = LABEL ? `results/summary-${LABEL}` : 'results/summary'
+const BUDGET = `results/budget${process.env.VARIANT ? `-${process.env.VARIANT}` : ''}.json`
 const BROWSERS = ['chromium', 'firefox', 'webkit']
 const MIN_TOLERANCE = 0.05
 
@@ -24,6 +31,9 @@ const EXTRA = [
   ['typeDeferredPaint', 'Typing, useDeferredValue: keystroke → rows painted (median key)'],
   ['typeDeferredEcho', 'Typing, useDeferredValue: keystroke → next frame (median key)'],
   ['typeDeferredWorstEcho', 'Typing, useDeferredValue: slowest keystroke → next frame'],
+  ['smallNavRequired', 'Navigation from a small page (/about), cold: required content painted'],
+  ['smallNavPanel', 'Navigation from a small page (/about), cold: secondary panel painted'],
+  ['smallWarmNav', 'Navigation from a small page (/about), preloaded: required content painted'],
 ]
 
 const sorted = (values) => [...values].sort((a, b) => a - b)
@@ -43,12 +53,12 @@ const cell = (s) => `${ms(s.median)} (${ms(s.min)}–${ms(s.max)})`
 const pct = (value) => `${value >= 0 ? '+' : '−'}${Math.abs(value * 100).toFixed(0)}%`
 
 const raw = Object.fromEntries(
-  BROWSERS.filter((browser) => existsSync(`results/raw/${browser}.json`)).map((browser) => [
+  BROWSERS.filter((browser) => existsSync(`${RAW}/${browser}.json`)).map((browser) => [
     browser,
-    JSON.parse(readFileSync(`results/raw/${browser}.json`, 'utf8')),
+    JSON.parse(readFileSync(`${RAW}/${browser}.json`, 'utf8')),
   ]),
 )
-const budget = JSON.parse(readFileSync('results/budget.json', 'utf8'))
+const budget = JSON.parse(readFileSync(BUDGET, 'utf8'))
 
 const summary = { budget: {}, timings: {}, gate: {} }
 const lines = []
@@ -121,8 +131,9 @@ const out = [
   lines.join('\n'),
   '',
   `Timings: median (min–max) in ms over ${first?.runs} runs per renderer per browser (${first?.typingRuns} typing runs × ${first?.keys.length} keystrokes), ` +
-    `production builds under \`vite preview\` on localhost, renderers interleaved. Browsers: ${meta}. ` +
-    `Mock API delays: ${JSON.stringify(first?.mockDelayMs)} ms.`,
+    `production builds under ${first?.condition?.serve === 'brotli' ? '\`scripts/serve.mjs\` (Brotli)' : '\`vite preview\`'} on localhost, renderers interleaved. Browsers: ${meta}. ` +
+    `Mock API delays: ${JSON.stringify(first?.mockDelayMs)} ms.` +
+    (first?.condition ? ` Condition: ${JSON.stringify(first.condition)}.` : ''),
   '',
   extra.join('\n'),
   '',
@@ -130,6 +141,6 @@ const out = [
   summary.gate.failing.length ? `Failing: ${summary.gate.failing.join('; ')}.` : '',
 ].join('\n')
 
-writeFileSync('results/summary.md', out + '\n')
-writeFileSync('results/summary.json', JSON.stringify(summary, null, 2) + '\n')
+writeFileSync(`${OUT}.md`, out + '\n')
+writeFileSync(`${OUT}.json`, JSON.stringify(summary, null, 2) + '\n')
 console.log(out)

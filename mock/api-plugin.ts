@@ -10,7 +10,7 @@ const items = generateItems()
 const byId = new Map(items.map((item) => [item.id, item]))
 const listBody = JSON.stringify(items)
 
-const middleware: Connect.NextHandleFunction = (req, res, next) => {
+export const middleware: Connect.NextHandleFunction = (req, res, next) => {
   const url = req.url ?? ''
   if (!url.startsWith('/api/')) return next()
   const path = url.split('?')[0]!

@@ -8,6 +8,9 @@
     "build:redact": "vite build --outDir dist-redact",
     "build:react-dom": "RENDERER=react-dom vite build --outDir dist-react-dom",
     "build:both": "bun run build:redact && bun run build:react-dom",
+    "build:virtual": "VIRTUAL=1 vite build --outDir dist-redact-virtual && VIRTUAL=1 RENDERER=react-dom vite build --outDir dist-react-dom-virtual",
+    "build:stale0": "STALE=0 vite build --outDir dist-redact-stale0 && STALE=0 RENDERER=react-dom vite build --outDir dist-react-dom-stale0",
+    "serve": "node scripts/serve.mjs",
     "budget": "node scripts/budget.mjs",
     "lint": "oxlint src mock scripts tests",
     "bench": "PLAYWRIGHT_BROWSERS_PATH=0 playwright test tests/bench.pw.ts",
@@ -21,6 +24,7 @@
     "@stylexjs/stylex": "0.19.2",
     "@tanstack/react-query": "5.108.4",
     "@tanstack/react-router": "1.170.46",
+    "@tanstack/react-virtual": "3.14.28",
     "@tanstack/redact": "0.3.1",
     "react": "19.3.1",
     "react-dom": "19.3.1"
@@ -39,7 +43,9 @@
     "bun": "1.4.5",
     "oxlint": "1.81.0",
     "react-doctor": "0.9.23",
+    "selenium-webdriver": "4.54.0",
     "typescript": "7.0.2",
-    "vite": "8.3.8"
+    "vite": "8.3.8",
+    "web-vitals": "6.2.3"
   }
 }

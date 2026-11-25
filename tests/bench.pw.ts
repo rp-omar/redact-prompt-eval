@@ -4,7 +4,8 @@
 import { mkdirSync, writeFileSync } from 'node:fs'
 import { type Browser, type Page, test } from '@playwright/test'
 import { DELAY } from '../mock/api-plugin.ts'
-import { TARGETS, type TargetName, urlOf } from '../playwright.config'
+import { CONDITION, TARGETS, type TargetName, urlOf } from '../playwright.config'
+import { installMarks } from '../scripts/marks.mjs'
 
 const RUNS = Number(process.env.RUNS ?? 9)
 const TYPING_RUNS = Number(process.env.TYPING_RUNS ?? 5)
@@ -14,66 +15,13 @@ const targets = Object.keys(TARGETS) as TargetName[]
 
 type Marks = { seen: Record<string, number>; painted: Record<string, number>; t0: number }
 
-// Installed before any app code. "seen" = DOM committed; "painted" = first frame after that
-// (requestAnimationFrame + a MessageChannel hop, i.e. after style/layout/paint of that frame).
-function installMarks() {
-  const marks: Marks = ((window as any).__marks = { seen: {}, painted: {}, t0: 0 })
-  const selectors: Record<string, string> = {
-    row: '[data-testid=row]',
-    item: '[data-testid=item-name]',
-    fallback: '[data-testid=activity-fallback]',
-    activity: '[data-testid=activity]',
-  }
-  const afterPaint = (callback: () => void) =>
-    requestAnimationFrame(() => {
-      const channel = new MessageChannel()
-      channel.port1.onmessage = callback
-      channel.port2.postMessage(0)
-    })
-  ;(window as any).__afterPaint = afterPaint
-  const check = () => {
-    for (const [name, selector] of Object.entries(selectors)) {
-      if (name in marks.seen || !document.querySelector(selector)) continue
-      marks.seen[name] = performance.now()
-      afterPaint(() => (marks.painted[name] = performance.now()))
-    }
-  }
-  new MutationObserver(check).observe(document, { childList: true, subtree: true })
-  // Restart the clock for an in-page navigation; t0 is the next trusted or synthetic click.
-  ;(window as any).__resetOnClick = () => {
-    marks.seen = {}
-    marks.painted = {}
-    window.addEventListener('click', () => (marks.t0 = performance.now()), { capture: true, once: true })
-  }
-  // Resolves once the committed rows reflect the input's value after the next keystroke.
-  ;(window as any).__armKey = () => {
-    ;(window as any).__key = new Promise((resolve) => {
-      const input = document.querySelector<HTMLInputElement>('[data-testid=filter]')!
-      const table = document.querySelector<HTMLElement>('[data-testid=rows]')!
-      let t0: number | undefined
-      let echo = 0
-      let done = false
-      const check = () => {
-        if (done || t0 === undefined || table.dataset.applied !== input.value) return
-        done = true
-        observer.disconnect()
-        const commit = performance.now() - t0
-        afterPaint(() => resolve({ commit, paint: performance.now() - t0!, echo }))
-      }
-      const observer = new MutationObserver(check)
-      observer.observe(table, { attributes: true, attributeFilter: ['data-applied'] })
-      window.addEventListener(
-        'input',
-        () => {
-          t0 = performance.now()
-          afterPaint(() => (echo ||= performance.now() - t0!))
-          queueMicrotask(check)
-        },
-        { capture: true, once: true },
-      )
-    })
-  }
-}
+// Slow profile for THROTTLE=slow4g-cpu4: Lighthouse's "mobile slow 4G" DevTools throttling
+// (562.5 ms request latency, 1,474.56 kbps down, 675 kbps up) plus 4x CPU slowdown.
+// Applied through CDP, so it exists in Chromium only.
+const THROTTLE = process.env.THROTTLE === 'slow4g-cpu4'
+const SLOW = { latencyMs: 562.5, downKbps: 1474.56, upKbps: 675, cpuRate: 4 }
+// Every condition writes to its own directory, so run 1 (results/raw/*.json) is never overwritten.
+const LABEL = process.env.BENCH_LABEL ?? 'unlabelled'
 
 const marks = (page: Page) => page.evaluate(() => (window as any).__marks as Marks)
 const painted = (page: Page, name: string) =>
@@ -83,6 +31,17 @@ async function fresh(browser: Browser, target: TargetName, path: string) {
   const context = await browser.newContext({ viewport: { width: 1280, height: 800 } }) // cold HTTP cache
   const page = await context.newPage()
   await page.addInitScript(installMarks)
+  if (THROTTLE) {
+    const cdp = await context.newCDPSession(page)
+    await cdp.send('Network.enable')
+    await cdp.send('Network.emulateNetworkConditions', {
+      offline: false,
+      latency: SLOW.latencyMs,
+      downloadThroughput: (SLOW.downKbps * 1024) / 8,
+      uploadThroughput: (SLOW.upKbps * 1024) / 8,
+    })
+    await cdp.send('Emulation.setCPUThrottlingRate', { rate: SLOW.cpuRate })
+  }
   await page.goto(urlOf(target) + path, { waitUntil: 'commit' })
   return { context, page }
 }
@@ -94,6 +53,7 @@ const median = (values: number[]) => {
 }
 
 test('bench', async ({ browser, browserName }) => {
+  test.skip(THROTTLE && browserName !== 'chromium', 'CDP throttling is Chromium-only')
   const samples: Record<string, Record<string, number[]>> = {}
   const push = (target: string, metric: string, value: number) => ((samples[target] ??= {})[metric] ??= []).push(value)
   const rotated = (run: number) => targets.map((_, index) => targets[(index + run) % targets.length]!)
@@ -173,6 +133,35 @@ test('bench', async ({ browser, browserName }) => {
     }
   }
 
+  // 6. Navigation to the same detail page from a small page (/about) instead of the 5,000-row
+  //    list, started from script (About has no link to an item). Cold = nothing preloaded;
+  //    warm = route chunk and data preloaded first. Compare with suspRequired and warmNav.
+  for (let run = 0; run < RUNS; run++) {
+    for (const target of rotated(run)) {
+      for (const warm of [false, true]) {
+        const { context, page } = await fresh(browser, target, '/about')
+        await page.waitForLoadState('load')
+        await page.waitForFunction(() => document.querySelector('h1')?.textContent === 'About')
+        if (warm) {
+          await page.evaluate(
+            (id) => (window as any).__TSR_ROUTER__.preloadRoute({ to: '/items/$id', params: { id } }),
+            ITEM,
+          )
+        }
+        await page.waitForTimeout(250)
+        await page.evaluate((id) => {
+          ;(window as any).__resetNow()
+          void (window as any).__TSR_ROUTER__.navigate({ to: '/items/$id', params: { id } })
+        }, ITEM)
+        await painted(page, 'activity')
+        const m = await marks(page)
+        push(target, warm ? 'smallWarmNav' : 'smallNavRequired', m.painted.item! - m.t0)
+        push(target, warm ? 'smallWarmNavPanel' : 'smallNavPanel', m.painted.activity! - m.t0)
+        await context.close()
+      }
+    }
+  }
+
   // 5. Input latency while filtering 5,000 unvirtualised rows; plain state and useDeferredValue.
   for (let run = 0; run < TYPING_RUNS; run++) {
     for (const target of rotated(run)) {
@@ -201,9 +190,9 @@ test('bench', async ({ browser, browserName }) => {
     }
   }
 
-  mkdirSync('results/raw', { recursive: true })
+  mkdirSync(`results/raw/${LABEL}`, { recursive: true })
   writeFileSync(
-    `results/raw/${browserName}.json`,
+    `results/raw/${LABEL}/${browserName}.json`,
     JSON.stringify(
       {
         browser: browserName,
@@ -212,6 +201,7 @@ test('bench', async ({ browser, browserName }) => {
         typingRuns: TYPING_RUNS,
         keys: KEYS,
         mockDelayMs: DELAY,
+        condition: { ...CONDITION, throttle: THROTTLE ? SLOW : null },
         samples,
       },
       null,

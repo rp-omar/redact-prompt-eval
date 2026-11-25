@@ -173,3 +173,20 @@ Warnings only: Vite 8.3.8 prints `Your Vite config uses features that are unsupp
 - The `staleTime: 0` double-fetch (F-12) and navigation from a small page (R-2) are reasoned, not measured.
 - A virtualised list (F-31).
 - Sequential `RENDERER` switching on a shared dep cache (F-08).
+
+---
+
+# Run 2 (2026-11-25): verifying the "Not run or not verified" list
+
+Appended after run 1. Everything above is run 1 and is left as written, except where a "was:" note marks a correction. IDs in this part start with **V-**.
+
+## Rules fixed before the run-2 measurements
+
+- **Same gate, applied per condition.** Baseline = React DOM build of the same condition; tolerance per metric and browser = max(A/A noise in that condition, 5%); Redact ships under a condition only if cold entry improves and Suspense navigation and input latency hold, in every browser measured for that condition.
+- **Measured bundles do not change.** The default builds must stay byte-identical to the ones timed in run 1 (`results/hashes/run1.sha256`). Variants are separate build outputs.
+- **Conditions.**
+  - `brotli`: default builds served by `scripts/serve.mjs` (pre-compressed Brotli quality 11 for files, Brotli quality 5 for API JSON) instead of `vite preview`, no throttling, three browsers. This is the control that separates "server changed" from "network changed".
+  - `brotli-slow4g-cpu4`: the same, with Lighthouse's mobile slow-4G DevTools profile (562.5 ms request latency, 1,474.56 kbps down, 675 kbps up) and 4x CPU slowdown, applied through CDP. CDP exists only in Chromium, so this condition is judged on Chromium alone.
+  - `virtual-brotli` and `virtual-slow4g-cpu4`: the same two, on the `VIRTUAL=1` build variant.
+- **"Usable content" for the virtualised list**: the first window of rows (the rows in a 1280×800 viewport plus 10 overscan) painted, with the count reading "5,000 of 5,000". Input latency is keystroke to that window repainted with the filtered rows.
+- Decision: run counts stay at 9 (5 typing runs × 10 keystrokes) for every condition.

@@ -5,7 +5,9 @@ import { join } from 'node:path'
 import { fileURLToPath } from 'node:url'
 import { brotliCompressSync, constants } from 'node:zlib'
 
-export const BUILDS = { redact: 'dist-redact', 'react-dom': 'dist-react-dom' }
+// VARIANT=virtual|stale0 checks a diagnostic build variant instead of the default build.
+const SUFFIX = process.env.VARIANT ? `-${process.env.VARIANT}` : ''
+export const BUILDS = { redact: `dist-redact${SUFFIX}`, 'react-dom': `dist-react-dom${SUFFIX}` }
 // PROMPT.md says "kB"; read as 1000 bytes (the stricter reading). See FINDINGS.md.
 export const LIMITS = { coldEntryJs: 150_000, routeJs: 50_000, firstViewCss: 20_000 }
 // Route template -> route source files matched on entry (root layout + leaf).
@@ -97,7 +99,7 @@ function main() {
     }
   }
   mkdirSync('results', { recursive: true })
-  writeFileSync('results/budget.json', JSON.stringify({ limits: LIMITS, builds: report }, null, 2) + '\n')
+  writeFileSync(`results/budget${SUFFIX}.json`, JSON.stringify({ limits: LIMITS, builds: report }, null, 2) + '\n')
   process.exit(failed ? 1 : 0)
 }
 

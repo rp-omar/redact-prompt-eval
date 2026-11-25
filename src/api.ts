@@ -12,7 +12,8 @@ async function getJson<T>(url: string, init?: RequestInit): Promise<T> {
 // One queryOptions definition per resource, shared by loaders and components.
 // staleTime is not in the prompt: without it Query's default (0) makes the intent
 // preload and the navigation each fetch the same resource. See FINDINGS.md F-12.
-const STALE_MS = 30_000
+// STALE=0 builds a diagnostic variant with Query's default (FINDINGS.md V-3).
+const STALE_MS = __STALE_MS__
 
 export const itemsQueryOptions = queryOptions({
   queryKey: ['items'],
