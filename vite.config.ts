@@ -27,6 +27,8 @@ export default defineConfig({
     ].slice(0, chain),
     mockApi(),
   ],
+  // Per-renderer dep cache: two dev servers sharing node_modules/.vite load two copies of React.
+  cacheDir: `node_modules/.vite-${renderer}`,
   build: { manifest: true },
   preview: { strictPort: true },
 })

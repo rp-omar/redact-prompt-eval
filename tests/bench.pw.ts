@@ -137,7 +137,10 @@ test('bench', async ({ browser, browserName }) => {
         await painted(page, 'activity')
         const m = await marks(page)
         const responseEnd = await page.evaluate(
-          () => performance.getEntriesByType('resource').find((entry) => entry.name.endsWith('/activity'))!.responseEnd,
+          () =>
+            (performance.getEntriesByType('resource') as PerformanceResourceTiming[]).find((entry) =>
+              entry.name.endsWith('/activity'),
+            )!.responseEnd,
         )
         push(target, 'suspRequired', m.painted.item! - m.t0)
         push(target, 'suspPanel', m.painted.activity! - m.t0)
@@ -153,7 +156,9 @@ test('bench', async ({ browser, browserName }) => {
         await link.hover()
         await page.waitForFunction(() => {
           const names = performance.getEntriesByType('resource').map((entry) => entry.name)
-          return ['/activity', '/api/items/1000', 'items._id'].every((part) => names.some((name) => name.includes(part)))
+          return ['/activity', '/api/items/1000', 'items._id'].every((part) =>
+            names.some((name) => name.includes(part)),
+          )
         })
         await page.waitForTimeout(250)
         await page.evaluate(() => (window as any).__resetOnClick())
@@ -171,7 +176,10 @@ test('bench', async ({ browser, browserName }) => {
   // 5. Input latency while filtering 5,000 unvirtualised rows; plain state and useDeferredValue.
   for (let run = 0; run < TYPING_RUNS; run++) {
     for (const target of rotated(run)) {
-      for (const [mode, path] of [['type', '/'], ['typeDeferred', '/?deferred=true']] as const) {
+      for (const [mode, path] of [
+        ['type', '/'],
+        ['typeDeferred', '/?deferred=true'],
+      ] as const) {
         const { context, page } = await fresh(browser, target, path)
         await painted(page, 'row')
         await page.waitForTimeout(250)
@@ -196,6 +204,18 @@ test('bench', async ({ browser, browserName }) => {
   mkdirSync('results/raw', { recursive: true })
   writeFileSync(
     `results/raw/${browserName}.json`,
-    JSON.stringify({ browser: browserName, version: browser.version(), runs: RUNS, typingRuns: TYPING_RUNS, keys: KEYS, mockDelayMs: DELAY, samples }, null, 2) + '\n',
+    JSON.stringify(
+      {
+        browser: browserName,
+        version: browser.version(),
+        runs: RUNS,
+        typingRuns: TYPING_RUNS,
+        keys: KEYS,
+        mockDelayMs: DELAY,
+        samples,
+      },
+      null,
+      2,
+    ) + '\n',
   )
 })

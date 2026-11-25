@@ -17,6 +17,7 @@
         "@rolldown/plugin-babel": "0.3.1",
         "@stylexjs/unplugin": "0.19.2",
         "@tanstack/router-plugin": "1.169.0",
+        "@types/bun": "1.4.5",
         "@types/node": "26.6.10",
         "@types/react": "19.3.2",
         "@types/react-dom": "19.3.0",
@@ -371,6 +372,8 @@
 
     "@tybys/wasm-util": ["@tybys/wasm-util@0.10.5", "", { "dependencies": { "tslib": "^2.4.0" } }, "sha512-dOGOPxlaNV+G046mZzN+9C0dAcQZeSKcXiVaM0TYy/LM4ttTmgSBDxYfovcYI8Em3+eAbiAYpvWLOv8+ZVRJKA=="],
 
+    "@types/bun": ["@types/bun@1.4.5", "", { "dependencies": { "bun-types": "1.4.5" } }, "sha512-DpgwNI9z0L1S0gtb45QLCWgwCUcMLnsHYMJHQvpNj7erGiCGBvpggltAIeARrtobNMKMuy0UP7i56tKKgwFs/Q=="],
+
     "@types/esrecurse": ["@types/esrecurse@4.3.1", "", {}, "sha512-xJBAbDifo5hpffDBuHl0Y8ywswbiAp/Wi7Y/GtAgSlZyIABppyurxVueOPE8LUQOxdlgi6Zqce7uoEpqNTeiUw=="],
 
     "@types/estree": ["@types/estree@1.0.11", "", {}, "sha512-YBdNe5JcjYR0sPhJW1QIeRCmI11YhYvaRuGCs9+WCeTTb+Yhb2BE2XMe5/wAqF10FK5g3+q1PDhQABfT7aX0gg=="],
@@ -458,6 +461,8 @@
     "browserslist": ["browserslist@4.29.6", "", { "dependencies": { "baseline-browser-mapping": "^2.11.37", "caniuse-lite": "^1.0.30001826", "electron-to-chromium": "^1.5.486", "node-releases": "^2.0.64", "update-browserslist-db": "^1.4.0" }, "bin": { "browserslist": "cli.js" } }, "sha512-CmVVIQ3RVc5HxYEc9X84GvxK/C8C1wH8TlKAiO7uTxF8PDwt7r8t9Qk3J9NkMOVzX5O/HbLv3yzxZg9HPrnI9w=="],
 
     "bun": ["bun@1.4.5", "", { "optionalDependencies": { "@oven/bun-darwin-aarch64": "1.4.5", "@oven/bun-darwin-x64": "1.4.5", "@oven/bun-freebsd-aarch64": "1.4.5", "@oven/bun-freebsd-x64": "1.4.5", "@oven/bun-linux-aarch64": "1.4.5", "@oven/bun-linux-aarch64-android": "1.4.5", "@oven/bun-linux-aarch64-musl": "1.4.5", "@oven/bun-linux-x64": "1.4.5", "@oven/bun-linux-x64-android": "1.4.5", "@oven/bun-linux-x64-musl": "1.4.5", "@oven/bun-windows-aarch64": "1.4.5", "@oven/bun-windows-x64": "1.4.5" }, "os": [ "!aix", "!sunos", "!openbsd", ], "cpu": [ "x64", "arm64", ], "hasInstallScript": true, "bin": { "bun": "bin/bun.exe", "bunx": "bin/bunx.exe" } }, "sha512-SWOAncfhwiqIyaZ3uyuUD/6o8aWbG8QtU6SChlz4u6U/C89gTZafLDCmbUvyNjx+ccxLLHV+lSsWqE1OBN8bBw=="],
+
+    "bun-types": ["bun-types@1.4.5", "", { "dependencies": { "@types/node": "*", "undici-types": "*" } }, "sha512-ECHn+9dhL3wv0G6u0+7dQvrnaimXiRDxxerYBmhTaLyJEEuvTPWk2Fye3XIf5Y++JIIiHKfQw4Z7V5D8KuiXbg=="],
 
     "cacheable": ["cacheable@2.5.0", "", { "dependencies": { "@cacheable/memory": "^2.2.0", "@cacheable/utils": "^2.5.0", "hookified": "^1.15.0", "keyv": "^5.6.0", "qified": "^0.10.1" } }, "sha512-60cyAOytib/OzBw1JNSoSV/boK1AtHryDIjvVBk7XbN4ugfkM3+Sry7fEjNgPMGgOjuaZPAp8ruZ0Cxafwyq9g=="],
 

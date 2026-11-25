@@ -10,7 +10,7 @@
     "noUncheckedIndexedAccess": true,
     "verbatimModuleSyntax": true,
     "allowImportingTsExtensions": true,
-    "types": ["vite/client", "node"]
+    "types": ["vite/client", "node", "bun"]
   },
   "include": ["src", "mock", "scripts", "tests", "vite.config.ts", "playwright.config.ts"]
 }

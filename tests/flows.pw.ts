@@ -33,18 +33,24 @@ for (const renderer of RENDERERS) {
       await expect(page.locator('html')).toHaveAttribute('data-renderer', renderer)
       await expect(page.getByTestId('row').first()).toBeVisible()
       const fiberKeys = await page.evaluate(
-        () => Object.keys(document.querySelector('[data-testid=row]')!).filter((key) => key.startsWith('__reactFiber$')).length,
+        () =>
+          Object.keys(document.querySelector('[data-testid=row]')!).filter((key) => key.startsWith('__reactFiber$'))
+            .length,
       )
       expect(fiberKeys > 0).toBe(renderer === 'react-dom')
     })
 
     test('cold network log matches the budget script file set', async ({ page }) => {
       const expected = analyze(BUILDS[renderer]).routes
-      for (const [template, path] of [['/', '/'], ['/items/$id', `/items/${ITEM}`]] as const) {
+      for (const [template, path] of [
+        ['/', '/'],
+        ['/items/$id', `/items/${ITEM}`],
+      ] as const) {
         const requests = trackRequests(page)
         await page.goto(base + path)
         await expect(page.getByTestId(template === '/' ? 'row' : 'activity').first()).toBeVisible()
-        const assets = (ext: string) => [...new Set(requests.urls.filter((url) => url.endsWith(ext)).map((url) => url.slice(1)))].sort()
+        const assets = (ext: string) =>
+          [...new Set(requests.urls.filter((url) => url.endsWith(ext)).map((url) => url.slice(1)))].sort()
         expect(assets('.js'), `${template} JS`).toEqual(expected[template].coldEntryJs.files)
         expect(assets('.css'), `${template} CSS`).toEqual(expected[template].firstViewCss.files)
         await page.goto('about:blank')

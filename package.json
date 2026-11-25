@@ -10,8 +10,12 @@
     "build:both": "bun run build:redact && bun run build:react-dom",
     "budget": "node scripts/budget.mjs",
     "lint": "oxlint src mock scripts tests",
-    "bench": "playwright test",
-    "react-doctor": "react-doctor"
+    "bench": "PLAYWRIGHT_BROWSERS_PATH=0 playwright test tests/bench.pw.ts",
+    "react-doctor": "react-doctor",
+    "playwright:install": "PLAYWRIGHT_BROWSERS_PATH=0 playwright install chromium firefox webkit",
+    "test:flows": "PLAYWRIGHT_BROWSERS_PATH=0 playwright test tests/flows.pw.ts",
+    "report": "node scripts/report.mjs",
+    "doctor": "react-doctor . -y --no-supply-chain --no-score"
   },
   "dependencies": {
     "@stylexjs/stylex": "0.19.2",
@@ -26,6 +30,7 @@
     "@rolldown/plugin-babel": "0.3.1",
     "@stylexjs/unplugin": "0.19.2",
     "@tanstack/router-plugin": "1.169.0",
+    "@types/bun": "1.4.5",
     "@types/node": "26.6.10",
     "@types/react": "19.3.2",
     "@types/react-dom": "19.3.0",
