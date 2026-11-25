@@ -190,3 +190,51 @@ Appended after run 1. Everything above is run 1 and is left as written, except w
   - `virtual-brotli` and `virtual-slow4g-cpu4`: the same two, on the `VIRTUAL=1` build variant.
 - **"Usable content" for the virtualised list**: the first window of rows (the rows in a 1280×800 viewport plus 10 overscan) painted, with the count reading "5,000 of 5,000". Input latency is keystroke to that window repainted with the filtered rows.
 - Decision: run counts stay at 9 (5 typing runs × 10 keystrokes) for every condition.
+
+## Run 2 results: checks that are not timings
+
+### V-0 Toolchain: `bun lint` is a Bun canary built-in (corrects F-23)
+
+- Measured: Bun stable 1.4.5 has no `lint` subcommand. Bun canary (`bun@1.4.5-canary.20261124.1`, `bun --revision` → `1.4.6-canary.1+bd92f9bef`) lists `lint`, `fmt`, `check`, `test` in `bun --help`. Canary was installed in a scratch directory outside the repo and run against a fresh clone.
+- With a `lint` script in `package.json`, canary's `bun lint` still runs the script (`$ oxlint src mock scripts tests`); `bun lint --no-script` runs the built-in. The built-in is clean on this repo (22 files, 96 rules native, oxlint defaults) and does report problems: a probe file gave `eslint(no-debugger)` and `eslint(no-unused-vars)`.
+- `bun fmt --check`, `bun check`, `bun test` and both builds pass on canary.
+- **Bundles did not change.** `bun run build:*` on canary runs Vite under Node, and the output is byte-identical to run 1 (all 25 files, sha256). Only `bun --bun run build:redact` (Vite on the Bun runtime) differs: different chunk hashes, 2 bytes larger in total.
+- Decision: the repo stays pinned to stable 1.4.5, because the `PROMPT.md` under evaluation says "Bun 1.4.5 (stable)" and the run-1 numbers were taken on it. The parent session reports that the original prompt pinned canary and that the stable pin came from a rewrite; I could not check the original. Either way the prompt edit is the same: the Bun pin and the command list must agree.
+
+### V-3a `staleTime: 0` double fetch (was reasoned in F-12): MEASURED, confirmed
+
+`STALE=0` build variant, hover a row link (intent preload), wait, click. Requests counted by Playwright, identical in Chromium, Firefox and WebKit and on both renderers ([results/raw/verify](results/raw/verify)):
+
+| Requests | `staleTime: 30 s` (as built) | `staleTime: 0` (Query default) |
+|---|---:|---:|
+| `/api/items/1000` after preload → after click | 1 → 1 | 1 → **2** |
+| `/api/items/1000/activity` after preload → after click | 1 → 1 | 1 → **2** |
+| `/api/items` after returning to the list | 1 | **2** |
+| route chunk | 1 | 1 |
+
+So with the prompt as written (no `staleTime`), the intent preload is thrown away and every navigation fetches again. The third row is a second defect: `staleTime: 'static'` in the list loader does not stop the refetch, because the component's `useSuspenseQuery` uses the shared options (`staleTime: 0`) and refetches on mount. "Use `staleTime: 'static'` in the loader" only works if the component's options are not stale either.
+
+### V-3b Sequential `RENDERER` switching on a shared dep cache (F-08): MEASURED, works
+
+`VITE_CACHE=shared`, one dev server at a time: Redact → React DOM → Redact → React DOM (`scripts/verify-cache-switch.mjs`). All four starts rendered 5,000 rows with the right renderer and no console errors; Vite re-optimised dependencies on each switch. The `Invalid hook call` failure (E-6) therefore needs both dev servers running at the same time on one cache. The per-renderer `cacheDir` is still the right fix for that case, and it also avoids the re-optimise on every switch.
+
+### V-5 Real browsers
+
+- **Google Chrome 158.0.8127.37 (installed)**: driven by Playwright `channel: 'chrome'`. Timings in the tables below.
+- **Firefox 150.0.1 (installed release)**: Playwright cannot drive a stock Firefox, so it was driven over WebDriver with geckodriver 0.37.1 (downloaded by the `geckodriver` npm package into `node_modules/.cache`), headless, one fresh profile per measurement. WebDriver has no init-script hook, so `scripts/serve.mjs --inject-marks` puts the timing marks into `index.html`. Timings below.
+- **Safari 26.5: could not run.** `safaridriver` started, and the session request failed with: `Could not create a session: You must enable 'Allow remote automation' in the Developer section of Safari Settings to control Safari via WebDriver.` I did not change the setting. Human step is in the README.
+
+### V-6 `react-doctor scan`: ran unattended
+
+- `react-doctor scan <url>` exits with `` `react-doctor scan <url>` requires an interactive terminal `` when stdin is not a terminal. `script(1)` did not help (`script: tcgetattr/ioctl: Operation not supported on socket`). Running it on a pseudo-terminal from Python's `pty` module works: `scripts/doctor-scan.mjs` starts Chromium with a debugging port, runs the scan with `--cdp`, drives one interaction with Playwright (type five characters in the filter, click the first row), then writes Enter. Reports and traces are in `.doctor/`, which is git-ignored.
+- **On the Redact build the scan sees no React**: `"reactDetected": false`, warning `No React renderer was detected during the recording.`, no component data. It still reports long frames and script hotspots (the `oninput` handler, 925 ms over 5 frames).
+- **On the React DOM build** it detects React 19.3.1 (production), warns `React component timings were unavailable. Production builds require react-dom/profiling.`, and its own instrumentation slows the page badly: worst interaction 5,696 ms, against about 42 ms for the same keystrokes without the scan. Redact's worst interaction in its scan was 360 ms.
+- Consequences for the prompt: the scan's numbers cannot be compared across renderers (one is instrumented and the other is invisible), component-level output needs a `react-dom/profiling` build that the prompt does not ask for, and the command needs a terminal, so "run on a schedule or for performance work" cannot be a plain CI step.
+
+### V-7 Fresh-clone install: works
+
+`git clone https://github.com/rp-omar/redact-prompt-eval` at `602a19d`, then the README line (`npm install --no-package-lock --save-dev --save-exact bun@1.4.5 && ./node_modules/.bin/bun ci`): 25 s, working tree left clean. In that clone `bun lint`, `bun fmt --check`, `bun check`, `bun test`, `bun run build:both` and `bun run budget` (12/12) pass, and the two builds are byte-identical to the ones measured in run 1. npm prints `bun@1.4.5 (postinstall: node install.js)` as an unapproved install script; the binary works without it.
+
+### V-8 CI: written, not enabled
+
+`ci/github-actions-ci.yml` runs the prompt's command list, both builds, the budget script, the flow tests and the React Doctor static check. It is stored outside `.github/workflows/` because the `gh` token has no `workflow` scope, and granting that is Omar's action. It has never run, so it is unverified. Human step is in the README.
