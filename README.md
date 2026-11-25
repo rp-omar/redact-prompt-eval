@@ -42,7 +42,7 @@ Why Redact loses: re-rendering 5,000 rows with nothing changed costs about 145 m
 
 1. **Give the gate numbers.** State the tolerance, run count, what "usable content" means, and the network and device profile. As written, "improves" and "hold their baseline" are undecidable, and whether cold entry improves depends entirely on the unstated network.
 2. **Warn about large trees, not only Suspense retries.** The Redact caveat should say: re-rendering a large list is far slower than React DOM and `useDeferredValue` will not keep input responsive, so virtualise long lists or pick React DOM. State whether lists must be virtualised.
-3. **Set a `staleTime`.** "Query owns freshness" with `defaultPreloadStaleTime: 0` and Query's default `staleTime: 0` refetches on navigation right after the intent preload. Name a value, and say whether secondary queries start in the loader un-awaited.
+3. **Set a `staleTime`.** "Query owns freshness" with `defaultPreloadStaleTime: 0` and Query's default `staleTime: 0` should refetch on navigation right after the intent preload (reasoned from Query's `staleTime` semantics, not measured; this build uses 30 s). Name a value, and say whether secondary queries start in the loader un-awaited.
 4. **Make the renderer switch complete.** Add: separate `outDir` per renderer, separate Vite `cacheDir` per renderer (sharing one broke the Redact dev server with `Invalid hook call`), and a test proving which renderer is in the bundle.
 5. **Fix the command list.** `bun lint` is not a Bun command; name a linter and the script. Say which files `bun fmt --check` must ignore (generated route tree), and keep Playwright tests out of `bun test`'s `*.spec.ts` / `*.test.ts` pattern.
 6. **List every package.** Add `@stylexjs/stylex`, `@babel/core`, `@playwright/test`, `web-vitals`, `@types/*` with versions, and say that `reactCompilerPreset` comes from `@vitejs/plugin-react`. Drop `runtimeInjection: false` (the default) and the implied position of `redact()` (it runs `enforce: 'pre'`).
@@ -56,7 +56,8 @@ Why Redact loses: re-rendering 5,000 rows with nothing changed costs about 145 m
 - Throttled network or CPU, real devices, Safari, release Firefox. Timings are localhost, one Apple-silicon Mac, headless.
 - LCP, INP, CLS, and any field data. Timings are in-page marks.
 - CI: no workflow pushed (no provider named; token lacks `workflow` scope).
-- A virtualised list, and navigation from a small page.
+- A virtualised list, navigation from a small page, and the `staleTime: 0` double fetch.
+- The install line below from a fresh clone.
 
 ## Run it
 
