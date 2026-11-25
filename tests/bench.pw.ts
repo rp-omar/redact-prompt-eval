@@ -52,7 +52,7 @@ const median = (values: number[]) => {
   return sorted.length % 2 ? sorted[mid]! : (sorted[mid - 1]! + sorted[mid]!) / 2
 }
 
-test('bench', async ({ browser, browserName }) => {
+test('bench', async ({ browser, browserName }, testInfo) => {
   test.skip(THROTTLE && browserName !== 'chromium', 'CDP throttling is Chromium-only')
   const samples: Record<string, Record<string, number[]>> = {}
   const push = (target: string, metric: string, value: number) => ((samples[target] ??= {})[metric] ??= []).push(value)
@@ -192,10 +192,10 @@ test('bench', async ({ browser, browserName }) => {
 
   mkdirSync(`results/raw/${LABEL}`, { recursive: true })
   writeFileSync(
-    `results/raw/${LABEL}/${browserName}.json`,
+    `results/raw/${LABEL}/${testInfo.project.name}.json`,
     JSON.stringify(
       {
-        browser: browserName,
+        browser: testInfo.project.name,
         version: browser.version(),
         runs: RUNS,
         typingRuns: TYPING_RUNS,

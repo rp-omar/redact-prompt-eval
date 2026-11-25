@@ -1,0 +1,50 @@
+# CI for this repo. It is stored here, NOT in .github/workflows/, because the token used to
+# push this repo has no `workflow` scope and GitHub refuses pushes that add workflow files
+# without it. To enable it (one human step, see README "Human steps"):
+#   gh auth refresh -h github.com -s workflow
+#   mkdir -p .github/workflows && git mv ci/github-actions-ci.yml .github/workflows/ci.yml
+#   git commit -m "Enable CI" && git push
+# Not run anywhere yet: this file is unverified until that step is done.
+name: ci
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  checks:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    env:
+      PLAYWRIGHT_BROWSERS_PATH: '0'
+    steps:
+      - uses: actions/checkout@v4
+      - uses: oven-sh/setup-bun@v2
+        with:
+          bun-version: 1.4.5
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 26
+      - run: bun ci
+      # The prompt's command list. `bun lint` runs the package.json script on Bun 1.4.5
+      # stable (the built-in linter is canary-only, FINDINGS.md F-23).
+      - run: bun lint
+      - run: bun fmt --check
+      - run: bun check
+      - run: bun test
+      # Both renderers from the same commit, then the byte budgets (exits 1 on a breach).
+      - run: bun run build:both
+      - run: bun run budget
+      # Required flows, both renderers, three browser engines.
+      - run: bunx playwright install --with-deps chromium firefox webkit
+      - run: bun run test:flows
+      # React Doctor static check, offline flags. `react-doctor scan` needs a terminal and a
+      # person (or the pty wrapper in scripts/doctor-scan.mjs), so it is not part of CI.
+      - run: bun run doctor
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: results
+          path: |
+            results/budget.json
+            test-results/

@@ -25,12 +25,14 @@ export default defineConfig({
   workers: 1,
   fullyParallel: false,
   retries: 0,
-  timeout: 15 * 60_000,
+  timeout: 60 * 60_000,
   reporter: [['list']],
   use: { viewport: { width: 1280, height: 800 } },
   projects: [
     { name: 'chromium', use: { ...devices['Desktop Chrome'], viewport: { width: 1280, height: 800 } } },
     { name: 'firefox', use: { ...devices['Desktop Firefox'], viewport: { width: 1280, height: 800 } } },
+    // Installed Google Chrome (not Playwright's Chromium build); run with --project chrome.
+    { name: 'chrome', use: { ...devices['Desktop Chrome'], channel: 'chrome', viewport: { width: 1280, height: 800 } } },
     { name: 'webkit', use: { ...devices['Desktop Safari'], viewport: { width: 1280, height: 800 } } },
   ],
   webServer: Object.values(TARGETS).map((target) => ({

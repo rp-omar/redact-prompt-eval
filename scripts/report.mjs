@@ -9,7 +9,7 @@ const LABEL = process.argv[2]
 const RAW = LABEL ? `results/raw/${LABEL}` : 'results/raw'
 const OUT = LABEL ? `results/summary-${LABEL}` : 'results/summary'
 const BUDGET = `results/budget${process.env.VARIANT ? `-${process.env.VARIANT}` : ''}.json`
-const BROWSERS = ['chromium', 'firefox', 'webkit']
+const BROWSERS = ['chromium', 'firefox', 'webkit', 'chrome', 'firefox-release']
 const MIN_TOLERANCE = 0.05
 
 // [key, label, role in the gate]

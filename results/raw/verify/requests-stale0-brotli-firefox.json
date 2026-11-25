@@ -1,0 +1,25 @@
+{
+  "condition": {
+    "variant": "stale0",
+    "serve": "brotli"
+  },
+  "browser": "159.0",
+  "counts": {
+    "redact": {
+      "itemAfterPreload": 1,
+      "activityAfterPreload": 1,
+      "itemAfterClick": 2,
+      "activityAfterClick": 2,
+      "listAfterReturn": 2,
+      "routeChunk": 1
+    },
+    "react-dom": {
+      "itemAfterPreload": 1,
+      "activityAfterPreload": 1,
+      "itemAfterClick": 2,
+      "activityAfterClick": 2,
+      "listAfterReturn": 2,
+      "routeChunk": 1
+    }
+  }
+}

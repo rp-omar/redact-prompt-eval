@@ -1,0 +1,38 @@
+[
+  {
+    "renderer": "redact",
+    "rendered": true,
+    "marker": "redact",
+    "rows": 5000,
+    "reactDomFiber": false,
+    "errors": [],
+    "reoptimized": false
+  },
+  {
+    "renderer": "react-dom",
+    "rendered": true,
+    "marker": "react-dom",
+    "rows": 5000,
+    "reactDomFiber": true,
+    "errors": [],
+    "reoptimized": true
+  },
+  {
+    "renderer": "redact",
+    "rendered": true,
+    "marker": "redact",
+    "rows": 5000,
+    "reactDomFiber": false,
+    "errors": [],
+    "reoptimized": true
+  },
+  {
+    "renderer": "react-dom",
+    "rendered": true,
+    "marker": "react-dom",
+    "rows": 5000,
+    "reactDomFiber": true,
+    "errors": [],
+    "reoptimized": true
+  }
+]

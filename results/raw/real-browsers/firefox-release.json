@@ -1,0 +1,101 @@
+{
+  "browser": "firefox-release",
+  "version": "150.0.1",
+  "runs": 1,
+  "typingRuns": 1,
+  "keys": [
+    "a",
+    "n",
+    "d",
+    "r",
+    "e",
+    "Backspace",
+    "Backspace",
+    "Backspace",
+    "Backspace",
+    "Backspace"
+  ],
+  "mockDelayMs": {
+    "list": 30,
+    "item": 40,
+    "activity": 150,
+    "save": 40
+  },
+  "condition": {
+    "variant": "default",
+    "serve": "brotli",
+    "throttle": null,
+    "driver": "geckodriver (WebDriver), headless"
+  },
+  "samples": {
+    "redact": {
+      "coldList": [
+        536
+      ],
+      "coldListCommit": [
+        329
+      ],
+      "suspRequired": [
+        308
+      ],
+      "suspPanel": [
+        317
+      ],
+      "typePaint": [
+        286.5
+      ],
+      "typeCommit": [
+        208.5
+      ],
+      "typeWorstPaint": [
+        635
+      ]
+    },
+    "react-dom": {
+      "coldList": [
+        474
+      ],
+      "coldListCommit": [
+        278
+      ],
+      "suspRequired": [
+        94
+      ],
+      "suspPanel": [
+        383
+      ],
+      "typePaint": [
+        80.5
+      ],
+      "typeCommit": [
+        19.5
+      ],
+      "typeWorstPaint": [
+        383
+      ]
+    },
+    "react-dom-b": {
+      "coldList": [
+        467
+      ],
+      "coldListCommit": [
+        268
+      ],
+      "suspRequired": [
+        112
+      ],
+      "suspPanel": [
+        401
+      ],
+      "typePaint": [
+        77
+      ],
+      "typeCommit": [
+        18.5
+      ],
+      "typeWorstPaint": [
+        388
+      ]
+    }
+  }
+}

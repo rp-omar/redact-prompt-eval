@@ -48,7 +48,7 @@ async function open(browser: Browser, url: string, init?: (page: Page) => Promis
   return { context, page, requests }
 }
 
-test('request counts: intent preload then click', async ({ browser, browserName }) => {
+test('request counts: intent preload then click', async ({ browser, browserName }, testInfo) => {
   test.skip(THROTTLE, 'counts do not depend on throttling')
   const out: Record<string, Record<string, number>> = {}
   for (const renderer of RENDERERS) {
@@ -86,7 +86,7 @@ test('request counts: intent preload then click', async ({ browser, browserName 
     }
     await context.close()
   }
-  save(`requests-${TAG}-${browserName}`, {
+  save(`requests-${TAG}-${testInfo.project.name}`, {
     condition: CONDITION,
     browser: browser.version(),
     counts: out,
@@ -123,7 +123,7 @@ const readVitals = async (page: Page) => {
   return page.evaluate(() => (window as any).__vitals as Record<string, Vital>)
 }
 
-test('web vitals in the lab', async ({ browser, browserName }) => {
+test('web vitals in the lab', async ({ browser, browserName }, testInfo) => {
   test.skip(THROTTLE && browserName !== 'chromium', 'CDP throttling is Chromium-only')
   const samples: Record<string, Record<string, number[]>> = {}
   const details: Record<string, Record<string, unknown>> = {}
@@ -186,7 +186,7 @@ test('web vitals in the lab', async ({ browser, browserName }) => {
       ),
     ]),
   )
-  save(`vitals-${TAG}-${browserName}`, {
+  save(`vitals-${TAG}-${testInfo.project.name}`, {
     condition: { ...CONDITION, throttle: THROTTLE },
     browser: `${browserName} ${browser.version()}`,
     runs: RUNS,
