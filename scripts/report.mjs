@@ -131,7 +131,7 @@ const out = [
   lines.join('\n'),
   '',
   `Timings: median (min–max) in ms over ${first?.runs} runs per renderer per browser (${first?.typingRuns} typing runs × ${first?.keys.length} keystrokes), ` +
-    `production builds under ${first?.condition?.serve === 'brotli' ? '\`scripts/serve.mjs\` (Brotli)' : '\`vite preview\`'} on localhost, renderers interleaved. Browsers: ${meta}. ` +
+    `production builds under ${first?.condition?.serve === 'brotli' ? '`scripts/serve.mjs` (Brotli)' : '`vite preview`'} on localhost, renderers interleaved. Browsers: ${meta}. ` +
     `Mock API delays: ${JSON.stringify(first?.mockDelayMs)} ms.` +
     (first?.condition ? ` Condition: ${JSON.stringify(first.condition)}.` : ''),
   '',

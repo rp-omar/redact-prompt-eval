@@ -25,7 +25,7 @@ const median = (values: number[]) => {
   return sorted.length % 2 ? sorted[mid]! : (sorted[mid - 1]! + sorted[mid]!) / 2
 }
 
-async function open(browser: Browser, url: string, init?: (page: Page) => Promise<void>) {
+async function open(browser: Browser, url: string, init?: (page: Page) => Promise<unknown>) {
   const context = await browser.newContext({
     viewport: { width: 1280, height: 800 },
   })
