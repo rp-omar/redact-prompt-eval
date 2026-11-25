@@ -70,9 +70,15 @@ function Row({ item }: { item: Item }) {
   return (
     <tr data-testid="row">
       <td {...stylex.props(styles.td)}>
-        <Link to="/items/$id" params={{ id: item.id }} {...stylex.props(styles.link)}>
-          {item.name}
-        </Link>
+        {__PLAIN_LINKS__ ? (
+          <a href={`/items/${item.id}`} {...stylex.props(styles.link)}>
+            {item.name}
+          </a>
+        ) : (
+          <Link to="/items/$id" params={{ id: item.id }} {...stylex.props(styles.link)}>
+            {item.name}
+          </Link>
+        )}
         <div {...stylex.props(styles.sub)}>{item.email}</div>
       </td>
       <td {...stylex.props(styles.td)}>{item.company}</td>

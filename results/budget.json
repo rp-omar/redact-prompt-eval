@@ -1,0 +1,185 @@
+{
+  "limits": {
+    "coldEntryJs": 150000,
+    "routeJs": 50000,
+    "firstViewCss": 20000
+  },
+  "builds": {
+    "redact": {
+      "distDir": "dist-redact",
+      "routes": {
+        "/": {
+          "coldEntryJs": {
+            "bytes": 57276,
+            "files": [
+              "assets/api-D05-eIbR.js",
+              "assets/compiler-runtime-BSWfaqYf.js",
+              "assets/index-BCUo3ygH.js",
+              "assets/preload-helper-CTB-3vUV.js",
+              "assets/routes-DhrwOiXf.js",
+              "assets/useSuspenseQuery-CDt-Dl7e.js"
+            ]
+          },
+          "routeJs": {
+            "bytes": 4413,
+            "files": [
+              "assets/routes-DhrwOiXf.js",
+              "assets/useSuspenseQuery-CDt-Dl7e.js"
+            ]
+          },
+          "firstViewCss": {
+            "bytes": 1075,
+            "files": [
+              "assets/index-DPQ9m7we.css"
+            ]
+          }
+        },
+        "/items/$id": {
+          "coldEntryJs": {
+            "bytes": 57177,
+            "files": [
+              "assets/api-D05-eIbR.js",
+              "assets/compiler-runtime-BSWfaqYf.js",
+              "assets/index-BCUo3ygH.js",
+              "assets/items._id-CTLYB107.js",
+              "assets/preload-helper-CTB-3vUV.js",
+              "assets/useSuspenseQuery-CDt-Dl7e.js"
+            ]
+          },
+          "routeJs": {
+            "bytes": 4314,
+            "files": [
+              "assets/items._id-CTLYB107.js",
+              "assets/useSuspenseQuery-CDt-Dl7e.js"
+            ]
+          },
+          "firstViewCss": {
+            "bytes": 1075,
+            "files": [
+              "assets/index-DPQ9m7we.css"
+            ]
+          }
+        }
+      },
+      "files": {
+        "assets/index-BCUo3ygH.js": {
+          "raw": 73645,
+          "brotli": 24542
+        },
+        "assets/api-D05-eIbR.js": {
+          "raw": 9191,
+          "brotli": 3259
+        },
+        "assets/compiler-runtime-BSWfaqYf.js": {
+          "raw": 2422,
+          "brotli": 944
+        },
+        "assets/preload-helper-CTB-3vUV.js": {
+          "raw": 75901,
+          "brotli": 24118
+        },
+        "assets/routes-DhrwOiXf.js": {
+          "raw": 4919,
+          "brotli": 1698
+        },
+        "assets/useSuspenseQuery-CDt-Dl7e.js": {
+          "raw": 7999,
+          "brotli": 2715
+        },
+        "assets/index-DPQ9m7we.css": {
+          "raw": 4412,
+          "brotli": 1075
+        },
+        "assets/items._id-CTLYB107.js": {
+          "raw": 4111,
+          "brotli": 1599
+        }
+      }
+    },
+    "react-dom": {
+      "distDir": "dist-react-dom",
+      "routes": {
+        "/": {
+          "coldEntryJs": {
+            "bytes": 95463,
+            "files": [
+              "assets/api-Coxmj2me.js",
+              "assets/compiler-runtime-8yHzpnUu.js",
+              "assets/index-cADqiIUL.js",
+              "assets/routes-o_l_266M.js",
+              "assets/useSuspenseQuery-Cux8_qiX.js"
+            ]
+          },
+          "routeJs": {
+            "bytes": 4455,
+            "files": [
+              "assets/routes-o_l_266M.js",
+              "assets/useSuspenseQuery-Cux8_qiX.js"
+            ]
+          },
+          "firstViewCss": {
+            "bytes": 1075,
+            "files": [
+              "assets/index-DPQ9m7we.css"
+            ]
+          }
+        },
+        "/items/$id": {
+          "coldEntryJs": {
+            "bytes": 95351,
+            "files": [
+              "assets/api-Coxmj2me.js",
+              "assets/compiler-runtime-8yHzpnUu.js",
+              "assets/index-cADqiIUL.js",
+              "assets/items._id-DB4lp4Qb.js",
+              "assets/useSuspenseQuery-Cux8_qiX.js"
+            ]
+          },
+          "routeJs": {
+            "bytes": 4343,
+            "files": [
+              "assets/items._id-DB4lp4Qb.js",
+              "assets/useSuspenseQuery-Cux8_qiX.js"
+            ]
+          },
+          "firstViewCss": {
+            "bytes": 1075,
+            "files": [
+              "assets/index-DPQ9m7we.css"
+            ]
+          }
+        }
+      },
+      "files": {
+        "assets/index-cADqiIUL.js": {
+          "raw": 308531,
+          "brotli": 85111
+        },
+        "assets/api-Coxmj2me.js": {
+          "raw": 8089,
+          "brotli": 2891
+        },
+        "assets/compiler-runtime-8yHzpnUu.js": {
+          "raw": 8951,
+          "brotli": 3006
+        },
+        "assets/routes-o_l_266M.js": {
+          "raw": 5198,
+          "brotli": 1726
+        },
+        "assets/useSuspenseQuery-Cux8_qiX.js": {
+          "raw": 8096,
+          "brotli": 2729
+        },
+        "assets/index-DPQ9m7we.css": {
+          "raw": 4412,
+          "brotli": 1075
+        },
+        "assets/items._id-DB4lp4Qb.js": {
+          "raw": 4315,
+          "brotli": 1614
+        }
+      }
+    }
+  }
+}
