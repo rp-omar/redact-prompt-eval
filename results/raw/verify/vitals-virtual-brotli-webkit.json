@@ -1,0 +1,395 @@
+{
+  "condition": {
+    "variant": "virtual",
+    "serve": "brotli",
+    "throttle": false
+  },
+  "browser": "webkit 27.2",
+  "runs": 5,
+  "medians": {
+    "redact": {
+      "list.TTFB": {
+        "median": 1,
+        "min": 1,
+        "max": 2,
+        "n": 5
+      },
+      "list.LCP": {
+        "median": 88,
+        "min": 80,
+        "max": 148,
+        "n": 5
+      },
+      "list.FCP": {
+        "median": 72,
+        "min": 70,
+        "max": 127,
+        "n": 5
+      },
+      "list.INP": {
+        "median": 8,
+        "min": 8,
+        "max": 16,
+        "n": 5
+      },
+      "detail.TTFB": {
+        "median": 1,
+        "min": 1,
+        "max": 2,
+        "n": 5
+      },
+      "detail.LCP": {
+        "median": 71,
+        "min": 70,
+        "max": 76,
+        "n": 5
+      },
+      "detail.FCP": {
+        "median": 71,
+        "min": 70,
+        "max": 76,
+        "n": 5
+      },
+      "nav.TTFB": {
+        "median": 1,
+        "min": 1,
+        "max": 2,
+        "n": 5
+      },
+      "nav.LCP": {
+        "median": 84,
+        "min": 80,
+        "max": 88,
+        "n": 5
+      },
+      "nav.FCP": {
+        "median": 71,
+        "min": 70,
+        "max": 75,
+        "n": 5
+      },
+      "nav.INP": {
+        "median": 8,
+        "min": 8,
+        "max": 8,
+        "n": 5
+      }
+    },
+    "react-dom": {
+      "list.TTFB": {
+        "median": 1,
+        "min": 1,
+        "max": 2,
+        "n": 5
+      },
+      "list.LCP": {
+        "median": 92,
+        "min": 80,
+        "max": 96,
+        "n": 5
+      },
+      "list.FCP": {
+        "median": 77,
+        "min": 76,
+        "max": 82,
+        "n": 5
+      },
+      "list.INP": {
+        "median": 8,
+        "min": 8,
+        "max": 16,
+        "n": 5
+      },
+      "detail.TTFB": {
+        "median": 1,
+        "min": 1,
+        "max": 1,
+        "n": 5
+      },
+      "detail.LCP": {
+        "median": 75,
+        "min": 75,
+        "max": 78,
+        "n": 5
+      },
+      "detail.FCP": {
+        "median": 75,
+        "min": 75,
+        "max": 78,
+        "n": 5
+      },
+      "nav.TTFB": {
+        "median": 2,
+        "min": 1,
+        "max": 2,
+        "n": 5
+      },
+      "nav.LCP": {
+        "median": 84,
+        "min": 84,
+        "max": 96,
+        "n": 5
+      },
+      "nav.FCP": {
+        "median": 78,
+        "min": 76,
+        "max": 80,
+        "n": 5
+      },
+      "nav.INP": {
+        "median": 8,
+        "min": 8,
+        "max": 8,
+        "n": 5
+      }
+    }
+  },
+  "lastAttribution": {
+    "redact": {
+      "list.TTFB": {},
+      "list.LCP": {
+        "target": "a.active.x14ju556.x3nfvp2>img",
+        "timeToFirstByte": 1,
+        "resourceLoadDelay": 4,
+        "resourceLoadDuration": 1,
+        "elementRenderDelay": 78
+      },
+      "list.FCP": {},
+      "list.INP": {
+        "target": "input.x1awh872.x1iyjqo2.x1jvydc1.x1kogg8i.x1lr1uin.x1t0vds8.x1xlxyfa.x1y0btm7.xmkeg23",
+        "type": "pointer",
+        "inputDelay": 1,
+        "processingDuration": 0,
+        "presentationDelay": 7
+      },
+      "detail.TTFB": {},
+      "detail.LCP": {
+        "target": "main.x1iyjqo2.x1xn8qrt.x4l9tsp>article>dl.x1ghz6dp.x40hh3e.xif65rj.xrvj5dj.xrwz996.xw09woa>dd",
+        "timeToFirstByte": 1,
+        "resourceLoadDelay": 0,
+        "resourceLoadDuration": 0,
+        "elementRenderDelay": 75
+      },
+      "detail.FCP": {},
+      "nav.TTFB": {},
+      "nav.LCP": {
+        "target": "a.active.x14ju556.x3nfvp2>img",
+        "timeToFirstByte": 1,
+        "resourceLoadDelay": 4,
+        "resourceLoadDuration": 1,
+        "elementRenderDelay": 82
+      },
+      "nav.FCP": {},
+      "nav.INP": {
+        "target": "tbody>tr>td.x1165vuw.x16dsc37.x1q0q8m5.x1t0vds8.xdqyycr.xso031l>a.x1hl2dhg.x1s688f.x1timldr.xt0b8zv",
+        "type": "pointer",
+        "inputDelay": 1,
+        "processingDuration": 0,
+        "presentationDelay": 7
+      }
+    },
+    "react-dom": {
+      "list.TTFB": {},
+      "list.LCP": {
+        "target": "a.active.x14ju556.x3nfvp2>img",
+        "timeToFirstByte": 1,
+        "resourceLoadDelay": 4,
+        "resourceLoadDuration": 1,
+        "elementRenderDelay": 90
+      },
+      "list.FCP": {},
+      "list.INP": {
+        "target": "input.x1awh872.x1iyjqo2.x1jvydc1.x1kogg8i.x1lr1uin.x1t0vds8.x1xlxyfa.x1y0btm7.xmkeg23",
+        "type": "pointer",
+        "inputDelay": 3,
+        "processingDuration": 0,
+        "presentationDelay": 13
+      },
+      "detail.TTFB": {},
+      "detail.LCP": {
+        "target": "main.x1iyjqo2.x1xn8qrt.x4l9tsp>article>dl.x1ghz6dp.x40hh3e.xif65rj.xrvj5dj.xrwz996.xw09woa>dd",
+        "timeToFirstByte": 1,
+        "resourceLoadDelay": 0,
+        "resourceLoadDuration": 0,
+        "elementRenderDelay": 76
+      },
+      "detail.FCP": {},
+      "nav.TTFB": {},
+      "nav.LCP": {
+        "target": "a.active.x14ju556.x3nfvp2>img",
+        "timeToFirstByte": 1,
+        "resourceLoadDelay": 4,
+        "resourceLoadDuration": 1,
+        "elementRenderDelay": 78
+      },
+      "nav.FCP": {},
+      "nav.INP": {
+        "target": "tbody>tr>td.x1165vuw.x16dsc37.x1q0q8m5.x1t0vds8.xdqyycr.xso031l>a.x1hl2dhg.x1s688f.x1timldr.xt0b8zv",
+        "type": "pointer",
+        "inputDelay": 2,
+        "processingDuration": 0,
+        "presentationDelay": 6
+      }
+    }
+  },
+  "samples": {
+    "redact": {
+      "list.TTFB": [
+        2,
+        1,
+        1,
+        1,
+        1
+      ],
+      "list.LCP": [
+        148,
+        80,
+        88,
+        88,
+        84
+      ],
+      "list.FCP": [
+        127,
+        73,
+        71,
+        72,
+        70
+      ],
+      "list.INP": [
+        16,
+        8,
+        8,
+        8,
+        8
+      ],
+      "detail.TTFB": [
+        1,
+        1,
+        2,
+        2,
+        1
+      ],
+      "detail.LCP": [
+        71,
+        71,
+        71,
+        70,
+        76
+      ],
+      "detail.FCP": [
+        71,
+        71,
+        71,
+        70,
+        76
+      ],
+      "nav.TTFB": [
+        1,
+        2,
+        1,
+        1,
+        1
+      ],
+      "nav.LCP": [
+        80,
+        84,
+        88,
+        84,
+        88
+      ],
+      "nav.FCP": [
+        71,
+        75,
+        71,
+        70,
+        71
+      ],
+      "nav.INP": [
+        8,
+        8,
+        8,
+        8,
+        8
+      ]
+    },
+    "react-dom": {
+      "list.TTFB": [
+        1,
+        1,
+        2,
+        1,
+        1
+      ],
+      "list.LCP": [
+        80,
+        96,
+        80,
+        92,
+        96
+      ],
+      "list.FCP": [
+        77,
+        79,
+        77,
+        76,
+        82
+      ],
+      "list.INP": [
+        8,
+        8,
+        8,
+        8,
+        16
+      ],
+      "detail.TTFB": [
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "detail.LCP": [
+        75,
+        78,
+        75,
+        75,
+        77
+      ],
+      "detail.FCP": [
+        75,
+        78,
+        75,
+        75,
+        77
+      ],
+      "nav.TTFB": [
+        2,
+        1,
+        2,
+        2,
+        1
+      ],
+      "nav.LCP": [
+        92,
+        84,
+        84,
+        96,
+        84
+      ],
+      "nav.FCP": [
+        80,
+        76,
+        77,
+        78,
+        78
+      ],
+      "nav.INP": [
+        8,
+        8,
+        8,
+        8,
+        8
+      ]
+    }
+  }
+}

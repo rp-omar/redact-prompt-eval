@@ -23,7 +23,19 @@ await sleep(1500)
 // (script(1) does not work here: it needs a terminal on its own stdin.)
 const scan = spawn(
   'python3',
-  ['-c', 'import pty,sys; pty.spawn(sys.argv[1:])', './node_modules/.bin/react-doctor', 'scan', `http://localhost:${PORT}/`, '--cdp', `http://127.0.0.1:${CDP}`, '--format', 'json', '--trace-out', `.doctor/${renderer}.trace.json.gz`],
+  [
+    '-c',
+    'import pty,sys; pty.spawn(sys.argv[1:])',
+    './node_modules/.bin/react-doctor',
+    'scan',
+    `http://localhost:${PORT}/`,
+    '--cdp',
+    `http://127.0.0.1:${CDP}`,
+    '--format',
+    'json',
+    '--trace-out',
+    `.doctor/${renderer}.trace.json.gz`,
+  ],
   { stdio: ['pipe', 'pipe', 'pipe'] },
 )
 let stdout = ''
@@ -37,7 +49,10 @@ try {
   const attached = await chromium.connectOverCDP(`http://127.0.0.1:${CDP}`)
   let page
   for (let attempt = 0; attempt < 60 && !page; attempt++) {
-    page = attached.contexts().flatMap((context) => context.pages()).find((candidate) => candidate.url().includes(`:${PORT}`))
+    page = attached
+      .contexts()
+      .flatMap((context) => context.pages())
+      .find((candidate) => candidate.url().includes(`:${PORT}`))
     if (!page) await sleep(500)
   }
   if (page) {
@@ -59,7 +74,9 @@ scan.stdin.write('\n')
 const code = await Promise.race([exited, sleep(330_000).then(() => 'still running after 5.5 min')])
 if (code === 'still running after 5.5 min') scan.kill()
 writeFileSync(`.doctor/${renderer}.report.json`, stdout)
-console.log(JSON.stringify({ renderer, drove, exit: code, stderr: stderr.slice(0, 1500), stdoutBytes: stdout.length }, null, 1))
+console.log(
+  JSON.stringify({ renderer, drove, exit: code, stderr: stderr.slice(0, 1500), stdoutBytes: stdout.length }, null, 1),
+)
 console.log(stdout.slice(0, 2500))
 await browser.close()
 server.kill()

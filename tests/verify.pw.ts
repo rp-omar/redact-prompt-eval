@@ -48,7 +48,7 @@ async function open(browser: Browser, url: string, init?: (page: Page) => Promis
   return { context, page, requests }
 }
 
-test('request counts: intent preload then click', async ({ browser, browserName }, testInfo) => {
+test('request counts: intent preload then click', async ({ browser }, testInfo) => {
   test.skip(THROTTLE, 'counts do not depend on throttling')
   const out: Record<string, Record<string, number>> = {}
   for (const renderer of RENDERERS) {

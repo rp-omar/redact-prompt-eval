@@ -1,0 +1,390 @@
+{
+  "condition": {
+    "variant": "virtual",
+    "serve": "brotli",
+    "throttle": false
+  },
+  "browser": "firefox 159.0",
+  "runs": 5,
+  "medians": {
+    "redact": {
+      "list.TTFB": {
+        "median": 1,
+        "min": 1,
+        "max": 11,
+        "n": 4
+      },
+      "list.LCP": {
+        "median": 69,
+        "min": 66,
+        "max": 146,
+        "n": 5
+      },
+      "list.FCP": {
+        "median": 69,
+        "min": 66,
+        "max": 146,
+        "n": 5
+      },
+      "list.INP": {
+        "median": 16,
+        "min": 16,
+        "max": 24,
+        "n": 5
+      },
+      "detail.TTFB": {
+        "median": 1,
+        "min": 1,
+        "max": 2,
+        "n": 5
+      },
+      "detail.LCP": {
+        "median": 68,
+        "min": 67,
+        "max": 72,
+        "n": 5
+      },
+      "detail.FCP": {
+        "median": 68,
+        "min": 67,
+        "max": 72,
+        "n": 5
+      },
+      "nav.TTFB": {
+        "median": 1,
+        "min": 1,
+        "max": 1,
+        "n": 5
+      },
+      "nav.LCP": {
+        "median": 69,
+        "min": 66,
+        "max": 72,
+        "n": 5
+      },
+      "nav.FCP": {
+        "median": 69,
+        "min": 66,
+        "max": 72,
+        "n": 5
+      },
+      "nav.INP": {
+        "median": 16,
+        "min": 16,
+        "max": 16,
+        "n": 5
+      }
+    },
+    "react-dom": {
+      "list.LCP": {
+        "median": 75,
+        "min": 74,
+        "max": 77,
+        "n": 5
+      },
+      "list.FCP": {
+        "median": 75,
+        "min": 74,
+        "max": 77,
+        "n": 5
+      },
+      "list.INP": {
+        "median": 8,
+        "min": 8,
+        "max": 16,
+        "n": 5
+      },
+      "detail.LCP": {
+        "median": 75,
+        "min": 73,
+        "max": 78,
+        "n": 5
+      },
+      "detail.FCP": {
+        "median": 75,
+        "min": 73,
+        "max": 78,
+        "n": 5
+      },
+      "nav.TTFB": {
+        "median": 1,
+        "min": 1,
+        "max": 2,
+        "n": 5
+      },
+      "nav.LCP": {
+        "median": 76,
+        "min": 73,
+        "max": 79,
+        "n": 5
+      },
+      "nav.FCP": {
+        "median": 76,
+        "min": 73,
+        "max": 79,
+        "n": 5
+      },
+      "nav.INP": {
+        "median": 9,
+        "min": 8,
+        "max": 16,
+        "n": 5
+      },
+      "list.TTFB": {
+        "median": 1,
+        "min": 1,
+        "max": 1,
+        "n": 2
+      },
+      "detail.TTFB": {
+        "median": 1,
+        "min": 1,
+        "max": 1,
+        "n": 4
+      }
+    }
+  },
+  "lastAttribution": {
+    "redact": {
+      "list.TTFB": {},
+      "list.LCP": {
+        "target": "a.active.x14ju556.x3nfvp2>img",
+        "timeToFirstByte": 0,
+        "resourceLoadDelay": 0,
+        "resourceLoadDuration": 0,
+        "elementRenderDelay": 66
+      },
+      "list.FCP": {},
+      "list.INP": {
+        "target": "input.x1awh872.x1iyjqo2.x1jvydc1.x1kogg8i.x1lr1uin.x1t0vds8.x1xlxyfa.x1y0btm7.xmkeg23",
+        "type": "pointer",
+        "inputDelay": 0,
+        "processingDuration": 0,
+        "presentationDelay": 16
+      },
+      "detail.TTFB": {},
+      "detail.LCP": {
+        "target": "header.x10dr8xq.x1m2qa86.x1q0q8m5.x1qughib.x4l9tsp.x6s0dn4.x78zum5.xso031l>a.x14ju556.x3nfvp2>img",
+        "timeToFirstByte": 1,
+        "resourceLoadDelay": 6,
+        "resourceLoadDuration": 0,
+        "elementRenderDelay": 61
+      },
+      "detail.FCP": {},
+      "nav.TTFB": {},
+      "nav.LCP": {
+        "target": "a.active.x14ju556.x3nfvp2>img",
+        "timeToFirstByte": 1,
+        "resourceLoadDelay": 7,
+        "resourceLoadDuration": 0,
+        "elementRenderDelay": 59
+      },
+      "nav.FCP": {},
+      "nav.INP": {
+        "target": "tbody>tr>td.x1165vuw.x16dsc37.x1q0q8m5.x1t0vds8.xdqyycr.xso031l>a.x1hl2dhg.x1s688f.x1timldr.xt0b8zv",
+        "type": "pointer",
+        "inputDelay": 3,
+        "processingDuration": 0,
+        "presentationDelay": 13
+      }
+    },
+    "react-dom": {
+      "list.LCP": {
+        "target": "a.active.x14ju556.x3nfvp2>img",
+        "timeToFirstByte": 0,
+        "resourceLoadDelay": 0,
+        "resourceLoadDuration": 0,
+        "elementRenderDelay": 75
+      },
+      "list.FCP": {},
+      "list.INP": {
+        "target": "input.x1awh872.x1iyjqo2.x1jvydc1.x1kogg8i.x1lr1uin.x1t0vds8.x1xlxyfa.x1y0btm7.xmkeg23",
+        "type": "pointer",
+        "inputDelay": 0,
+        "processingDuration": 1,
+        "presentationDelay": 7
+      },
+      "detail.LCP": {
+        "target": "header.x10dr8xq.x1m2qa86.x1q0q8m5.x1qughib.x4l9tsp.x6s0dn4.x78zum5.xso031l>a.x14ju556.x3nfvp2>img",
+        "timeToFirstByte": 1,
+        "resourceLoadDelay": 6,
+        "resourceLoadDuration": 0,
+        "elementRenderDelay": 66
+      },
+      "detail.FCP": {},
+      "nav.TTFB": {},
+      "nav.LCP": {
+        "target": "a.active.x14ju556.x3nfvp2>img",
+        "timeToFirstByte": 1,
+        "resourceLoadDelay": 7,
+        "resourceLoadDuration": 1,
+        "elementRenderDelay": 70
+      },
+      "nav.FCP": {},
+      "nav.INP": {
+        "target": "tbody>tr>td.x1165vuw.x16dsc37.x1q0q8m5.x1t0vds8.xdqyycr.xso031l>a.x1hl2dhg.x1s688f.x1timldr.xt0b8zv",
+        "type": "pointer",
+        "inputDelay": 2,
+        "processingDuration": 1,
+        "presentationDelay": 13
+      },
+      "list.TTFB": {},
+      "detail.TTFB": {}
+    }
+  },
+  "samples": {
+    "redact": {
+      "list.TTFB": [
+        11,
+        1,
+        1,
+        1
+      ],
+      "list.LCP": [
+        146,
+        71,
+        69,
+        67,
+        66
+      ],
+      "list.FCP": [
+        146,
+        71,
+        69,
+        67,
+        66
+      ],
+      "list.INP": [
+        16,
+        24,
+        16,
+        16,
+        16
+      ],
+      "detail.TTFB": [
+        1,
+        2,
+        1,
+        1,
+        1
+      ],
+      "detail.LCP": [
+        67,
+        67,
+        72,
+        68,
+        68
+      ],
+      "detail.FCP": [
+        67,
+        67,
+        72,
+        68,
+        68
+      ],
+      "nav.TTFB": [
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "nav.LCP": [
+        70,
+        72,
+        69,
+        66,
+        67
+      ],
+      "nav.FCP": [
+        70,
+        72,
+        69,
+        66,
+        67
+      ],
+      "nav.INP": [
+        16,
+        16,
+        16,
+        16,
+        16
+      ]
+    },
+    "react-dom": {
+      "list.LCP": [
+        77,
+        75,
+        74,
+        77,
+        75
+      ],
+      "list.FCP": [
+        77,
+        75,
+        74,
+        77,
+        75
+      ],
+      "list.INP": [
+        8,
+        16,
+        8,
+        8,
+        8
+      ],
+      "detail.LCP": [
+        75,
+        75,
+        77,
+        78,
+        73
+      ],
+      "detail.FCP": [
+        75,
+        75,
+        77,
+        78,
+        73
+      ],
+      "nav.TTFB": [
+        1,
+        2,
+        1,
+        1,
+        1
+      ],
+      "nav.LCP": [
+        76,
+        73,
+        74,
+        77,
+        79
+      ],
+      "nav.FCP": [
+        76,
+        73,
+        74,
+        77,
+        79
+      ],
+      "nav.INP": [
+        9,
+        16,
+        8,
+        8,
+        16
+      ],
+      "list.TTFB": [
+        1,
+        1
+      ],
+      "detail.TTFB": [
+        1,
+        1,
+        1,
+        1
+      ]
+    }
+  }
+}

@@ -1,0 +1,181 @@
+{
+  "budget": {
+    "coldEntryJs /": {
+      "redact": 57286,
+      "reactDom": 95392,
+      "limit": 150000
+    },
+    "coldEntryJs /items/$id": {
+      "redact": 57189,
+      "reactDom": 95285,
+      "limit": 150000
+    },
+    "routeJs /": {
+      "redact": 4404,
+      "reactDom": 4443,
+      "limit": 50000
+    },
+    "routeJs /items/$id": {
+      "redact": 4307,
+      "reactDom": 4336,
+      "limit": 50000
+    },
+    "firstViewCss /": {
+      "redact": 1075,
+      "reactDom": 1075,
+      "limit": 20000
+    },
+    "firstViewCss /items/$id": {
+      "redact": 1075,
+      "reactDom": 1075,
+      "limit": 20000
+    }
+  },
+  "timings": {
+    "coldList firefox-release": {
+      "redact": {
+        "median": 493,
+        "min": 478,
+        "max": 565,
+        "n": 9
+      },
+      "reactDom": {
+        "median": 435,
+        "min": 421,
+        "max": 448,
+        "n": 9
+      },
+      "control": {
+        "median": 441,
+        "min": 425,
+        "max": 450,
+        "n": 9
+      },
+      "noise": 0.01379310344827589,
+      "tolerance": 0.05,
+      "delta": 0.1333333333333333,
+      "role": "improve",
+      "pass": false
+    },
+    "suspRequired firefox-release": {
+      "redact": {
+        "median": 304,
+        "min": 289,
+        "max": 324,
+        "n": 9
+      },
+      "reactDom": {
+        "median": 111,
+        "min": 101,
+        "max": 238,
+        "n": 9
+      },
+      "control": {
+        "median": 119,
+        "min": 99,
+        "max": 129,
+        "n": 9
+      },
+      "noise": 0.072072072072072,
+      "tolerance": 0.072072072072072,
+      "delta": 1.7387387387387387,
+      "role": "hold",
+      "pass": false
+    },
+    "typePaint firefox-release": {
+      "redact": {
+        "median": 308,
+        "min": 301,
+        "max": 324,
+        "n": 5
+      },
+      "reactDom": {
+        "median": 79.5,
+        "min": 71,
+        "max": 112.5,
+        "n": 5
+      },
+      "control": {
+        "median": 75.5,
+        "min": 69.5,
+        "max": 87.5,
+        "n": 5
+      },
+      "noise": 0.05031446540880502,
+      "tolerance": 0.05031446540880502,
+      "delta": 2.8742138364779874,
+      "role": "hold",
+      "pass": false
+    },
+    "coldListCommit firefox-release": {
+      "redact": {
+        "median": 295,
+        "min": 279,
+        "max": 365,
+        "n": 9
+      },
+      "reactDom": {
+        "median": 241,
+        "min": 230,
+        "max": 252,
+        "n": 9
+      },
+      "delta": 0.22406639004149387
+    },
+    "suspPanel firefox-release": {
+      "redact": {
+        "median": 316,
+        "min": 298,
+        "max": 333,
+        "n": 9
+      },
+      "reactDom": {
+        "median": 396,
+        "min": 390,
+        "max": 499,
+        "n": 9
+      },
+      "delta": -0.202020202020202
+    },
+    "typeCommit firefox-release": {
+      "redact": {
+        "median": 204.5,
+        "min": 194.5,
+        "max": 217.5,
+        "n": 5
+      },
+      "reactDom": {
+        "median": 20,
+        "min": 19,
+        "max": 46.5,
+        "n": 5
+      },
+      "delta": 9.225
+    },
+    "typeWorstPaint firefox-release": {
+      "redact": {
+        "median": 646,
+        "min": 626,
+        "max": 706,
+        "n": 5
+      },
+      "reactDom": {
+        "median": 385,
+        "min": 379,
+        "max": 424,
+        "n": 5
+      },
+      "delta": 0.6779220779220778
+    }
+  },
+  "gate": {
+    "coldImproves": false,
+    "interactionsHold": false,
+    "failing": [
+      "coldList/firefox-release +13% (tolerance 5%)",
+      "suspRequired/firefox-release +174% (tolerance 7%)",
+      "typePaint/firefox-release +287% (tolerance 5%)"
+    ],
+    "shipRedact": false
+  }
+}

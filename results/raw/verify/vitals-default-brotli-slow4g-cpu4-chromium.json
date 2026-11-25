@@ -1,0 +1,477 @@
+{
+  "condition": {
+    "variant": "default",
+    "serve": "brotli",
+    "throttle": true
+  },
+  "browser": "chromium 159.0.8154.6",
+  "runs": 5,
+  "medians": {
+    "redact": {
+      "list.TTFB": {
+        "median": 563.2000000476837,
+        "min": 563.0999999046326,
+        "max": 567.6000001430511,
+        "n": 5
+      },
+      "list.FCP": {
+        "median": 3972,
+        "min": 3928,
+        "max": 4188,
+        "n": 5
+      },
+      "list.LCP": {
+        "median": 3972,
+        "min": 3928,
+        "max": 4188,
+        "n": 5
+      },
+      "list.CLS": {
+        "median": 0,
+        "min": 0,
+        "max": 0,
+        "n": 5
+      },
+      "list.INP": {
+        "median": 744,
+        "min": 712,
+        "max": 776,
+        "n": 5
+      },
+      "detail.TTFB": {
+        "median": 563.0999999046326,
+        "min": 563.0999999046326,
+        "max": 563.5999999046326,
+        "n": 5
+      },
+      "detail.FCP": {
+        "median": 2140,
+        "min": 2136,
+        "max": 2168,
+        "n": 5
+      },
+      "detail.LCP": {
+        "median": 2140,
+        "min": 2136,
+        "max": 2168,
+        "n": 5
+      },
+      "detail.CLS": {
+        "median": 0,
+        "min": 0,
+        "max": 0,
+        "n": 5
+      },
+      "nav.TTFB": {
+        "median": 563.0999999046326,
+        "min": 563.0999999046326,
+        "max": 563.2000000476837,
+        "n": 5
+      },
+      "nav.FCP": {
+        "median": 3948,
+        "min": 3924,
+        "max": 4024,
+        "n": 5
+      },
+      "nav.LCP": {
+        "median": 3948,
+        "min": 3924,
+        "max": 4024,
+        "n": 5
+      },
+      "nav.CLS": {
+        "median": 0,
+        "min": 0,
+        "max": 0,
+        "n": 5
+      },
+      "nav.INP": {
+        "median": 80,
+        "min": 80,
+        "max": 104,
+        "n": 5
+      }
+    },
+    "react-dom": {
+      "list.TTFB": {
+        "median": 563.1000001430511,
+        "min": 563.0999999046326,
+        "max": 563.2000000476837,
+        "n": 5
+      },
+      "list.FCP": {
+        "median": 4044,
+        "min": 4016,
+        "max": 4136,
+        "n": 5
+      },
+      "list.LCP": {
+        "median": 4044,
+        "min": 4016,
+        "max": 4136,
+        "n": 5
+      },
+      "list.CLS": {
+        "median": 0,
+        "min": 0,
+        "max": 0,
+        "n": 5
+      },
+      "list.INP": {
+        "median": 208,
+        "min": 200,
+        "max": 256,
+        "n": 5
+      },
+      "detail.TTFB": {
+        "median": 563.1999998092651,
+        "min": 563.0999999046326,
+        "max": 563.2000000476837,
+        "n": 5
+      },
+      "detail.FCP": {
+        "median": 2368,
+        "min": 2356,
+        "max": 2376,
+        "n": 5
+      },
+      "detail.LCP": {
+        "median": 2368,
+        "min": 2356,
+        "max": 2376,
+        "n": 5
+      },
+      "detail.CLS": {
+        "median": 0,
+        "min": 0,
+        "max": 0,
+        "n": 5
+      },
+      "nav.TTFB": {
+        "median": 563.1000001430511,
+        "min": 563.0999999046326,
+        "max": 563.2999999523163,
+        "n": 5
+      },
+      "nav.FCP": {
+        "median": 4044,
+        "min": 3984,
+        "max": 4096,
+        "n": 5
+      },
+      "nav.LCP": {
+        "median": 4044,
+        "min": 3984,
+        "max": 4096,
+        "n": 5
+      },
+      "nav.CLS": {
+        "median": 0,
+        "min": 0,
+        "max": 0,
+        "n": 5
+      },
+      "nav.INP": {
+        "median": 96,
+        "min": 80,
+        "max": 120,
+        "n": 5
+      }
+    }
+  },
+  "lastAttribution": {
+    "redact": {
+      "list.TTFB": {},
+      "list.FCP": {},
+      "list.LCP": {
+        "target": "a.active.x14ju556.x3nfvp2>img",
+        "timeToFirstByte": 563.2000000476837,
+        "resourceLoadDelay": 16.699999809265137,
+        "resourceLoadDuration": 571.7000000476837,
+        "elementRenderDelay": 2776.4000000953674
+      },
+      "list.CLS": {},
+      "list.INP": {
+        "target": "input.x1awh872.x1iyjqo2.x1jvydc1.x1kogg8i.x1lr1uin.x1t0vds8.x1xlxyfa.x1y0btm7.xmkeg23",
+        "type": "keyboard",
+        "inputDelay": 0.09999990463256836,
+        "processingDuration": 628.9000000953674,
+        "presentationDelay": 107
+      },
+      "detail.TTFB": {},
+      "detail.FCP": {},
+      "detail.LCP": {
+        "target": "main.x1iyjqo2.x1xn8qrt.x4l9tsp>article>dl.x1ghz6dp.x40hh3e.xif65rj.xrvj5dj.xrwz996.xw09woa>dd",
+        "timeToFirstByte": 563.0999999046326,
+        "resourceLoadDelay": 0,
+        "resourceLoadDuration": 0,
+        "elementRenderDelay": 1572.9000000953674
+      },
+      "detail.CLS": {},
+      "nav.TTFB": {},
+      "nav.FCP": {},
+      "nav.LCP": {
+        "target": "a.active.x14ju556.x3nfvp2>img",
+        "timeToFirstByte": 563.0999999046326,
+        "resourceLoadDelay": 15.5,
+        "resourceLoadDuration": 565.4000000953674,
+        "elementRenderDelay": 2820
+      },
+      "nav.CLS": {},
+      "nav.INP": {
+        "type": "pointer",
+        "inputDelay": 5.299999952316284,
+        "processingDuration": 60.59999990463257,
+        "presentationDelay": 14.100000143051147
+      }
+    },
+    "react-dom": {
+      "list.TTFB": {},
+      "list.FCP": {},
+      "list.LCP": {
+        "target": "a.active.x14ju556.x3nfvp2>img",
+        "timeToFirstByte": 563.1000001430511,
+        "resourceLoadDelay": 18.5,
+        "resourceLoadDuration": 571.3999998569489,
+        "elementRenderDelay": 2887
+      },
+      "list.CLS": {},
+      "list.INP": {
+        "target": "input.x1awh872.x1iyjqo2.x1jvydc1.x1kogg8i.x1lr1uin.x1t0vds8.x1xlxyfa.x1y0btm7.xmkeg23",
+        "type": "keyboard",
+        "inputDelay": 0.10000014305114746,
+        "processingDuration": 196.09999990463257,
+        "presentationDelay": 3.799999952316284
+      },
+      "detail.TTFB": {},
+      "detail.FCP": {},
+      "detail.LCP": {
+        "target": "main.x1iyjqo2.x1xn8qrt.x4l9tsp>article>dl.x1ghz6dp.x40hh3e.xif65rj.xrvj5dj.xrwz996.xw09woa>dd",
+        "timeToFirstByte": 563.1999998092651,
+        "resourceLoadDelay": 0,
+        "resourceLoadDuration": 0,
+        "elementRenderDelay": 1808.8000001907349
+      },
+      "detail.CLS": {},
+      "nav.TTFB": {},
+      "nav.FCP": {},
+      "nav.LCP": {
+        "target": "a.active.x14ju556.x3nfvp2>img",
+        "timeToFirstByte": 563.1000001430511,
+        "resourceLoadDelay": 16.199999809265137,
+        "resourceLoadDuration": 572.1000001430511,
+        "elementRenderDelay": 2892.5999999046326
+      },
+      "nav.CLS": {},
+      "nav.INP": {
+        "type": "pointer",
+        "inputDelay": 6.599999904632568,
+        "processingDuration": 66.20000004768372,
+        "presentationDelay": 15.200000047683716
+      }
+    }
+  },
+  "samples": {
+    "redact": {
+      "list.TTFB": [
+        567.6000001430511,
+        563.0999999046326,
+        563.2000000476837,
+        563.1999998092651,
+        563.2000000476837
+      ],
+      "list.FCP": [
+        4188,
+        3964,
+        4032,
+        3972,
+        3928
+      ],
+      "list.LCP": [
+        4188,
+        3964,
+        4032,
+        3972,
+        3928
+      ],
+      "list.CLS": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "list.INP": [
+        776,
+        744,
+        744,
+        712,
+        736
+      ],
+      "detail.TTFB": [
+        563.5999999046326,
+        563.0999999046326,
+        563.0999999046326,
+        563.0999999046326,
+        563.0999999046326
+      ],
+      "detail.FCP": [
+        2168,
+        2136,
+        2140,
+        2144,
+        2136
+      ],
+      "detail.LCP": [
+        2168,
+        2136,
+        2140,
+        2144,
+        2136
+      ],
+      "detail.CLS": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "nav.TTFB": [
+        563.2000000476837,
+        563.0999999046326,
+        563.2000000476837,
+        563.0999999046326,
+        563.0999999046326
+      ],
+      "nav.FCP": [
+        4024,
+        3948,
+        3936,
+        3924,
+        3964
+      ],
+      "nav.LCP": [
+        4024,
+        3948,
+        3936,
+        3924,
+        3964
+      ],
+      "nav.CLS": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "nav.INP": [
+        104,
+        80,
+        104,
+        80,
+        80
+      ]
+    },
+    "react-dom": {
+      "list.TTFB": [
+        563.1000001430511,
+        563.0999999046326,
+        563.2000000476837,
+        563.2000000476837,
+        563.1000001430511
+      ],
+      "list.FCP": [
+        4136,
+        4088,
+        4016,
+        4044,
+        4040
+      ],
+      "list.LCP": [
+        4136,
+        4088,
+        4016,
+        4044,
+        4040
+      ],
+      "list.CLS": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "list.INP": [
+        256,
+        224,
+        208,
+        200,
+        200
+      ],
+      "detail.TTFB": [
+        563.2000000476837,
+        563.0999999046326,
+        563.1999998092651,
+        563.0999999046326,
+        563.1999998092651
+      ],
+      "detail.FCP": [
+        2356,
+        2364,
+        2368,
+        2376,
+        2372
+      ],
+      "detail.LCP": [
+        2356,
+        2364,
+        2368,
+        2376,
+        2372
+      ],
+      "detail.CLS": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "nav.TTFB": [
+        563.0999999046326,
+        563.0999999046326,
+        563.2999999523163,
+        563.2000000476837,
+        563.1000001430511
+      ],
+      "nav.FCP": [
+        4096,
+        4088,
+        3984,
+        4032,
+        4044
+      ],
+      "nav.LCP": [
+        4096,
+        4088,
+        3984,
+        4032,
+        4044
+      ],
+      "nav.CLS": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "nav.INP": [
+        96,
+        80,
+        104,
+        120,
+        88
+      ]
+    }
+  }
+}

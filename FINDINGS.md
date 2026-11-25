@@ -146,7 +146,7 @@ Warnings only: Vite 8.3.8 prints `Your Vite config uses features that are unsupp
 
 ### Ship on measured results
 
-- **F-23 WRONG: `bun lint` is not a command.** `bun fmt`, `bun check`, `bun test` and `bun ci` are Bun built-ins in 1.4.5; `bun lint` is not (E-1), and the prompt names no linter. Decision: oxlint via a `lint` script.
+- **F-23 WRONG: `bun lint` is not a command.** `bun fmt`, `bun check`, `bun test` and `bun ci` are Bun built-ins in 1.4.5; `bun lint` is not (E-1), and the prompt names no linter. Decision: oxlint via a `lint` script. **Corrected in run 2 (V-0):** `bun lint` is a built-in in Bun canary (`1.4.6-canary.1`) and missing only from stable 1.4.5. The defect is the stable Bun pin disagreeing with the command list, not a missing linter. Was: "`bun lint` is not a command … the prompt names no linter".
 - **F-24 UNDERSPECIFIED: `bun fmt --check` needs ignores.** Out of the box it flags the generated `src/routeTree.gen.ts`, and `bun fmt` would have rewritten `PROMPT.md`. Decision: `.prettierignore` for both plus `results/` and `bun.lock`; style set in `bunfig.toml`.
 - **F-25 UNDERSPECIFIED: `bun test` and Playwright collide.** Bun's runner picks up `*.spec.ts` / `*.test.ts`, which is where Playwright tests normally live. Decision: Playwright files are `*.pw.ts`; `bun test` runs unit tests only. The prompt also pins no Playwright version, and does not note that Playwright's WebKit and Firefox are test builds, not Safari and release Firefox.
 - **F-26 RESULT: React Doctor static check contradicts the gate.** `react-doctor . -y --no-supply-chain --no-score` runs non-interactively and reports one warning: `prefer-html-dialog` ("Custom modal instead of dialog") on the portal dialog. The gate tells you to exercise portals; the pinned checker tells you to replace this one with `<dialog>`. Kept the portal. I passed `--no-supply-chain --no-score` so nothing was sent to Socket.dev or the score API; the prompt does not mention that the default run calls both. "Static checks on new PR findings" maps to `--scope changed --base <ref>`, which I did not exercise (no PR).
@@ -165,6 +165,8 @@ Warnings only: Vite 8.3.8 prints `Your Vite config uses features that are unsupp
 - `COMPILER=off`, `PLAIN_LINKS=1` and `CHAIN=n` are diagnostic build switches used for R-2 and F-05. They are off in every measured build.
 
 ## Not run or not verified
+
+Run 2 worked through this list; the current state is in "Still not verified after run 2" at the end. The list below is run 1's, left as written.
 
 - `react-doctor scan` (interactive), and React Doctor's `--scope changed` mode.
 - Throttled network or CPU, real devices, real Safari, release Firefox. All timings are localhost on one Apple-silicon Mac, headless, Playwright builds.
@@ -205,12 +207,12 @@ Appended after run 1. Everything above is run 1 and is left as written, except w
 
 `STALE=0` build variant, hover a row link (intent preload), wait, click. Requests counted by Playwright, identical in Chromium, Firefox and WebKit and on both renderers ([results/raw/verify](results/raw/verify)):
 
-| Requests | `staleTime: 30 s` (as built) | `staleTime: 0` (Query default) |
-|---|---:|---:|
-| `/api/items/1000` after preload → after click | 1 → 1 | 1 → **2** |
-| `/api/items/1000/activity` after preload → after click | 1 → 1 | 1 → **2** |
-| `/api/items` after returning to the list | 1 | **2** |
-| route chunk | 1 | 1 |
+| Requests                                               | `staleTime: 30 s` (as built) | `staleTime: 0` (Query default) |
+| ------------------------------------------------------ | ---------------------------: | -----------------------------: |
+| `/api/items/1000` after preload → after click          |                        1 → 1 |                      1 → **2** |
+| `/api/items/1000/activity` after preload → after click |                        1 → 1 |                      1 → **2** |
+| `/api/items` after returning to the list               |                            1 |                          **2** |
+| route chunk                                            |                            1 |                              1 |
 
 So with the prompt as written (no `staleTime`), the intent preload is thrown away and every navigation fetches again. The third row is a second defect: `staleTime: 'static'` in the list loader does not stop the refetch, because the component's `useSuspenseQuery` uses the shared options (`staleTime: 0`) and refetches on mount. "Use `staleTime: 'static'` in the loader" only works if the component's options are not stale either.
 
@@ -238,3 +240,138 @@ So with the prompt as written (no `staleTime`), the intent preload is thrown awa
 ### V-8 CI: written, not enabled
 
 `ci/github-actions-ci.yml` runs the prompt's command list, both builds, the budget script, the flow tests and the React Doctor static check. It is stored outside `.github/workflows/` because the `gh` token has no `workflow` scope, and granting that is Omar's action. It has never run, so it is unverified. Human step is in the README.
+
+## Run 2 results: timings
+
+All medians in ms (min–max), 9 runs, Redact vs React DOM, Δ relative to React DOM. Full tables with A/A noise: `results/summary-<condition>.md`. "Chrome" is the installed Google Chrome 158; the other three are Playwright builds.
+
+### V-1 Real Brotli, then slow 4G + 4x CPU: verdict holds, cold entry becomes a tie
+
+**Control, `brotli` (unthrottled, [results/summary-brotli.md](results/summary-brotli.md)).** Serving Brotli instead of uncompressed files changes nothing on localhost; every number is within noise of run 1.
+
+| Metric                          |          Chromium |            Firefox |            WebKit |            Chrome |
+| ------------------------------- | ----------------: | -----------------: | ----------------: | ----------------: |
+| Cold entry → 5,000 rows painted | 382 vs 337 (+13%) |  473 vs 389 (+22%) |  668 vs 662 (+1%) |  424 vs 391 (+9%) |
+| Warm navigation                 | 132 vs 65 (+103%) |  218 vs 74 (+195%) |   89 vs 59 (+51%) |  141 vs 72 (+97%) |
+| Suspense navigation             |  167 vs 92 (+82%) | 268 vs 123 (+118%) | 148 vs 116 (+28%) |  175 vs 93 (+88%) |
+| Input latency                   | 131 vs 44 (+195%) |  287 vs 77 (+275%) |   93 vs 58 (+60%) | 141 vs 45 (+212%) |
+
+Gate: fails, same as run 1. Installed Chrome agrees with Playwright's Chromium.
+
+**`brotli-slow4g-cpu4` (Chromium only, [results/summary-brotli-slow4g-cpu4.md](results/summary-brotli-slow4g-cpu4.md)).**
+
+| Metric                          |           Redact |        React DOM |            Δ |
+| ------------------------------- | ---------------: | ---------------: | -----------: |
+| Cold entry → 5,000 rows painted | 4047 (3956–4158) | 4105 (3977–4203) | −1% (A/A 1%) |
+| Warm navigation                 |    425 (392–467) |    173 (156–216) |        +146% |
+| Suspense navigation             |   981 (970–1005) |    730 (720–749) |         +34% |
+| Input latency                   |    557 (532–582) |    168 (159–181) |        +231% |
+
+- Gate: fails. Cold entry is a tie (−1% against a 5% tolerance), and both interactions are far outside tolerance. **Verdict holds: ship React DOM.**
+- Why the 38 kB saving buys so little: the list response is 1,050,142 B raw and 108,009 B with Brotli, larger than either renderer's whole JS (57 kB / 95 kB). On slow 4G the data dominates the cold entry, and at 4x CPU Redact's slower first render of 5,000 rows uses up what the smaller download saved. This corrects the expectation in F-28: a slow network alone does not make cold entry improve for this page.
+- Not measured: throttled Firefox or WebKit. Playwright exposes network and CPU throttling only through CDP, which is Chromium-only.
+
+### V-2 Virtualised list: the gap closes; the strict gate still fails, on 1–4 ms
+
+`VIRTUAL=1` swaps the index route for `src/variants/index.virtual.tsx` (TanStack Virtual 3.14.28, `useWindowVirtualizer`, fixed 50 px rows, overscan 10) through a Vite `load` hook, so the default bundles stay byte-identical to run 1. Same data, same filter and sort, same row markup. Flow coverage for this variant is the benchmark's own assertions (rows painted, filter, navigation), not the 54-test flow suite.
+
+- **Build finding: React Compiler 1.0.0 silently breaks TanStack Virtual.** With the compiler on, the rendered window never moves on scroll, on both renderers: the compiler memoises `virtualizer.getVirtualItems()` on the stable virtualizer instance. No build error, no runtime error. `'use no memo'` in the component fixes it, and `COMPILER=off` works without it. The prompt requires both the compiler and (by implication of its own caveat) a way to keep large lists cheap, and does not mention the conflict.
+- Budgets pass ([results/budget-virtual.json](results/budget-virtual.json)): cold-entry JS for `/` is 67.0 kB on Redact and 105.2 kB on React DOM (+9.7 kB for the virtualiser on both); route JS for `/` is 14.1 kB.
+
+**`virtual-brotli` ([results/summary-virtual-brotli.md](results/summary-virtual-brotli.md)).** "Usable content" is the first window of rows painted.
+
+| Metric                            |          Chromium |           Firefox |            WebKit |            Chrome |
+| --------------------------------- | ----------------: | ----------------: | ----------------: | ----------------: |
+| Cold entry → first window painted |    74 vs 79 (−7%) |    87 vs 92 (−5%) |    79 vs 82 (−4%) |    75 vs 82 (−9%) |
+| Warm navigation                   |    38 vs 39 (−4%) |   14 vs 16 (−13%) |   15 vs 12 (+25%) |     43 vs 43 (0%) |
+| Suspense navigation               |   58 vs 65 (−11%) |     59 vs 59 (0%) |    64 vs 63 (+2%) |    65 vs 61 (+6%) |
+| Input latency                     | 8.1 vs 6.8 (+19%) | 8.0 vs 6.0 (+33%) | 9.5 vs 8.5 (+12%) | 7.4 vs 6.3 (+18%) |
+
+**`virtual-slow4g-cpu4` (Chromium only, [results/summary-virtual-slow4g-cpu4.md](results/summary-virtual-slow4g-cpu4.md)).**
+
+| Metric                            |           Redact |        React DOM |            Δ |
+| --------------------------------- | ---------------: | ---------------: | -----------: |
+| Cold entry → first window painted | 2804 (2791–2816) | 3023 (3009–3054) | −7% (A/A 0%) |
+| Cold entry, detail route          | 2133 (2118–2146) | 2357 (2349–2371) |          −9% |
+| Warm navigation                   |       50 (46–68) |       46 (42–52) |          +9% |
+| Suspense navigation               |    619 (614–627) |    621 (613–627) |           0% |
+| Input latency                     |       16 (16–18) |       12 (12–15) |         +36% |
+
+- **Gate as fixed before the run: fails in both conditions, so the written verdict does not flip.** Unthrottled: cold entry improves in three of four browsers (WebKit −4% is inside the 5% tolerance), Suspense navigation holds except Chrome (+6%, 4 ms), and input latency is over tolerance in three browsers. Throttled: cold entry improves (−7%, about 220 ms) and Suspense navigation holds; input latency fails at +36%.
+- **What the rule hides:** every failing difference is 1 to 4 ms, below one 60 Hz frame (16.7 ms), and no user can see it. The percentage tolerance was written for the 5,000-row numbers and is too strict at this scale. Read in absolute terms, the virtualised app is the case where Redact is the reasonable choice: about 220 ms faster cold entry on slow 4G, 38 kB less JS, interactions equal to the eye. I did not change the rule after seeing the numbers; a gate meant to cover this case needs an absolute floor (for example "or under 16 ms") stated up front.
+- So the answer to "does the verdict change": **not by the pre-registered rule; yes in substance.** Run 1's caveat F-31 is confirmed: the verdict depends on whether the list is virtualised, which the prompt leaves open.
+
+### V-3c Navigation from a small page (was reasoned in R-2): MEASURED, confirmed
+
+New benchmark scenario: start on `/about` (a page with a few nodes), navigate to the detail route through the router, cold and preloaded. Same detail route, loaders and API delays as the list → detail navigation.
+
+| Cold navigation → required content |  Chromium |    Firefox |     WebKit |    Chrome |
+| ---------------------------------- | --------: | ---------: | ---------: | --------: |
+| From the 5,000-row list            | 167 vs 92 | 268 vs 123 | 148 vs 116 | 175 vs 93 |
+| From `/about`                      |  64 vs 65 |   63 vs 63 |   63 vs 65 |  64 vs 62 |
+
+- From a small page the two renderers are equal (and stay equal at slow 4G + 4x CPU: 643 vs 646). The whole navigation regression in R-1 is the cost of leaving the 5,000-row view, as R-2 argued.
+- The secondary panel from `/about` paints at 163–177 ms on Redact against 359–372 ms on React DOM in all four browsers (R-4 again: React DOM throttles the Suspense reveal).
+- Preloaded navigation from `/about`: 13–19 ms on both; differences of 0–5 ms.
+
+### V-4 LCP, INP, CLS in the lab: MEASURED (`web-vitals/attribution` 6.2.3)
+
+The attribution build is injected by Playwright as an init script, so the bundles under test are unchanged. `reportAllChanges` on; values read after an emulated `visibilitychange` to hidden. 5 runs per renderer, medians, Redact vs React DOM. Raw: `results/raw/verify/vitals-*.json` (with the last attribution object per metric).
+
+| Metric (ms)                         | Chromium 159 |  Firefox 159 |  WebKit 27.2 | Chrome 158 |
+| ----------------------------------- | -----------: | -----------: | -----------: | ---------: |
+| LCP, list cold entry                |   396 vs 372 |   440 vs 377 |   688 vs 680 | 440 vs 408 |
+| LCP, detail cold entry              |     76 vs 80 |     69 vs 77 |     72 vs 77 |   76 vs 92 |
+| INP, typing in the 5,000-row filter |    232 vs 72 |   592 vs 368 |    128 vs 56 |  216 vs 80 |
+| INP, list → detail click            |     24 vs 24 |     24 vs 24 |     24 vs 48 |   32 vs 32 |
+| CLS, all three scenarios            |       0 vs 0 | not reported | not reported |     0 vs 0 |
+| Virtualised: LCP, list cold entry   |    80 vs 100 |     69 vs 75 |     88 vs 92 |   92 vs 96 |
+| Virtualised: INP, typing            |     48 vs 48 |      16 vs 8 |       8 vs 8 |   48 vs 48 |
+
+Slow 4G + 4x CPU, Chromium, default build: list LCP 3972 vs 4044; detail LCP 2140 vs 2368 (−10%); typing INP 744 vs 208; click INP 80 vs 96; CLS 0 on both.
+
+- **Which browser reported which metric (observed, not from documentation):** LCP, FCP, TTFB and INP were reported by all four. CLS was reported only by Chromium and Chrome; the Playwright Firefox 159 and WebKit 27.2 builds never called the CLS callback. Vitals were not collected in release Firefox (WebDriver run records marks only) or Safari (blocked).
+- The vitals agree with the in-page marks: on the 5,000-row list Redact's typing INP is about 3x React DOM's in Chromium and over the 200 ms "good" threshold in Chromium, Chrome and Firefox (React DOM is also over it in Firefox). INP attribution puts it in processing time (about 200 ms on Redact against 33–39 ms on React DOM; input delay under 1 ms on both), which matches R-2. With the list virtualised INP is equal or within one 8 ms tick.
+- LCP on a small first view (detail route, virtualised list) is lower on Redact in every browser, by 4 to 20 ms unthrottled and 228 ms on slow 4G. LCP on the 5,000-row list is higher on Redact unthrottled and a tie throttled.
+- CLS is 0 everywhere it is reported, including across the Suspense panel reveal.
+- The LCP element on the list is the header logo `<img>`, not a row, with almost all of its time in element render delay (about 380 of 396 ms): the logo first paints in the same commit as the rows.
+- These are lab values on one machine, n = 5. They are not the p75 field targets (F-29), which still need production traffic.
+
+### V-5 timings: installed Chrome and release Firefox
+
+- **Chrome 158** is the fourth column in V-1, V-2, V-3c and V-4. It agrees with Playwright's Chromium in direction and size everywhere.
+- **Firefox 150.0.1 release** (WebDriver, default build, Brotli, unthrottled, 9 runs; [results/summary-real-browsers.md](results/summary-real-browsers.md)): cold entry 493 (478–565) vs 435 (421–448), +13%; Suspense navigation 304 (289–324) vs 111 (101–238), +174%; input latency 308 (301–324) vs 80 (71–113), +287%; secondary panel 316 vs 396 (−20%). Gate fails. Same picture as Playwright's Firefox build (+22%, +118%, +275%). Warm navigation and the small-page scenario were not scripted for the WebDriver run.
+- **Safari**: not measured (V-5 above).
+
+## Run 2: verdict per condition
+
+Rule as fixed before the run. "Holds" means the run-1 verdict (ship React DOM) stands.
+
+| Condition                     | Browsers                          | Cold entry improves        | Interactions hold  | Verdict                                            |
+| ----------------------------- | --------------------------------- | -------------------------- | ------------------ | -------------------------------------------------- |
+| Brotli, unthrottled           | Chromium, Firefox, WebKit, Chrome | no (+1% to +22%)           | no                 | holds                                              |
+| Brotli, slow 4G + 4x CPU      | Chromium                          | no (−1%, inside tolerance) | no (+34%, +231%)   | holds                                              |
+| Release Firefox 150           | Firefox                           | no (+13%)                  | no (+174%, +287%)  | holds                                              |
+| Virtualised, unthrottled      | Chromium, Firefox, WebKit, Chrome | 3 of 4 (WebKit −4%)        | no, by 1–4 ms      | holds by the rule; a tie in absolute terms         |
+| Virtualised, slow 4G + 4x CPU | Chromium                          | yes (−7%, 220 ms)          | no, by 4 ms (+36%) | holds by the rule; Redact better in absolute terms |
+
+Run 1's verdict for the app as specified (unvirtualised list) stands under every condition measured. The one thing that would change the decision is a product choice, not a measurement condition: virtualise the list and add an absolute floor to the gate, and Redact passes on slow 4G.
+
+## Run 2: decisions and one incident
+
+- Decision: variants are separate build outputs (`dist-*-virtual`, `dist-*-stale0`) selected by `VARIANT`, so the default bundles stay byte-identical to run 1. Checked again after all run-2 changes: 25 of 25 files match `results/hashes/run1.sha256`.
+- Decision: throttling profile is Lighthouse's mobile slow 4G with DevTools (request-level) throttling and 4x CPU, because it is the most widely quoted "slow" lab profile and the prompt names none.
+- Decision: release Firefox through selenium-webdriver 4.54.0 and the `geckodriver` npm package, both devDependencies, driver binary kept in `node_modules/.cache`.
+- Decision: no new unit tests for the run-2 scripts; they are measurement harness, and their output is the check.
+- **Incident: an accidental `pnpm install` in the repo during the vitals run.** This machine's shell aliases `ps` to `pnpm start`. Two process checks I ran as `ps aux | grep …` therefore ran `pnpm start` in the repo at 11:37, which auto-installed: it wrote `pnpm-lock.yaml` and `pnpm-workspace.yaml`, relinked `node_modules` into pnpm's layout, and added packages to the pnpm store under `~/Library/pnpm` (outside the repo; left as is). Effect on results: the four timing conditions and the Chromium vitals had finished before 11:37 and are untouched; the Firefox vitals in flight were discarded. Recovery: stopped the chain, deleted the two pnpm files, removed `node_modules`, reinstalled with the README line (Playwright browsers and the geckodriver binary were moved aside and back, not re-downloaded), rebuilt, confirmed all default and virtual bundles byte-identical to the recorded hashes, then reran every vitals condition and the release-Firefox run from scratch. Nothing from the pnpm install is committed.
+
+## Still not verified after run 2
+
+- **Safari.** Blocked on a Safari setting (README, human step 1).
+- **CI.** Workflow file written, never run (README, human step 2).
+- Throttled Firefox and WebKit: no throttling API outside Chromium in Playwright. Real devices.
+- Field data: p75 LCP / INP / CLS and web-vitals sampling by route and release (F-29).
+- React Doctor `--scope changed` (no PR), and component-level `scan` output (needs a `react-dom/profiling` build; cannot exist for Redact).
+- The 54-test flow suite on the virtualised variant; it was exercised only by the benchmark and vitals scenarios.
+- Vitals in release Firefox; warm navigation in release Firefox.
+- The original prompt's Bun canary pin (reported by the parent session, not seen).

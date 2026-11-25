@@ -1,0 +1,395 @@
+{
+  "condition": {
+    "variant": "default",
+    "serve": "brotli",
+    "throttle": false
+  },
+  "browser": "webkit 27.2",
+  "runs": 5,
+  "medians": {
+    "redact": {
+      "list.TTFB": {
+        "median": 1,
+        "min": 1,
+        "max": 12,
+        "n": 5
+      },
+      "list.LCP": {
+        "median": 688,
+        "min": 672,
+        "max": 884,
+        "n": 5
+      },
+      "list.FCP": {
+        "median": 614,
+        "min": 595,
+        "max": 783,
+        "n": 5
+      },
+      "list.INP": {
+        "median": 128,
+        "min": 112,
+        "max": 128,
+        "n": 5
+      },
+      "detail.TTFB": {
+        "median": 2,
+        "min": 1,
+        "max": 2,
+        "n": 5
+      },
+      "detail.LCP": {
+        "median": 72,
+        "min": 69,
+        "max": 74,
+        "n": 5
+      },
+      "detail.FCP": {
+        "median": 72,
+        "min": 69,
+        "max": 74,
+        "n": 5
+      },
+      "nav.TTFB": {
+        "median": 2,
+        "min": 1,
+        "max": 3,
+        "n": 5
+      },
+      "nav.LCP": {
+        "median": 696.0000000000001,
+        "min": 672,
+        "max": 748,
+        "n": 5
+      },
+      "nav.FCP": {
+        "median": 624,
+        "min": 607,
+        "max": 668,
+        "n": 5
+      },
+      "nav.INP": {
+        "median": 24,
+        "min": 24,
+        "max": 40,
+        "n": 5
+      }
+    },
+    "react-dom": {
+      "list.TTFB": {
+        "median": 1,
+        "min": 1,
+        "max": 2,
+        "n": 5
+      },
+      "list.LCP": {
+        "median": 680,
+        "min": 664,
+        "max": 720,
+        "n": 5
+      },
+      "list.FCP": {
+        "median": 589,
+        "min": 574,
+        "max": 621,
+        "n": 5
+      },
+      "list.INP": {
+        "median": 56,
+        "min": 40,
+        "max": 64,
+        "n": 5
+      },
+      "detail.TTFB": {
+        "median": 1,
+        "min": 1,
+        "max": 2,
+        "n": 5
+      },
+      "detail.LCP": {
+        "median": 77,
+        "min": 75,
+        "max": 81,
+        "n": 5
+      },
+      "detail.FCP": {
+        "median": 77,
+        "min": 75,
+        "max": 81,
+        "n": 5
+      },
+      "nav.TTFB": {
+        "median": 1,
+        "min": 1,
+        "max": 2,
+        "n": 5
+      },
+      "nav.LCP": {
+        "median": 696.0000000000001,
+        "min": 668,
+        "max": 720,
+        "n": 5
+      },
+      "nav.FCP": {
+        "median": 613,
+        "min": 580,
+        "max": 634,
+        "n": 5
+      },
+      "nav.INP": {
+        "median": 48,
+        "min": 40,
+        "max": 48,
+        "n": 5
+      }
+    }
+  },
+  "lastAttribution": {
+    "redact": {
+      "list.TTFB": {},
+      "list.LCP": {
+        "target": "a.active.x14ju556.x3nfvp2>img",
+        "timeToFirstByte": 1,
+        "resourceLoadDelay": 4,
+        "resourceLoadDuration": 2,
+        "elementRenderDelay": 689.0000000000001
+      },
+      "list.FCP": {},
+      "list.INP": {
+        "target": "input.x1awh872.x1iyjqo2.x1jvydc1.x1kogg8i.x1lr1uin.x1t0vds8.x1xlxyfa.x1y0btm7.xmkeg23",
+        "type": "keyboard",
+        "inputDelay": 0,
+        "processingDuration": 112,
+        "presentationDelay": 0
+      },
+      "detail.TTFB": {},
+      "detail.LCP": {
+        "target": "main.x1iyjqo2.x1xn8qrt.x4l9tsp>article>dl.x1ghz6dp.x40hh3e.xif65rj.xrvj5dj.xrwz996.xw09woa>dd",
+        "timeToFirstByte": 2,
+        "resourceLoadDelay": 0,
+        "resourceLoadDuration": 0,
+        "elementRenderDelay": 72
+      },
+      "detail.FCP": {},
+      "nav.TTFB": {},
+      "nav.LCP": {
+        "target": "a.active.x14ju556.x3nfvp2>img",
+        "timeToFirstByte": 3,
+        "resourceLoadDelay": 6,
+        "resourceLoadDuration": 2,
+        "elementRenderDelay": 717
+      },
+      "nav.FCP": {},
+      "nav.INP": {
+        "target": "tbody>tr>td.x1165vuw.x16dsc37.x1q0q8m5.x1t0vds8.xdqyycr.xso031l>a.x1hl2dhg.x1s688f.x1timldr.xt0b8zv",
+        "type": "pointer",
+        "inputDelay": 24,
+        "processingDuration": 5,
+        "presentationDelay": 11
+      }
+    },
+    "react-dom": {
+      "list.TTFB": {},
+      "list.LCP": {
+        "target": "a.active.x14ju556.x3nfvp2>img",
+        "timeToFirstByte": 2,
+        "resourceLoadDelay": 3,
+        "resourceLoadDuration": 2,
+        "elementRenderDelay": 693.0000000000001
+      },
+      "list.FCP": {},
+      "list.INP": {
+        "target": "input.x1awh872.x1iyjqo2.x1jvydc1.x1kogg8i.x1lr1uin.x1t0vds8.x1xlxyfa.x1y0btm7.xmkeg23",
+        "type": "keyboard",
+        "inputDelay": 38,
+        "processingDuration": 0,
+        "presentationDelay": 18
+      },
+      "detail.TTFB": {},
+      "detail.LCP": {
+        "target": "main.x1iyjqo2.x1xn8qrt.x4l9tsp>article>dl.x1ghz6dp.x40hh3e.xif65rj.xrvj5dj.xrwz996.xw09woa>dd",
+        "timeToFirstByte": 2,
+        "resourceLoadDelay": 0,
+        "resourceLoadDuration": 0,
+        "elementRenderDelay": 79
+      },
+      "detail.FCP": {},
+      "nav.TTFB": {},
+      "nav.LCP": {
+        "target": "a.active.x14ju556.x3nfvp2>img",
+        "timeToFirstByte": 2,
+        "resourceLoadDelay": 4,
+        "resourceLoadDuration": 1,
+        "elementRenderDelay": 701
+      },
+      "nav.FCP": {},
+      "nav.INP": {
+        "target": "tbody>tr>td.x1165vuw.x16dsc37.x1q0q8m5.x1t0vds8.xdqyycr.xso031l>a.x1hl2dhg.x1s688f.x1timldr.xt0b8zv",
+        "type": "pointer",
+        "inputDelay": 46,
+        "processingDuration": 2,
+        "presentationDelay": 0
+      }
+    }
+  },
+  "samples": {
+    "redact": {
+      "list.TTFB": [
+        12,
+        2,
+        1,
+        1,
+        1
+      ],
+      "list.LCP": [
+        884,
+        684,
+        672,
+        688,
+        696.0000000000001
+      ],
+      "list.FCP": [
+        783,
+        613,
+        595,
+        614,
+        615
+      ],
+      "list.INP": [
+        128,
+        128,
+        128,
+        120,
+        112
+      ],
+      "detail.TTFB": [
+        2,
+        1,
+        1,
+        2,
+        2
+      ],
+      "detail.LCP": [
+        72,
+        72,
+        69,
+        73,
+        74
+      ],
+      "detail.FCP": [
+        72,
+        72,
+        69,
+        73,
+        74
+      ],
+      "nav.TTFB": [
+        2,
+        2,
+        1,
+        2,
+        3
+      ],
+      "nav.LCP": [
+        696.0000000000001,
+        696.0000000000001,
+        672,
+        748,
+        728
+      ],
+      "nav.FCP": [
+        624,
+        621,
+        607,
+        668,
+        650
+      ],
+      "nav.INP": [
+        24,
+        24,
+        24,
+        24,
+        40
+      ]
+    },
+    "react-dom": {
+      "list.TTFB": [
+        2,
+        1,
+        1,
+        1,
+        2
+      ],
+      "list.LCP": [
+        720,
+        664,
+        668,
+        680,
+        700.0000000000001
+      ],
+      "list.FCP": [
+        621,
+        574,
+        587,
+        589,
+        607
+      ],
+      "list.INP": [
+        64,
+        40,
+        56,
+        64,
+        56
+      ],
+      "detail.TTFB": [
+        1,
+        1,
+        1,
+        1,
+        2
+      ],
+      "detail.LCP": [
+        76,
+        77,
+        77,
+        75,
+        81
+      ],
+      "detail.FCP": [
+        76,
+        77,
+        77,
+        75,
+        81
+      ],
+      "nav.TTFB": [
+        1,
+        1,
+        1,
+        1,
+        2
+      ],
+      "nav.LCP": [
+        668,
+        696.0000000000001,
+        672,
+        720,
+        708
+      ],
+      "nav.FCP": [
+        583,
+        614,
+        580,
+        634,
+        613
+      ],
+      "nav.INP": [
+        40,
+        48,
+        48,
+        48,
+        48
+      ]
+    }
+  }
+}

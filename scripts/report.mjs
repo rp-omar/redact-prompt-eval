@@ -84,6 +84,8 @@ const gateRows = []
 for (const [key, label, role] of METRICS) {
   for (const browser of Object.keys(raw)) {
     const samples = raw[browser].samples
+    // The WebDriver run (release Firefox) does not record every scenario.
+    if (!samples.redact[key]) continue
     const redact = stat(samples.redact[key])
     const reactDom = stat(samples['react-dom'][key])
     const control = stat(samples['react-dom-b'][key])
