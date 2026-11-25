@@ -99,9 +99,9 @@ Each is independent. No reply needed unless a step fails.
 
 **1. Let WebDriver control Safari** (unblocks the Safari timings). The run stopped at: `Could not create a session: You must enable 'Allow remote automation' in the Developer section of Safari Settings to control Safari via WebDriver.`
 
-1. Safari → Settings → Advanced → tick "Show features for web developers".
-2. Safari → Settings → Developer → tick "Allow remote automation".
-3. Tell the session to rerun the Safari check. Nothing to paste anywhere.
+1. Open Safari → Settings. If there is no Developer tab, go to Advanced and tick "Show features for web developers" (location recalled, not checked on this machine).
+2. In the Developer tab, tick "Allow remote automation" (the name the error gives).
+3. Nothing to paste anywhere. No Safari benchmark script is committed yet: ask a session to port `scripts/real-firefox.mjs` to `safaridriver` and run it.
 
 **2. Enable CI** (the `gh` token has no `workflow` scope, so the workflow file could not be pushed to `.github/workflows/`).
 
@@ -110,7 +110,7 @@ gh auth refresh -h github.com -s workflow
 ```
 
 ```bash
-mkdir -p .github/workflows && git mv ci/github-actions-ci.yml .github/workflows/ci.yml && git commit -m "Enable CI" && git push
+mkdir -p .github/workflows && git mv ci/github-actions-ci.yml .github/workflows/ci.yml && git commit -m "Enable CI" && git -c credential.helper= -c credential.helper='!gh auth git-credential' push origin main
 ```
 
 The first run is the verification; it has never run.
@@ -125,15 +125,15 @@ npm install --no-package-lock --save-dev --save-exact bun@1.4.5 && ./node_module
 
 Then, with `./node_modules/.bin` on `PATH`:
 
-| Command                                                | Does                                                         |
-| ------------------------------------------------------ | ------------------------------------------------------------ |
-| `bun run dev` / `RENDERER=react-dom bun run dev`       | Dev server, either renderer                                  |
-| `bun run build:both`                                   | Production builds into `dist-redact` and `dist-react-dom`    |
-| `bun run budget`                                       | Byte budgets from the Vite manifests; exits 1 on a breach    |
-| `bun run playwright:install`                           | Chromium, Firefox, WebKit into `node_modules`                |
-| `bun run test:flows`                                   | Required flows, both renderers, three browsers               |
-| `bun run bench && bun run report`                      | Timings into `results/raw`, tables into `results/summary.md` |
-| `bun lint`, `bun fmt --check`, `bun check`, `bun test` | The prompt's checks                                          |
-| `bun run doctor`                                       | React Doctor static check, offline flags                     |
+| Command                                                | Does                                                                   |
+| ------------------------------------------------------ | ---------------------------------------------------------------------- |
+| `bun run dev` / `RENDERER=react-dom bun run dev`       | Dev server, either renderer                                            |
+| `bun run build:both`                                   | Production builds into `dist-redact` and `dist-react-dom`              |
+| `bun run budget`                                       | Byte budgets from the Vite manifests; exits 1 on a breach              |
+| `bun run playwright:install`                           | Chromium, Firefox, WebKit into `node_modules`                          |
+| `bun run test:flows`                                   | Required flows, both renderers; run 2 adds installed Chrome (72 tests) |
+| `bun run bench && bun run report`                      | Timings into `results/raw`, tables into `results/summary.md`           |
+| `bun lint`, `bun fmt --check`, `bun check`, `bun test` | The prompt's checks                                                    |
+| `bun run doctor`                                       | React Doctor static check, offline flags                               |
 
 Layout: `src/` app, `mock/` seeded data and the serve-only API plugin, `scripts/budget.mjs`, `scripts/report.mjs`, `tests/flows.pw.ts`, `tests/bench.pw.ts`, `results/`.

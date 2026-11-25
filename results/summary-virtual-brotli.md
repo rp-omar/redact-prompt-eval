@@ -6,10 +6,10 @@
 | Route-specific startup JS, Brotli, `/items/$id` (budget 50 kB) | 4.3 kB ✓ | 4.3 kB ✓ | +0% |
 | First-view CSS, Brotli, `/` (budget 20 kB) | 1.1 kB ✓ | 1.1 kB ✓ | +0% |
 | First-view CSS, Brotli, `/items/$id` (budget 20 kB) | 1.1 kB ✓ | 1.1 kB ✓ | +0% |
-| Cold entry → usable content (list, 5,000 rows painted), chromium, ms | 74 (73–75) | 79 (79–101) | −7% (A/A noise 0%) |
-| Cold entry → usable content (list, 5,000 rows painted), firefox, ms | 87 (83–94) | 92 (91–94) | −5% (A/A noise 3%) |
-| Cold entry → usable content (list, 5,000 rows painted), webkit, ms | 79 (77–82) | 82 (80–90) | −4% (A/A noise 1%) |
-| Cold entry → usable content (list, 5,000 rows painted), chrome, ms | 75 (73–77) | 82 (80–89) | −9% (A/A noise 0%) |
+| Cold entry → usable content (virtualised list, first window painted), chromium, ms | 74 (73–75) | 79 (79–101) | −7% (A/A noise 0%) |
+| Cold entry → usable content (virtualised list, first window painted), firefox, ms | 87 (83–94) | 92 (91–94) | −5% (A/A noise 3%) |
+| Cold entry → usable content (virtualised list, first window painted), webkit, ms | 79 (77–82) | 82 (80–90) | −4% (A/A noise 1%) |
+| Cold entry → usable content (virtualised list, first window painted), chrome, ms | 75 (73–77) | 82 (80–89) | −9% (A/A noise 0%) |
 | Warm navigation → visible content (preloaded, click → painted), chromium, ms | 38 (31–44) | 39 (31–42) | −4% (A/A noise 1%) |
 | Warm navigation → visible content (preloaded, click → painted), firefox, ms | 14 (9.0–22) | 16 (10–19) | −13% (A/A noise 19%) |
 | Warm navigation → visible content (preloaded, click → painted), webkit, ms | 15 (11–17) | 12 (7.0–14) | +25% (A/A noise 8%) |

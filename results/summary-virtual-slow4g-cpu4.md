@@ -6,7 +6,7 @@
 | Route-specific startup JS, Brotli, `/items/$id` (budget 50 kB) | 4.3 kB ✓ | 4.3 kB ✓ | +0% |
 | First-view CSS, Brotli, `/` (budget 20 kB) | 1.1 kB ✓ | 1.1 kB ✓ | +0% |
 | First-view CSS, Brotli, `/items/$id` (budget 20 kB) | 1.1 kB ✓ | 1.1 kB ✓ | +0% |
-| Cold entry → usable content (list, 5,000 rows painted), chromium, ms | 2804 (2791–2816) | 3023 (3009–3054) | −7% (A/A noise 0%) |
+| Cold entry → usable content (virtualised list, first window painted), chromium, ms | 2804 (2791–2816) | 3023 (3009–3054) | −7% (A/A noise 0%) |
 | Warm navigation → visible content (preloaded, click → painted), chromium, ms | 50 (46–68) | 46 (42–52) | +9% (A/A noise 5%) |
 | Suspense navigation (cold click → required content painted), chromium, ms | 619 (614–627) | 621 (613–627) | −0% (A/A noise 0%) |
 | Input latency, filter over 5,000 rows (keystroke → rows painted, median key), chromium, ms | 16 (16–18) | 12 (12–15) | +36% (A/A noise 2%) |

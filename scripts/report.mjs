@@ -14,7 +14,13 @@ const MIN_TOLERANCE = 0.05
 
 // [key, label, role in the gate]
 const METRICS = [
-  ['coldList', 'Cold entry → usable content (list, 5,000 rows painted)', 'improve'],
+  [
+    'coldList',
+    process.env.VARIANT === 'virtual'
+      ? 'Cold entry → usable content (virtualised list, first window painted)'
+      : 'Cold entry → usable content (list, 5,000 rows painted)',
+    'improve',
+  ],
   ['warmNav', 'Warm navigation → visible content (preloaded, click → painted)', 'info'],
   ['suspRequired', 'Suspense navigation (cold click → required content painted)', 'hold'],
   ['typePaint', 'Input latency, filter over 5,000 rows (keystroke → rows painted, median key)', 'hold'],

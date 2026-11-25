@@ -3,7 +3,7 @@
 # without it. To enable it (one human step, see README "Human steps"):
 #   gh auth refresh -h github.com -s workflow
 #   mkdir -p .github/workflows && git mv ci/github-actions-ci.yml .github/workflows/ci.yml
-#   git commit -m "Enable CI" && git push
+#   git commit -m "Enable CI" && git -c credential.helper= -c credential.helper='!gh auth git-credential' push origin main
 # Not run anywhere yet: this file is unverified until that step is done.
 name: ci
 on:
@@ -37,7 +37,8 @@ jobs:
       - run: bun run budget
       # Required flows, both renderers, three browser engines.
       - run: bunx playwright install --with-deps chromium firefox webkit
-      - run: bun run test:flows
+      # The chrome project needs an installed Google Chrome; CI runs the three Playwright builds.
+      - run: bun run test:flows --project chromium --project firefox --project webkit
       # React Doctor static check, offline flags. `react-doctor scan` needs a terminal and a
       # person (or the pty wrapper in scripts/doctor-scan.mjs), so it is not part of CI.
       - run: bun run doctor
