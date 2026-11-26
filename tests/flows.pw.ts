@@ -8,6 +8,12 @@ import { BUILDS, analyze } from '../scripts/budget.mjs'
 const RENDERERS = ['redact', 'react-dom'] as const satisfies readonly TargetName[]
 const ITEM = '1000'
 
+// Wait for the 5,000-row list with locator.waitFor(), not expect(). On every poll that finds
+// nothing, Playwright 1.65's expect() also takes an ARIA snapshot of <body> for its failure
+// message. If the list commits between the query and that snapshot, the snapshot walks 5,000
+// rows; in Firefox on a GitHub runner that takes over 5 s and uses up the whole expect timeout.
+const listReady = (page: Page) => page.getByTestId('row').first().waitFor()
+
 function trackRequests(page: Page) {
   const urls: string[] = []
   page.on('request', (request) => urls.push(new URL(request.url()).pathname))
@@ -31,7 +37,7 @@ for (const renderer of RENDERERS) {
       expect(js.includes('__reactFiber$')).toBe(renderer === 'react-dom')
       await page.goto(base)
       await expect(page.locator('html')).toHaveAttribute('data-renderer', renderer)
-      await expect(page.getByTestId('row').first()).toBeVisible()
+      await listReady(page)
       const fiberKeys = await page.evaluate(
         () =>
           Object.keys(document.querySelector('[data-testid=row]')!).filter((key) => key.startsWith('__reactFiber$'))
@@ -48,7 +54,10 @@ for (const renderer of RENDERERS) {
       ] as const) {
         const requests = trackRequests(page)
         await page.goto(base + path)
-        await expect(page.getByTestId(template === '/' ? 'row' : 'activity').first()).toBeVisible()
+        await page
+          .getByTestId(template === '/' ? 'row' : 'activity')
+          .first()
+          .waitFor()
         const assets = (ext: string) =>
           [...new Set(requests.urls.filter((url) => url.endsWith(ext)).map((url) => url.slice(1)))].sort()
         expect(assets('.js'), `${template} JS`).toEqual(expected[template].coldEntryJs.files)
@@ -59,6 +68,7 @@ for (const renderer of RENDERERS) {
 
     test('list renders 5,000 rows and filters as you type', async ({ page }) => {
       await page.goto(base)
+      await listReady(page)
       await expect(page.getByTestId('row')).toHaveCount(5000)
       await page.getByTestId('filter').fill('kestrel bank')
       await expect(page.getByTestId('rows')).toHaveAttribute('data-applied', 'kestrel bank')
@@ -72,6 +82,7 @@ for (const renderer of RENDERERS) {
 
     test('useDeferredValue variant still converges on the typed filter', async ({ page }) => {
       await page.goto(`${base}/?deferred=true`)
+      await listReady(page)
       await expect(page.getByTestId('row')).toHaveCount(5000)
       await page.getByTestId('filter').pressSequentially('sweden')
       await expect(page.getByTestId('rows')).toHaveAttribute('data-applied', 'sweden')
@@ -81,7 +92,7 @@ for (const renderer of RENDERERS) {
     test('hover preloads the detail route; preload={false} link does not', async ({ page }) => {
       const requests = trackRequests(page)
       await page.goto(base)
-      await expect(page.getByTestId('row').first()).toBeVisible()
+      await listReady(page)
       await page.getByRole('link', { name: 'About' }).hover()
       await page.waitForTimeout(400)
       expect(requests.count(/assets\/about-/)).toBe(0)
@@ -94,7 +105,7 @@ for (const renderer of RENDERERS) {
     test('keyboard focus preloads the detail route', async ({ page, browserName }) => {
       const requests = trackRequests(page)
       await page.goto(base)
-      await expect(page.getByTestId('row').first()).toBeVisible()
+      await listReady(page)
       await page.getByTestId('filter').focus()
       // Safari only tabs to links with Option held (macOS default).
       await page.keyboard.press(browserName === 'webkit' ? 'Alt+Tab' : 'Tab')
@@ -116,7 +127,7 @@ for (const renderer of RENDERERS) {
       })
       await page.goto(base)
       const link = page.getByTestId('row').first().getByRole('link')
-      await expect(link).toBeVisible()
+      await listReady(page)
       await link.evaluate((element: HTMLElement) => element.click()) // no hover, so no preload
       await expect(page.getByTestId('activity').locator('li')).toHaveCount(20)
       await expect(page.getByTestId('activity-fallback')).toHaveCount(0)
