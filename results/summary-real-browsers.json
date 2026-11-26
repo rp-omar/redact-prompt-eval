@@ -57,6 +57,31 @@
       "role": "improve",
       "pass": false
     },
+    "coldList safari-release": {
+      "redact": {
+        "median": 895,
+        "min": 855,
+        "max": 931,
+        "n": 9
+      },
+      "reactDom": {
+        "median": 883,
+        "min": 821.0000000000001,
+        "max": 903,
+        "n": 9
+      },
+      "control": {
+        "median": 857,
+        "min": 827.0000000000001,
+        "max": 900,
+        "n": 9
+      },
+      "noise": 0.029445073612684003,
+      "tolerance": 0.05,
+      "delta": 0.013590033975084959,
+      "role": "improve",
+      "pass": false
+    },
     "suspRequired firefox-release": {
       "redact": {
         "median": 304,
@@ -79,6 +104,31 @@
       "noise": 0.072072072072072,
       "tolerance": 0.072072072072072,
       "delta": 1.7387387387387387,
+      "role": "hold",
+      "pass": false
+    },
+    "suspRequired safari-release": {
+      "redact": {
+        "median": 140,
+        "min": 129,
+        "max": 159,
+        "n": 9
+      },
+      "reactDom": {
+        "median": 104,
+        "min": 93.00000000000023,
+        "max": 134,
+        "n": 9
+      },
+      "control": {
+        "median": 97.00000000000023,
+        "min": 95,
+        "max": 111,
+        "n": 9
+      },
+      "noise": 0.06730769230769007,
+      "tolerance": 0.06730769230769007,
+      "delta": 0.34615384615384626,
       "role": "hold",
       "pass": false
     },
@@ -107,6 +157,31 @@
       "role": "hold",
       "pass": false
     },
+    "typePaint safari-release": {
+      "redact": {
+        "median": 110.50000000000011,
+        "min": 104.5,
+        "max": 114.49999999999977,
+        "n": 5
+      },
+      "reactDom": {
+        "median": 53.49999999999977,
+        "min": 50,
+        "max": 55.500000000000114,
+        "n": 5
+      },
+      "control": {
+        "median": 55,
+        "min": 50.499999999999886,
+        "max": 56.00000000000023,
+        "n": 5
+      },
+      "noise": 0.028037383177574426,
+      "tolerance": 0.05,
+      "delta": 1.0654205607476745,
+      "role": "hold",
+      "pass": false
+    },
     "coldListCommit firefox-release": {
       "redact": {
         "median": 295,
@@ -121,6 +196,21 @@
         "n": 9
       },
       "delta": 0.22406639004149387
+    },
+    "coldListCommit safari-release": {
+      "redact": {
+        "median": 275,
+        "min": 267,
+        "max": 284.00000000000006,
+        "n": 9
+      },
+      "reactDom": {
+        "median": 251,
+        "min": 241,
+        "max": 260,
+        "n": 9
+      },
+      "delta": 0.095617529880478
     },
     "suspPanel firefox-release": {
       "redact": {
@@ -137,6 +227,21 @@
       },
       "delta": -0.202020202020202
     },
+    "suspPanel safari-release": {
+      "redact": {
+        "median": 160,
+        "min": 158,
+        "max": 171,
+        "n": 9
+      },
+      "reactDom": {
+        "median": 402,
+        "min": 394,
+        "max": 438,
+        "n": 9
+      },
+      "delta": -0.6019900497512438
+    },
     "typeCommit firefox-release": {
       "redact": {
         "median": 204.5,
@@ -152,6 +257,21 @@
       },
       "delta": 9.225
     },
+    "typeCommit safari-release": {
+      "redact": {
+        "median": 83.49999999999977,
+        "min": 78.00000000000034,
+        "max": 88.50000000000011,
+        "n": 5
+      },
+      "reactDom": {
+        "median": 21.5,
+        "min": 20.000000000000227,
+        "max": 23,
+        "n": 5
+      },
+      "delta": 2.8837209302325477
+    },
     "typeWorstPaint firefox-release": {
       "redact": {
         "median": 646,
@@ -166,6 +286,21 @@
         "n": 5
       },
       "delta": 0.6779220779220778
+    },
+    "typeWorstPaint safari-release": {
+      "redact": {
+        "median": 501,
+        "min": 498,
+        "max": 509,
+        "n": 5
+      },
+      "reactDom": {
+        "median": 416,
+        "min": 409,
+        "max": 424,
+        "n": 5
+      },
+      "delta": 0.20432692307692313
     }
   },
   "gate": {
@@ -173,8 +308,11 @@
     "interactionsHold": false,
     "failing": [
       "coldList/firefox-release +13% (tolerance 5%)",
+      "coldList/safari-release +1% (tolerance 5%)",
       "suspRequired/firefox-release +174% (tolerance 7%)",
-      "typePaint/firefox-release +287% (tolerance 5%)"
+      "suspRequired/safari-release +35% (tolerance 7%)",
+      "typePaint/firefox-release +287% (tolerance 5%)",
+      "typePaint/safari-release +107% (tolerance 5%)"
     ],
     "shipRedact": false
   }

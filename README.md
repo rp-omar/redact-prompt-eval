@@ -21,6 +21,7 @@ Run 2 verified the "Not verified" list. Everything in "Redact vs React DOM" belo
 | Virtualised list, unthrottled, 4 browsers                         |   74–87 vs 79–92 ms (−4% to −9%) |  −11% to +6% (≤ 4 ms) | 7–10 vs 6–9 ms (+12% to +33%) | fails on 1–4 ms | holds on paper; a tie in practice            |
 | Virtualised list, slow 4G + 4x CPU, Chromium                      |            2804 vs 3023 ms (−7%) |         619 vs 621 ms |            16 vs 12 ms (+36%) | fails on 4 ms   | holds on paper; Redact is better in practice |
 | Release Firefox 150.0.1 (WebDriver), unthrottled                  |             493 vs 435 ms (+13%) | 304 vs 111 ms (+174%) |          308 vs 80 ms (+287%) | fails           | holds: React DOM                             |
+| Release Safari 26.5 (WebDriver, 2026-11-26), unthrottled          |              895 vs 883 ms (+1%) |  140 vs 104 ms (+35%) |          111 vs 53 ms (+107%) | fails           | holds: React DOM                             |
 
 - **Unvirtualised list: ship React DOM, under every condition.** Slow 4G does not rescue Redact: the list JSON (108 kB Brotli) outweighs the 38 kB of JS saved, so cold entry is a tie and the interaction gaps stay.
 - **Virtualised list: the pre-registered gate still says React DOM, but only because a 5% tolerance on a 6–12 ms input latency is 1–4 ms**, less than one frame. In absolute terms Redact wins there: about 220 ms faster cold entry on slow 4G, 38 kB less JS, interactions equal to the eye. The gate needs an absolute floor before it can decide this case; I did not move it after seeing the numbers.
@@ -87,21 +88,21 @@ Why Redact loses: re-rendering 5,000 rows with nothing changed costs about 145 m
 Run 1's list, with what run 2 did to each item:
 
 - ~~`react-doctor scan`~~ Ran (through a pseudo-terminal, `--cdp`). Redact build: no React detected.
-- ~~Throttled network or CPU~~ Measured, Chromium only. ~~Release Firefox~~ Measured (150.0.1). Installed Chrome measured too. **Still open: Safari** (human step 1), throttled Firefox and WebKit (no throttling API outside Chromium), real devices.
+- ~~Throttled network or CPU~~ Measured, Chromium only. ~~Release Firefox~~ Measured (150.0.1). Installed Chrome measured too. ~~Safari~~ Measured 2026-11-26 (26.5, `scripts/real-safari.mjs`). **Still open:** throttled Firefox and WebKit (no throttling API outside Chromium), real devices.
 - ~~LCP, INP, CLS~~ Measured in the lab with `web-vitals/attribution`. **Still open: field data.**
-- **Still open: CI.** Workflow written at `ci/github-actions-ci.yml`, never run (human step 2).
+- ~~CI~~ Enabled 2026-11-25 at `.github/workflows/ci.yml`; first run green in 3m15s.
 - ~~A virtualised list, navigation from a small page, the `staleTime: 0` double fetch~~ All measured.
 - ~~The install line below from a fresh clone~~ Works (25 s; builds byte-identical).
 
 ## Human steps
 
-Each is independent. No reply needed unless a step fails.
+Both done (step 2 on 2026-11-25, step 1 on 2026-11-26). Kept for the record.
 
 **1. Let WebDriver control Safari** (unblocks the Safari timings). The run stopped at: `Could not create a session: You must enable 'Allow remote automation' in the Developer section of Safari Settings to control Safari via WebDriver.`
 
 1. Open Safari → Settings. If there is no Developer tab, go to Advanced and tick "Show features for web developers" (location recalled, not checked on this machine).
 2. In the Developer tab, tick "Allow remote automation" (the name the error gives).
-3. Nothing to paste anywhere. No Safari benchmark script is committed yet: ask a session to port `scripts/real-firefox.mjs` to `safaridriver` and run it.
+3. Nothing to paste anywhere. Then: `node scripts/real-safari.mjs` (was: no Safari script committed).
 
 **2. Enable CI** (the `gh` token has no `workflow` scope, so the workflow file could not be pushed to `.github/workflows/`).
 

@@ -376,3 +376,10 @@ Run 1's verdict for the app as specified (unvirtualised list) stands under every
 - The 54-test flow suite on the virtualised variant; it was exercised only by the benchmark and vitals scenarios.
 - Vitals in release Firefox; warm navigation in release Firefox.
 - The original prompt's Bun canary pin (reported by the parent session, not seen).
+
+## Update 2026-11-26: Safari and CI
+
+- **Safari 26.5 (installed), measured.** `scripts/real-safari.mjs`, a port of `real-firefox.mjs` to safaridriver through selenium-webdriver. Redact vs React DOM, median over 9 runs (5 typing runs): cold entry 895 vs 883 ms (+1%, A/A noise 3%); Suspense navigation 140 vs 104 ms (+35%); input latency 111 vs 53 ms (+107%). Secondary panel painted 160 vs 402 ms (Redact sooner, as in the other browsers). Gate fails; verdict unchanged: React DOM.
+- **How the Safari run differs from the Firefox run.** Safari has no headless mode, so a window opens. safaridriver takes no profile option, so each measurement is served from a port never used before to force a cold HTTP cache. Cold entry "painted" is about 600 ms after "committed" on both renderers (895 vs 275 ms on Redact), a much larger gap than in Firefox; the cause was not investigated, so compare Safari's cold-entry number between renderers only, not with other browsers. `summary-real-browsers.md` prints one condition line (the Firefox one) for both browsers; Safari's is in `results/raw/real-browsers/safari-release.json`.
+- **CI enabled 2026-11-25** (`.github/workflows/ci.yml`), first run green in 3m15s. Actions bumped from v4 to `checkout@v7`, `setup-node@v7`, `upload-artifact@v7` to clear the Node 20 deprecation warning.
+- Was (run 2): "Safari. Blocked on a Safari setting" and "CI. Workflow file written, never run". Both closed.

@@ -13,6 +13,7 @@ SERVE=brotli $PW test tests/verify.pw.ts -g "web vitals" $ALL
 SERVE=brotli THROTTLE=slow4g-cpu4 $PW test tests/verify.pw.ts -g "web vitals" --project chromium
 VARIANT=virtual SERVE=brotli $PW test tests/verify.pw.ts -g "web vitals" $ALL
 node scripts/real-firefox.mjs
+node scripts/real-safari.mjs
 for label in brotli brotli-slow4g-cpu4; do node scripts/report.mjs $label > /dev/null; done
 for label in virtual-brotli virtual-slow4g-cpu4; do VARIANT=virtual node scripts/report.mjs $label > /dev/null; done
 node scripts/report.mjs real-browsers > /dev/null
