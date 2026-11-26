@@ -34,1099 +34,1099 @@
   "timings": {
     "coldList chromium": {
       "redact": {
-        "median": 381.80000019073486,
-        "min": 368.5,
-        "max": 387.40000009536743,
+        "median": 371.7999999523163,
+        "min": 365.2000000476837,
+        "max": 402,
         "n": 9
       },
       "reactDom": {
-        "median": 337.2999999523163,
-        "min": 328,
-        "max": 350.80000019073486,
+        "median": 332,
+        "min": 325.59999990463257,
+        "max": 364.60000014305115,
         "n": 9
       },
       "control": {
-        "median": 339.2000000476837,
-        "min": 329.30000019073486,
-        "max": 345.5,
+        "median": 329.40000009536743,
+        "min": 324.89999985694885,
+        "max": 339.5,
         "n": 9
       },
-      "noise": 0.005632967968087765,
+      "noise": 0.00783132501395356,
       "tolerance": 0.05,
-      "delta": 0.13193003333741316,
+      "delta": 0.11987951792866358,
       "role": "improve",
       "pass": false
     },
     "coldList firefox": {
       "redact": {
-        "median": 473,
-        "min": 467,
-        "max": 506,
+        "median": 476,
+        "min": 452,
+        "max": 619,
         "n": 9
       },
       "reactDom": {
-        "median": 389,
-        "min": 384,
-        "max": 405,
+        "median": 384,
+        "min": 374,
+        "max": 417,
         "n": 9
       },
       "control": {
-        "median": 392,
-        "min": 384,
-        "max": 403,
+        "median": 381,
+        "min": 374,
+        "max": 421,
         "n": 9
       },
-      "noise": 0.007712082262210762,
+      "noise": 0.0078125,
       "tolerance": 0.05,
-      "delta": 0.21593830334190223,
+      "delta": 0.23958333333333326,
       "role": "improve",
       "pass": false
     },
     "coldList webkit": {
       "redact": {
-        "median": 668,
-        "min": 661,
-        "max": 682,
+        "median": 659,
+        "min": 651,
+        "max": 746,
         "n": 9
       },
       "reactDom": {
-        "median": 662,
-        "min": 654,
-        "max": 669,
+        "median": 642,
+        "min": 635,
+        "max": 714,
         "n": 9
       },
       "control": {
-        "median": 657,
-        "min": 652,
-        "max": 666,
+        "median": 644,
+        "min": 631,
+        "max": 667,
         "n": 9
       },
-      "noise": 0.007552870090634434,
+      "noise": 0.0031152647975076775,
       "tolerance": 0.05,
-      "delta": 0.009063444108761365,
+      "delta": 0.026479750778816147,
       "role": "improve",
       "pass": false
     },
     "coldList chrome": {
       "redact": {
-        "median": 424.19999980926514,
-        "min": 411.60000014305115,
-        "max": 434.39999985694885,
+        "median": 417.2999999523163,
+        "min": 406,
+        "max": 425.09999990463257,
         "n": 9
       },
       "reactDom": {
-        "median": 390.7000000476837,
-        "min": 377.39999985694885,
-        "max": 409.7000000476837,
+        "median": 377.10000014305115,
+        "min": 373.7000000476837,
+        "max": 412.10000014305115,
         "n": 9
       },
       "control": {
-        "median": 392,
-        "min": 377.2999999523163,
-        "max": 394.90000009536743,
+        "median": 376.7000000476837,
+        "min": 370.7999999523163,
+        "max": 402,
         "n": 9
       },
-      "noise": 0.003327361024206832,
+      "noise": 0.0010607268502139666,
       "tolerance": 0.05,
-      "delta": 0.08574353662015066,
+      "delta": 0.10660302252457021,
       "role": "improve",
       "pass": false
     },
     "warmNav chromium": {
       "redact": {
-        "median": 131.79999995231628,
-        "min": 125.40000009536743,
-        "max": 138.39999985694885,
+        "median": 129.39999985694885,
+        "min": 123.20000004768372,
+        "max": 131.79999995231628,
         "n": 9
       },
       "reactDom": {
         "median": 64.79999995231628,
-        "min": 62.799999952316284,
-        "max": 72.80000019073486,
+        "min": 61.30000019073486,
+        "max": 73.5,
         "n": 9
       },
       "control": {
-        "median": 64.5,
-        "min": 61.700000047683716,
-        "max": 71.29999995231628,
+        "median": 63.299999952316284,
+        "min": 58.200000047683716,
+        "max": 73.89999985694885,
         "n": 9
       },
-      "noise": 0.004629628897176552,
+      "noise": 0.02314814816518196,
       "tolerance": 0.05,
-      "delta": 1.0339506180447935,
+      "delta": 0.9969135795087827,
       "role": "info",
       "pass": null
     },
     "warmNav firefox": {
       "redact": {
-        "median": 218,
-        "min": 210,
-        "max": 224,
+        "median": 229,
+        "min": 202,
+        "max": 268,
         "n": 9
       },
       "reactDom": {
-        "median": 74,
-        "min": 63,
-        "max": 76,
+        "median": 73,
+        "min": 72,
+        "max": 78,
         "n": 9
       },
       "control": {
-        "median": 72,
-        "min": 59,
-        "max": 123,
+        "median": 73,
+        "min": 69,
+        "max": 75,
         "n": 9
       },
-      "noise": 0.027027027027026973,
+      "noise": 0,
       "tolerance": 0.05,
-      "delta": 1.945945945945946,
+      "delta": 2.136986301369863,
       "role": "info",
       "pass": null
     },
     "warmNav webkit": {
       "redact": {
-        "median": 89,
-        "min": 77,
-        "max": 95,
+        "median": 92,
+        "min": 90,
+        "max": 105,
         "n": 9
       },
       "reactDom": {
-        "median": 59,
-        "min": 57,
-        "max": 62,
+        "median": 55,
+        "min": 50,
+        "max": 59,
         "n": 9
       },
       "control": {
-        "median": 59,
-        "min": 58,
-        "max": 60,
+        "median": 57,
+        "min": 56,
+        "max": 63,
         "n": 9
       },
-      "noise": 0,
+      "noise": 0.036363636363636376,
       "tolerance": 0.05,
-      "delta": 0.5084745762711864,
+      "delta": 0.6727272727272726,
       "role": "info",
       "pass": null
     },
     "warmNav chrome": {
       "redact": {
-        "median": 140.90000009536743,
-        "min": 132.79999995231628,
-        "max": 153.39999985694885,
+        "median": 139.29999995231628,
+        "min": 132.59999990463257,
+        "max": 142.59999990463257,
         "n": 9
       },
       "reactDom": {
-        "median": 71.5,
-        "min": 63.799999952316284,
-        "max": 77.59999990463257,
+        "median": 59.60000014305115,
+        "min": 55.200000047683716,
+        "max": 67.29999995231628,
         "n": 9
       },
       "control": {
-        "median": 66.70000004768372,
-        "min": 55.40000009536743,
-        "max": 73,
+        "median": 65.79999995231628,
+        "min": 54.19999980926514,
+        "max": 69.60000014305115,
         "n": 9
       },
-      "noise": 0.06713286646596206,
-      "tolerance": 0.06713286646596206,
-      "delta": 0.9706293719631809,
+      "noise": 0.10402684218765068,
+      "tolerance": 0.10402684218765068,
+      "delta": 1.3372483157377557,
       "role": "info",
       "pass": null
     },
     "suspRequired chromium": {
       "redact": {
-        "median": 166.79999995231628,
-        "min": 157.40000009536743,
-        "max": 170.89999985694885,
+        "median": 165,
+        "min": 140.59999990463257,
+        "max": 171,
         "n": 9
       },
       "reactDom": {
-        "median": 91.70000004768372,
-        "min": 82.40000009536743,
-        "max": 105.59999990463257,
+        "median": 94,
+        "min": 78.80000019073486,
+        "max": 101.09999990463257,
         "n": 9
       },
       "control": {
-        "median": 96.09999990463257,
-        "min": 75.5,
-        "max": 105.09999990463257,
+        "median": 96.70000004768372,
+        "min": 94.59999990463257,
+        "max": 105.10000014305115,
         "n": 9
       },
-      "noise": 0.04798255021440423,
+      "noise": 0.02872340476259283,
       "tolerance": 0.05,
-      "delta": 0.8189749167457012,
+      "delta": 0.7553191489361701,
       "role": "hold",
       "pass": false
     },
     "suspRequired firefox": {
       "redact": {
-        "median": 268,
-        "min": 260,
-        "max": 277,
+        "median": 264,
+        "min": 240,
+        "max": 281,
         "n": 9
       },
       "reactDom": {
-        "median": 123,
-        "min": 118,
-        "max": 133,
+        "median": 122,
+        "min": 117,
+        "max": 132,
         "n": 9
       },
       "control": {
-        "median": 122,
-        "min": 119,
-        "max": 134,
+        "median": 123,
+        "min": 118,
+        "max": 127,
         "n": 9
       },
-      "noise": 0.008130081300813052,
+      "noise": 0.008196721311475308,
       "tolerance": 0.05,
-      "delta": 1.178861788617886,
+      "delta": 1.1639344262295084,
       "role": "hold",
       "pass": false
     },
     "suspRequired webkit": {
       "redact": {
-        "median": 148,
+        "median": 144,
         "min": 137,
-        "max": 155,
+        "max": 165,
         "n": 9
       },
       "reactDom": {
-        "median": 116,
-        "min": 111,
-        "max": 117,
+        "median": 113,
+        "min": 99,
+        "max": 118,
         "n": 9
       },
       "control": {
-        "median": 116,
-        "min": 100,
-        "max": 118,
+        "median": 113,
+        "min": 93,
+        "max": 124,
         "n": 9
       },
       "noise": 0,
       "tolerance": 0.05,
-      "delta": 0.27586206896551735,
+      "delta": 0.2743362831858407,
       "role": "hold",
       "pass": false
     },
     "suspRequired chrome": {
       "redact": {
-        "median": 174.79999995231628,
-        "min": 153.29999995231628,
-        "max": 178.40000009536743,
+        "median": 168.19999980926514,
+        "min": 161,
+        "max": 174.90000009536743,
         "n": 9
       },
       "reactDom": {
-        "median": 93.20000004768372,
-        "min": 91.5,
-        "max": 102.79999995231628,
+        "median": 98.30000019073486,
+        "min": 79.79999995231628,
+        "max": 100.5,
         "n": 9
       },
       "control": {
-        "median": 92.40000009536743,
-        "min": 85,
-        "max": 98.5,
+        "median": 97.30000019073486,
+        "min": 86.29999995231628,
+        "max": 101.69999980926514,
         "n": 9
       },
-      "noise": 0.008583690471104966,
+      "noise": 0.010172939959915195,
       "tolerance": 0.05,
-      "delta": 0.8755364792154907,
+      "delta": 0.7110884993174049,
       "role": "hold",
       "pass": false
     },
     "typePaint chromium": {
       "redact": {
-        "median": 130.69999992847443,
-        "min": 129.60000002384186,
-        "max": 134.55000007152557,
+        "median": 116.75,
+        "min": 115.14999997615814,
+        "max": 119.40000009536743,
         "n": 5
       },
       "reactDom": {
-        "median": 44.25,
-        "min": 42.35000002384186,
-        "max": 44.550000071525574,
+        "median": 36.050000071525574,
+        "min": 33.699999928474426,
+        "max": 39.049999952316284,
         "n": 5
       },
       "control": {
-        "median": 43.700000047683716,
-        "min": 42.39999997615814,
-        "max": 44.09999990463257,
+        "median": 34.949999928474426,
+        "min": 31.299999952316284,
+        "max": 37.25,
         "n": 5
       },
-      "noise": 0.012429377453475388,
+      "noise": 0.030513180051835675,
       "tolerance": 0.05,
-      "delta": 1.9536723147677835,
+      "delta": 2.238557552520397,
       "role": "hold",
       "pass": false
     },
     "typePaint firefox": {
       "redact": {
-        "median": 286.5,
-        "min": 280.5,
-        "max": 292.5,
+        "median": 223,
+        "min": 204,
+        "max": 248.5,
         "n": 5
       },
       "reactDom": {
-        "median": 76.5,
-        "min": 74,
-        "max": 79,
+        "median": 39,
+        "min": 34.5,
+        "max": 39,
         "n": 5
       },
       "control": {
-        "median": 75.5,
-        "min": 74,
-        "max": 78,
+        "median": 38.5,
+        "min": 37,
+        "max": 39.5,
         "n": 5
       },
-      "noise": 0.013071895424836555,
+      "noise": 0.012820512820512775,
       "tolerance": 0.05,
-      "delta": 2.7450980392156863,
+      "delta": 4.717948717948718,
       "role": "hold",
       "pass": false
     },
     "typePaint webkit": {
       "redact": {
-        "median": 93,
-        "min": 89,
-        "max": 95.5,
+        "median": 88,
+        "min": 86,
+        "max": 90.5,
         "n": 5
       },
       "reactDom": {
-        "median": 58,
-        "min": 57,
-        "max": 60.5,
+        "median": 48.5,
+        "min": 47,
+        "max": 49.5,
         "n": 5
       },
       "control": {
-        "median": 60,
-        "min": 58,
-        "max": 61.5,
+        "median": 48,
+        "min": 47.5,
+        "max": 49,
         "n": 5
       },
-      "noise": 0.034482758620689724,
+      "noise": 0.010309278350515427,
       "tolerance": 0.05,
-      "delta": 0.603448275862069,
+      "delta": 0.8144329896907216,
       "role": "hold",
       "pass": false
     },
     "typePaint chrome": {
       "redact": {
-        "median": 141.19999992847443,
-        "min": 139.70000004768372,
-        "max": 144.25,
+        "median": 121.85000002384186,
+        "min": 121.25000011920929,
+        "max": 125.75000011920929,
         "n": 5
       },
       "reactDom": {
-        "median": 45.299999952316284,
-        "min": 44.34999990463257,
-        "max": 48.25,
+        "median": 36.050000071525574,
+        "min": 33.5,
+        "max": 36.75,
         "n": 5
       },
       "control": {
-        "median": 45.699999928474426,
-        "min": 42.15000009536743,
-        "max": 47.5,
+        "median": 35.700000047683716,
+        "min": 33.59999990463257,
+        "max": 36.699999928474426,
         "n": 5
       },
-      "noise": 0.00883002155803947,
+      "noise": 0.009708738506170156,
       "tolerance": 0.05,
-      "delta": 2.1169977941965663,
+      "delta": 2.380027733206198,
       "role": "hold",
       "pass": false
     },
     "coldListCommit chromium": {
       "redact": {
-        "median": 162,
-        "min": 156.20000004768372,
-        "max": 167.40000009536743,
+        "median": 159.40000009536743,
+        "min": 154.90000009536743,
+        "max": 168.29999995231628,
         "n": 9
       },
       "reactDom": {
-        "median": 128.29999995231628,
-        "min": 125.20000004768372,
-        "max": 133.80000019073486,
+        "median": 126.89999985694885,
+        "min": 125,
+        "max": 137.20000004768372,
         "n": 9
       },
-      "delta": 0.2626656279049773
+      "delta": 0.25610717316828224
     },
     "coldListCommit firefox": {
       "redact": {
         "median": 300,
-        "min": 297,
-        "max": 318,
+        "min": 288,
+        "max": 402,
         "n": 9
       },
       "reactDom": {
-        "median": 222,
-        "min": 219,
-        "max": 231,
+        "median": 219,
+        "min": 207,
+        "max": 237,
         "n": 9
       },
-      "delta": 0.3513513513513513
+      "delta": 0.36986301369863006
     },
     "coldListCommit webkit": {
       "redact": {
-        "median": 180,
-        "min": 177,
-        "max": 186,
+        "median": 175,
+        "min": 171,
+        "max": 183,
         "n": 9
       },
       "reactDom": {
-        "median": 157,
-        "min": 155,
-        "max": 164,
+        "median": 154,
+        "min": 153,
+        "max": 171,
         "n": 9
       },
-      "delta": 0.14649681528662417
+      "delta": 0.13636363636363646
     },
     "coldListCommit chrome": {
       "redact": {
-        "median": 204.09999990463257,
-        "min": 194,
-        "max": 205.39999985694885,
+        "median": 197.29999995231628,
+        "min": 195,
+        "max": 199.70000004768372,
         "n": 9
       },
       "reactDom": {
-        "median": 169.19999980926514,
-        "min": 165.10000014305115,
-        "max": 180.10000014305115,
+        "median": 164.5,
+        "min": 162.79999995231628,
+        "max": 176.90000009536743,
         "n": 9
       },
-      "delta": 0.20626477620986594
+      "delta": 0.19939209697456706
     },
     "coldDetail chromium": {
       "redact": {
-        "median": 74.09999990463257,
-        "min": 73.20000004768372,
-        "max": 74.40000009536743,
+        "median": 73.90000009536743,
+        "min": 73.10000014305115,
+        "max": 74.5,
         "n": 9
       },
       "reactDom": {
-        "median": 75.89999985694885,
-        "min": 74.29999995231628,
-        "max": 78.09999990463257,
+        "median": 74.09999990463257,
+        "min": 73.59999990463257,
+        "max": 77.20000004768372,
         "n": 9
       },
-      "delta": -0.023715414436216053
+      "delta": -0.002699052760088194
     },
     "coldDetail firefox": {
       "redact": {
-        "median": 88,
-        "min": 85,
+        "median": 90,
+        "min": 83,
         "max": 95,
         "n": 9
       },
       "reactDom": {
         "median": 96,
-        "min": 88,
-        "max": 101,
+        "min": 84,
+        "max": 100,
         "n": 9
       },
-      "delta": -0.08333333333333337
+      "delta": -0.0625
     },
     "coldDetail webkit": {
       "redact": {
-        "median": 77,
-        "min": 76,
+        "median": 76,
+        "min": 73,
         "max": 81,
         "n": 9
-      },
-      "reactDom": {
-        "median": 83,
-        "min": 82,
-        "max": 84,
-        "n": 9
-      },
-      "delta": -0.07228915662650603
-    },
-    "coldDetail chrome": {
-      "redact": {
-        "median": 76.59999990463257,
-        "min": 69.09999990463257,
-        "max": 81,
-        "n": 9
-      },
-      "reactDom": {
-        "median": 84.89999985694885,
-        "min": 78.5,
-        "max": 89.89999985694885,
-        "n": 9
-      },
-      "delta": -0.097762072630168
-    },
-    "coldDetailPanel chromium": {
-      "redact": {
-        "median": 188.39999985694885,
-        "min": 171.39999985694885,
-        "max": 188.60000014305115,
-        "n": 9
-      },
-      "reactDom": {
-        "median": 390.5,
-        "min": 387.90000009536743,
-        "max": 391.39999985694885,
-        "n": 9
-      },
-      "delta": -0.5175416136825894
-    },
-    "coldDetailPanel firefox": {
-      "redact": {
-        "median": 187,
-        "min": 184,
-        "max": 194,
-        "n": 9
-      },
-      "reactDom": {
-        "median": 397,
-        "min": 387,
-        "max": 402,
-        "n": 9
-      },
-      "delta": -0.5289672544080605
-    },
-    "coldDetailPanel webkit": {
-      "redact": {
-        "median": 184,
-        "min": 183,
-        "max": 191,
-        "n": 9
-      },
-      "reactDom": {
-        "median": 388,
-        "min": 386,
-        "max": 391,
-        "n": 9
-      },
-      "delta": -0.5257731958762887
-    },
-    "coldDetailPanel chrome": {
-      "redact": {
-        "median": 182.69999980926514,
-        "min": 174.20000004768372,
-        "max": 189.89999985694885,
-        "n": 9
-      },
-      "reactDom": {
-        "median": 385.59999990463257,
-        "min": 378.10000014305115,
-        "max": 391.5,
-        "n": 9
-      },
-      "delta": -0.5261929464355526
-    },
-    "suspPanel chromium": {
-      "redact": {
-        "median": 178.29999995231628,
-        "min": 161.79999995231628,
-        "max": 185.89999985694885,
-        "n": 9
-      },
-      "reactDom": {
-        "median": 392.2999999523163,
-        "min": 371.2000000476837,
-        "max": 403.90000009536743,
-        "n": 9
-      },
-      "delta": -0.5455008922406615
-    },
-    "suspPanel firefox": {
-      "redact": {
-        "median": 276,
-        "min": 262,
-        "max": 282,
-        "n": 9
-      },
-      "reactDom": {
-        "median": 413,
-        "min": 403,
-        "max": 420,
-        "n": 9
-      },
-      "delta": -0.33171912832929784
-    },
-    "suspPanel webkit": {
-      "redact": {
-        "median": 165,
-        "min": 160,
-        "max": 175,
-        "n": 9
-      },
-      "reactDom": {
-        "median": 417,
-        "min": 413,
-        "max": 421,
-        "n": 9
-      },
-      "delta": -0.60431654676259
-    },
-    "suspPanel chrome": {
-      "redact": {
-        "median": 189.20000004768372,
-        "min": 160.09999990463257,
-        "max": 193.40000009536743,
-        "n": 9
-      },
-      "reactDom": {
-        "median": 389.09999990463257,
-        "min": 387,
-        "max": 401.90000009536743,
-        "n": 9
-      },
-      "delta": -0.5137496785040963
-    },
-    "suspPanelAfterData chromium": {
-      "redact": {
-        "median": 7.599999904632568,
-        "min": 0.6000001430511475,
-        "max": 12.5,
-        "n": 9
-      },
-      "reactDom": {
-        "median": 218.5,
-        "min": 212.09999990463257,
-        "max": 224.89999985694885,
-        "n": 9
-      },
-      "delta": -0.965217391740812
-    },
-    "suspPanelAfterData firefox": {
-      "redact": {
-        "median": 101,
-        "min": 89,
-        "max": 111,
-        "n": 9
-      },
-      "reactDom": {
-        "median": 229,
-        "min": 221,
-        "max": 240,
-        "n": 9
-      },
-      "delta": -0.5589519650655022
-    },
-    "suspPanelAfterData webkit": {
-      "redact": {
-        "median": 1,
-        "min": 1,
-        "max": 2,
-        "n": 9
-      },
-      "reactDom": {
-        "median": 250,
-        "min": 246,
-        "max": 253,
-        "n": 9
-      },
-      "delta": -0.996
-    },
-    "suspPanelAfterData chrome": {
-      "redact": {
-        "median": 15.700000047683716,
-        "min": 0.7999999523162842,
-        "max": 19.59999990463257,
-        "n": 9
-      },
-      "reactDom": {
-        "median": 221.40000009536743,
-        "min": 220.70000004768372,
-        "max": 224,
-        "n": 9
-      },
-      "delta": -0.9290876240247471
-    },
-    "warmNavPanel chromium": {
-      "redact": {
-        "median": 131.79999995231628,
-        "min": 125.5,
-        "max": 138.39999985694885,
-        "n": 9
-      },
-      "reactDom": {
-        "median": 64.79999995231628,
-        "min": 62.799999952316284,
-        "max": 72.80000019073486,
-        "n": 9
-      },
-      "delta": 1.0339506180447935
-    },
-    "warmNavPanel firefox": {
-      "redact": {
-        "median": 218,
-        "min": 210,
-        "max": 224,
-        "n": 9
-      },
-      "reactDom": {
-        "median": 74,
-        "min": 63,
-        "max": 76,
-        "n": 9
-      },
-      "delta": 1.945945945945946
-    },
-    "warmNavPanel webkit": {
-      "redact": {
-        "median": 89,
-        "min": 77,
-        "max": 95,
-        "n": 9
-      },
-      "reactDom": {
-        "median": 59,
-        "min": 57,
-        "max": 62,
-        "n": 9
-      },
-      "delta": 0.5084745762711864
-    },
-    "warmNavPanel chrome": {
-      "redact": {
-        "median": 141,
-        "min": 132.79999995231628,
-        "max": 153.5,
-        "n": 9
-      },
-      "reactDom": {
-        "median": 71.5,
-        "min": 63.799999952316284,
-        "max": 77.59999990463257,
-        "n": 9
-      },
-      "delta": 0.9720279720279721
-    },
-    "typeCommit chromium": {
-      "redact": {
-        "median": 115.69999992847443,
-        "min": 113.25,
-        "max": 118.19999992847443,
-        "n": 5
-      },
-      "reactDom": {
-        "median": 12,
-        "min": 11.850000023841858,
-        "max": 12.399999976158142,
-        "n": 5
-      },
-      "delta": 8.641666660706202
-    },
-    "typeCommit firefox": {
-      "redact": {
-        "median": 191.5,
-        "min": 186.5,
-        "max": 193.5,
-        "n": 5
-      },
-      "reactDom": {
-        "median": 22,
-        "min": 20.5,
-        "max": 25.5,
-        "n": 5
-      },
-      "delta": 7.704545454545455
-    },
-    "typeCommit webkit": {
-      "redact": {
-        "median": 73,
-        "min": 70.5,
-        "max": 78.5,
-        "n": 5
-      },
-      "reactDom": {
-        "median": 15,
-        "min": 14.5,
-        "max": 16,
-        "n": 5
-      },
-      "delta": 3.8666666666666663
-    },
-    "typeCommit chrome": {
-      "redact": {
-        "median": 122.70000004768372,
-        "min": 119.04999995231628,
-        "max": 124.64999997615814,
-        "n": 5
-      },
-      "reactDom": {
-        "median": 14.149999976158142,
-        "min": 12.100000143051147,
-        "max": 14.649999976158142,
-        "n": 5
-      },
-      "delta": 7.671378109853391
-    },
-    "typeWorstPaint chromium": {
-      "redact": {
-        "median": 312.5,
-        "min": 309.5,
-        "max": 316.2999999523163,
-        "n": 5
-      },
-      "reactDom": {
-        "median": 151,
-        "min": 145,
-        "max": 154.70000004768372,
-        "n": 5
-      },
-      "delta": 1.0695364238410594
-    },
-    "typeWorstPaint firefox": {
-      "redact": {
-        "median": 583,
-        "min": 577,
-        "max": 595,
-        "n": 5
-      },
-      "reactDom": {
-        "median": 354,
-        "min": 352,
-        "max": 366,
-        "n": 5
-      },
-      "delta": 0.6468926553672316
-    },
-    "typeWorstPaint webkit": {
-      "redact": {
-        "median": 481,
-        "min": 475,
-        "max": 496,
-        "n": 5
-      },
-      "reactDom": {
-        "median": 413,
-        "min": 411,
-        "max": 418,
-        "n": 5
-      },
-      "delta": 0.16464891041162222
-    },
-    "typeWorstPaint chrome": {
-      "redact": {
-        "median": 332.5,
-        "min": 330,
-        "max": 366.39999985694885,
-        "n": 5
-      },
-      "reactDom": {
-        "median": 222,
-        "min": 215.20000004768372,
-        "max": 233,
-        "n": 5
-      },
-      "delta": 0.49774774774774766
-    },
-    "typeDeferredPaint chromium": {
-      "redact": {
-        "median": 159.79999995231628,
-        "min": 158.10000002384186,
-        "max": 167.5,
-        "n": 5
-      },
-      "reactDom": {
-        "median": 55.85000014305115,
-        "min": 55.49999988079071,
-        "max": 57.75,
-        "n": 5
-      },
-      "delta": 1.8612354439214553
-    },
-    "typeDeferredPaint firefox": {
-      "redact": {
-        "median": 280,
-        "min": 255.5,
-        "max": 301,
-        "n": 5
-      },
-      "reactDom": {
-        "median": 82.5,
-        "min": 80,
-        "max": 86.5,
-        "n": 5
-      },
-      "delta": 2.393939393939394
-    },
-    "typeDeferredPaint webkit": {
-      "redact": {
-        "median": 95.5,
-        "min": 90.5,
-        "max": 97.5,
-        "n": 5
-      },
-      "reactDom": {
-        "median": 77,
-        "min": 75,
-        "max": 77.5,
-        "n": 5
-      },
-      "delta": 0.24025974025974017
-    },
-    "typeDeferredPaint chrome": {
-      "redact": {
-        "median": 168.70000004768372,
-        "min": 166.60000002384186,
-        "max": 173.69999992847443,
-        "n": 5
-      },
-      "reactDom": {
-        "median": 57.85000014305115,
-        "min": 56.10000002384186,
-        "max": 61.950000047683716,
-        "n": 5
-      },
-      "delta": 1.916162482809392
-    },
-    "typeDeferredEcho chromium": {
-      "redact": {
-        "median": 159.79999995231628,
-        "min": 158,
-        "max": 167.39999997615814,
-        "n": 5
-      },
-      "reactDom": {
-        "median": 19.199999928474426,
-        "min": 19.09999990463257,
-        "max": 21.75,
-        "n": 5
-      },
-      "delta": 7.32291669518842
-    },
-    "typeDeferredEcho firefox": {
-      "redact": {
-        "median": 280,
-        "min": 255.5,
-        "max": 301,
-        "n": 5
-      },
-      "reactDom": {
-        "median": 16.5,
-        "min": 16,
-        "max": 17,
-        "n": 5
-      },
-      "delta": 15.969696969696969
-    },
-    "typeDeferredEcho webkit": {
-      "redact": {
-        "median": 95.5,
-        "min": 90.5,
-        "max": 97.5,
-        "n": 5
-      },
-      "reactDom": {
-        "median": 25,
-        "min": 24.5,
-        "max": 25,
-        "n": 5
-      },
-      "delta": 2.82
-    },
-    "typeDeferredEcho chrome": {
-      "redact": {
-        "median": 168.64999997615814,
-        "min": 166.59999990463257,
-        "max": 173.69999992847443,
-        "n": 5
-      },
-      "reactDom": {
-        "median": 23.299999952316284,
-        "min": 19.700000047683716,
-        "max": 24,
-        "n": 5
-      },
-      "delta": 6.238197438682501
-    },
-    "typeDeferredWorstEcho chromium": {
-      "redact": {
-        "median": 255.20000004768372,
-        "min": 246.5,
-        "max": 265,
-        "n": 5
-      },
-      "reactDom": {
-        "median": 50.5,
-        "min": 48.39999985694885,
-        "max": 66.29999995231628,
-        "n": 5
-      },
-      "delta": 4.053465347478886
-    },
-    "typeDeferredWorstEcho firefox": {
-      "redact": {
-        "median": 593,
-        "min": 586,
-        "max": 617,
-        "n": 5
-      },
-      "reactDom": {
-        "median": 85,
-        "min": 30,
-        "max": 243,
-        "n": 5
-      },
-      "delta": 5.976470588235294
-    },
-    "typeDeferredWorstEcho webkit": {
-      "redact": {
-        "median": 469,
-        "min": 465,
-        "max": 483,
-        "n": 5
       },
       "reactDom": {
         "median": 80,
         "min": 78,
-        "max": 82,
+        "max": 87,
+        "n": 9
+      },
+      "delta": -0.050000000000000044
+    },
+    "coldDetail chrome": {
+      "redact": {
+        "median": 80.60000014305115,
+        "min": 68.20000004768372,
+        "max": 84.20000004768372,
+        "n": 9
+      },
+      "reactDom": {
+        "median": 80.80000019073486,
+        "min": 77.70000004768372,
+        "max": 87.20000004768372,
+        "n": 9
+      },
+      "delta": -0.0024752481090544176
+    },
+    "coldDetailPanel chromium": {
+      "redact": {
+        "median": 172.80000019073486,
+        "min": 171.39999985694885,
+        "max": 189.40000009536743,
+        "n": 9
+      },
+      "reactDom": {
+        "median": 390,
+        "min": 374.89999985694885,
+        "max": 391.2000000476837,
+        "n": 9
+      },
+      "delta": -0.5569230764340132
+    },
+    "coldDetailPanel firefox": {
+      "redact": {
+        "median": 189,
+        "min": 183,
+        "max": 199,
+        "n": 9
+      },
+      "reactDom": {
+        "median": 392,
+        "min": 376,
+        "max": 398,
+        "n": 9
+      },
+      "delta": -0.5178571428571428
+    },
+    "coldDetailPanel webkit": {
+      "redact": {
+        "median": 182,
+        "min": 179,
+        "max": 190,
+        "n": 9
+      },
+      "reactDom": {
+        "median": 385,
+        "min": 383,
+        "max": 390,
+        "n": 9
+      },
+      "delta": -0.5272727272727273
+    },
+    "coldDetailPanel chrome": {
+      "redact": {
+        "median": 178.60000014305115,
+        "min": 175.20000004768372,
+        "max": 181.70000004768372,
+        "n": 9
+      },
+      "reactDom": {
+        "median": 383.2000000476837,
+        "min": 379.2000000476837,
+        "max": 398.40000009536743,
+        "n": 9
+      },
+      "delta": -0.5339248431084891
+    },
+    "suspPanel chromium": {
+      "redact": {
+        "median": 175.5,
+        "min": 158.39999985694885,
+        "max": 186.30000019073486,
+        "n": 9
+      },
+      "reactDom": {
+        "median": 388.90000009536743,
+        "min": 379.7999999523163,
+        "max": 401.59999990463257,
+        "n": 9
+      },
+      "delta": -0.5487271793341135
+    },
+    "suspPanel firefox": {
+      "redact": {
+        "median": 276,
+        "min": 243,
+        "max": 291,
+        "n": 9
+      },
+      "reactDom": {
+        "median": 408,
+        "min": 399,
+        "max": 420,
+        "n": 9
+      },
+      "delta": -0.32352941176470584
+    },
+    "suspPanel webkit": {
+      "redact": {
+        "median": 167,
+        "min": 161,
+        "max": 174,
+        "n": 9
+      },
+      "reactDom": {
+        "median": 413,
+        "min": 399,
+        "max": 422,
+        "n": 9
+      },
+      "delta": -0.5956416464891041
+    },
+    "suspPanel chrome": {
+      "redact": {
+        "median": 176.40000009536743,
+        "min": 165.79999995231628,
+        "max": 192.90000009536743,
+        "n": 9
+      },
+      "reactDom": {
+        "median": 385.5,
+        "min": 379.7000000476837,
+        "max": 400.39999985694885,
+        "n": 9
+      },
+      "delta": -0.5424124511144814
+    },
+    "suspPanelAfterData chromium": {
+      "redact": {
+        "median": 5,
+        "min": 0.5,
+        "max": 12.400000095367432,
+        "n": 9
+      },
+      "reactDom": {
+        "median": 218.89999985694885,
+        "min": 211.29999995231628,
+        "max": 223.29999995231628,
+        "n": 9
+      },
+      "delta": -0.9771585198571608
+    },
+    "suspPanelAfterData firefox": {
+      "redact": {
+        "median": 95,
+        "min": 72,
+        "max": 114,
+        "n": 9
+      },
+      "reactDom": {
+        "median": 228,
+        "min": 221,
+        "max": 242,
+        "n": 9
+      },
+      "delta": -0.5833333333333333
+    },
+    "suspPanelAfterData webkit": {
+      "redact": {
+        "median": 2,
+        "min": 1,
+        "max": 3,
+        "n": 9
+      },
+      "reactDom": {
+        "median": 245,
+        "min": 235,
+        "max": 252,
+        "n": 9
+      },
+      "delta": -0.9918367346938776
+    },
+    "suspPanelAfterData chrome": {
+      "redact": {
+        "median": 8,
+        "min": 2.4000000953674316,
+        "max": 13.100000143051147,
+        "n": 9
+      },
+      "reactDom": {
+        "median": 220,
+        "min": 210.29999995231628,
+        "max": 222.90000009536743,
+        "n": 9
+      },
+      "delta": -0.9636363636363636
+    },
+    "warmNavPanel chromium": {
+      "redact": {
+        "median": 129.39999985694885,
+        "min": 123.20000004768372,
+        "max": 131.79999995231628,
+        "n": 9
+      },
+      "reactDom": {
+        "median": 64.79999995231628,
+        "min": 61.30000019073486,
+        "max": 73.59999990463257,
+        "n": 9
+      },
+      "delta": 0.9969135795087827
+    },
+    "warmNavPanel firefox": {
+      "redact": {
+        "median": 229,
+        "min": 202,
+        "max": 268,
+        "n": 9
+      },
+      "reactDom": {
+        "median": 73,
+        "min": 72,
+        "max": 78,
+        "n": 9
+      },
+      "delta": 2.136986301369863
+    },
+    "warmNavPanel webkit": {
+      "redact": {
+        "median": 92,
+        "min": 90,
+        "max": 105,
+        "n": 9
+      },
+      "reactDom": {
+        "median": 55,
+        "min": 50,
+        "max": 59,
+        "n": 9
+      },
+      "delta": 0.6727272727272726
+    },
+    "warmNavPanel chrome": {
+      "redact": {
+        "median": 139.29999995231628,
+        "min": 132.59999990463257,
+        "max": 142.59999990463257,
+        "n": 9
+      },
+      "reactDom": {
+        "median": 59.60000014305115,
+        "min": 55.200000047683716,
+        "max": 67.39999985694885,
+        "n": 9
+      },
+      "delta": 1.3372483157377557
+    },
+    "typeCommit chromium": {
+      "redact": {
+        "median": 105.64999997615814,
+        "min": 103.69999992847443,
+        "max": 106.10000002384186,
         "n": 5
       },
-      "delta": 4.8625
+      "reactDom": {
+        "median": 10.5,
+        "min": 9.799999952316284,
+        "max": 11.200000047683716,
+        "n": 5
+      },
+      "delta": 9.061904759634109
+    },
+    "typeCommit firefox": {
+      "redact": {
+        "median": 176.5,
+        "min": 163,
+        "max": 185.5,
+        "n": 5
+      },
+      "reactDom": {
+        "median": 20.5,
+        "min": 19,
+        "max": 21,
+        "n": 5
+      },
+      "delta": 7.609756097560975
+    },
+    "typeCommit webkit": {
+      "redact": {
+        "median": 72.5,
+        "min": 70,
+        "max": 74.5,
+        "n": 5
+      },
+      "reactDom": {
+        "median": 11,
+        "min": 11,
+        "max": 11.5,
+        "n": 5
+      },
+      "delta": 5.590909090909091
+    },
+    "typeCommit chrome": {
+      "redact": {
+        "median": 108.35000002384186,
+        "min": 107.29999995231628,
+        "max": 109.95000004768372,
+        "n": 5
+      },
+      "reactDom": {
+        "median": 12.300000071525574,
+        "min": 11.75,
+        "max": 13.350000023841858,
+        "n": 5
+      },
+      "delta": 7.808943040144484
+    },
+    "typeWorstPaint chromium": {
+      "redact": {
+        "median": 294.39999985694885,
+        "min": 290.2999999523163,
+        "max": 316.2999999523163,
+        "n": 5
+      },
+      "reactDom": {
+        "median": 213.40000009536743,
+        "min": 211.09999990463257,
+        "max": 221.79999995231628,
+        "n": 5
+      },
+      "delta": 0.3795688834366584
+    },
+    "typeWorstPaint firefox": {
+      "redact": {
+        "median": 585,
+        "min": 576,
+        "max": 606,
+        "n": 5
+      },
+      "reactDom": {
+        "median": 359,
+        "min": 354,
+        "max": 374,
+        "n": 5
+      },
+      "delta": 0.6295264623955432
+    },
+    "typeWorstPaint webkit": {
+      "redact": {
+        "median": 567,
+        "min": 547,
+        "max": 588,
+        "n": 5
+      },
+      "reactDom": {
+        "median": 485,
+        "min": 478,
+        "max": 504,
+        "n": 5
+      },
+      "delta": 0.16907216494845367
+    },
+    "typeWorstPaint chrome": {
+      "redact": {
+        "median": 327.59999990463257,
+        "min": 318.2999999523163,
+        "max": 336.40000009536743,
+        "n": 5
+      },
+      "reactDom": {
+        "median": 250.5,
+        "min": 241.5,
+        "max": 260.5,
+        "n": 5
+      },
+      "delta": 0.30778443075701634
+    },
+    "typeDeferredPaint chromium": {
+      "redact": {
+        "median": 147.54999995231628,
+        "min": 146.45000004768372,
+        "max": 158.65000009536743,
+        "n": 5
+      },
+      "reactDom": {
+        "median": 44.25,
+        "min": 40.60000002384186,
+        "max": 46.799999952316284,
+        "n": 5
+      },
+      "delta": 2.33446327575856
+    },
+    "typeDeferredPaint firefox": {
+      "redact": {
+        "median": 261,
+        "min": 251,
+        "max": 264,
+        "n": 5
+      },
+      "reactDom": {
+        "median": 42,
+        "min": 37.5,
+        "max": 46,
+        "n": 5
+      },
+      "delta": 5.214285714285714
+    },
+    "typeDeferredPaint webkit": {
+      "redact": {
+        "median": 92.5,
+        "min": 89,
+        "max": 103.5,
+        "n": 5
+      },
+      "reactDom": {
+        "median": 56.5,
+        "min": 55.5,
+        "max": 59.5,
+        "n": 5
+      },
+      "delta": 0.6371681415929205
+    },
+    "typeDeferredPaint chrome": {
+      "redact": {
+        "median": 158.75,
+        "min": 154.0000001192093,
+        "max": 166.7499998807907,
+        "n": 5
+      },
+      "reactDom": {
+        "median": 45.450000047683716,
+        "min": 44.40000009536743,
+        "max": 47.75,
+        "n": 5
+      },
+      "delta": 2.4928492812639815
+    },
+    "typeDeferredEcho chromium": {
+      "redact": {
+        "median": 147.5,
+        "min": 146.45000004768372,
+        "max": 158.65000009536743,
+        "n": 5
+      },
+      "reactDom": {
+        "median": 17.299999952316284,
+        "min": 16.75,
+        "max": 17.600000023841858,
+        "n": 5
+      },
+      "delta": 7.526011584193752
+    },
+    "typeDeferredEcho firefox": {
+      "redact": {
+        "median": 261,
+        "min": 251,
+        "max": 264,
+        "n": 5
+      },
+      "reactDom": {
+        "median": 14.5,
+        "min": 14,
+        "max": 15.5,
+        "n": 5
+      },
+      "delta": 17
+    },
+    "typeDeferredEcho webkit": {
+      "redact": {
+        "median": 92.5,
+        "min": 89,
+        "max": 103.5,
+        "n": 5
+      },
+      "reactDom": {
+        "median": 20.5,
+        "min": 19.5,
+        "max": 22,
+        "n": 5
+      },
+      "delta": 3.512195121951219
+    },
+    "typeDeferredEcho chrome": {
+      "redact": {
+        "median": 158.75,
+        "min": 154.0000001192093,
+        "max": 166.7499998807907,
+        "n": 5
+      },
+      "reactDom": {
+        "median": 17.550000071525574,
+        "min": 17.200000047683716,
+        "max": 20.700000047683716,
+        "n": 5
+      },
+      "delta": 8.045584008718485
+    },
+    "typeDeferredWorstEcho chromium": {
+      "redact": {
+        "median": 257.5,
+        "min": 251.79999995231628,
+        "max": 276.89999985694885,
+        "n": 5
+      },
+      "reactDom": {
+        "median": 63.700000047683716,
+        "min": 43.39999985694885,
+        "max": 66,
+        "n": 5
+      },
+      "delta": 3.0423861822173315
+    },
+    "typeDeferredWorstEcho firefox": {
+      "redact": {
+        "median": 606,
+        "min": 584,
+        "max": 619,
+        "n": 5
+      },
+      "reactDom": {
+        "median": 123,
+        "min": 121,
+        "max": 128,
+        "n": 5
+      },
+      "delta": 3.926829268292683
+    },
+    "typeDeferredWorstEcho webkit": {
+      "redact": {
+        "median": 537,
+        "min": 519,
+        "max": 566,
+        "n": 5
+      },
+      "reactDom": {
+        "median": 82,
+        "min": 79,
+        "max": 113,
+        "n": 5
+      },
+      "delta": 5.548780487804878
     },
     "typeDeferredWorstEcho chrome": {
       "redact": {
-        "median": 287.7000000476837,
-        "min": 285.2999999523163,
-        "max": 296.59999990463257,
+        "median": 292,
+        "min": 288.10000014305115,
+        "max": 304.39999985694885,
         "n": 5
       },
       "reactDom": {
-        "median": 50.10000014305115,
-        "min": 48.700000047683716,
-        "max": 69.69999980926514,
+        "median": 65.10000014305115,
+        "min": 64.80000019073486,
+        "max": 66.60000014305115,
         "n": 5
       },
-      "delta": 4.742514954614977
+      "delta": 3.4854070561959656
     },
     "smallNavRequired chromium": {
       "redact": {
-        "median": 63.90000009536743,
-        "min": 62.700000047683716,
-        "max": 65.89999985694885,
+        "median": 66.5,
+        "min": 60.200000047683716,
+        "max": 67.20000004768372,
         "n": 9
       },
       "reactDom": {
-        "median": 64.60000014305115,
-        "min": 62.40000009536743,
-        "max": 76.59999990463257,
+        "median": 62,
+        "min": 56.39999985694885,
+        "max": 74.40000009536743,
         "n": 9
       },
-      "delta": -0.010835914026836369
+      "delta": 0.07258064516129026
     },
     "smallNavRequired firefox": {
       "redact": {
-        "median": 63,
-        "min": 59,
-        "max": 71,
+        "median": 65,
+        "min": 61,
+        "max": 72,
         "n": 9
       },
       "reactDom": {
-        "median": 63,
-        "min": 57,
-        "max": 75,
+        "median": 62,
+        "min": 53,
+        "max": 66,
         "n": 9
       },
-      "delta": 0
+      "delta": 0.048387096774193505
     },
     "smallNavRequired webkit": {
       "redact": {
-        "median": 63,
-        "min": 54,
-        "max": 65,
+        "median": 65,
+        "min": 59,
+        "max": 84,
         "n": 9
       },
       "reactDom": {
@@ -1135,160 +1135,160 @@
         "max": 67,
         "n": 9
       },
-      "delta": -0.03076923076923077
+      "delta": 0
     },
     "smallNavRequired chrome": {
       "redact": {
-        "median": 63.5,
-        "min": 57.700000047683716,
-        "max": 70.89999985694885,
+        "median": 68.09999990463257,
+        "min": 56.80000019073486,
+        "max": 71.39999985694885,
         "n": 9
       },
       "reactDom": {
-        "median": 62.09999990463257,
-        "min": 58.299999952316284,
-        "max": 73.29999995231628,
+        "median": 60.700000047683716,
+        "min": 58.19999980926514,
+        "max": 65,
         "n": 9
       },
-      "delta": 0.022544284984177487
+      "delta": 0.12191103543880866
     },
     "smallNavPanel chromium": {
       "redact": {
-        "median": 177.10000014305115,
-        "min": 162.89999985694885,
-        "max": 178.29999995231628,
+        "median": 177.80000019073486,
+        "min": 161.39999985694885,
+        "max": 180,
         "n": 9
       },
       "reactDom": {
-        "median": 371.60000014305115,
-        "min": 368.60000014305115,
-        "max": 372.2000000476837,
+        "median": 370.09999990463257,
+        "min": 354.09999990463257,
+        "max": 373,
         "n": 9
       },
-      "delta": -0.5234122710579259
+      "delta": -0.5195892995499853
     },
     "smallNavPanel firefox": {
       "redact": {
-        "median": 166,
-        "min": 165,
-        "max": 175,
+        "median": 169,
+        "min": 167,
+        "max": 178,
         "n": 9
       },
       "reactDom": {
-        "median": 367,
-        "min": 361,
+        "median": 363,
+        "min": 352,
         "max": 370,
         "n": 9
       },
-      "delta": -0.547683923705722
+      "delta": -0.534435261707989
     },
     "smallNavPanel webkit": {
       "redact": {
-        "median": 170,
-        "min": 166,
-        "max": 173,
+        "median": 173,
+        "min": 165,
+        "max": 179,
         "n": 9
       },
       "reactDom": {
-        "median": 370,
-        "min": 365,
-        "max": 377,
+        "median": 369,
+        "min": 363,
+        "max": 374,
         "n": 9
       },
-      "delta": -0.5405405405405406
+      "delta": -0.5311653116531165
     },
     "smallNavPanel chrome": {
       "redact": {
-        "median": 171,
-        "min": 163,
-        "max": 177.20000004768372,
+        "median": 165.29999995231628,
+        "min": 162,
+        "max": 167.10000014305115,
         "n": 9
       },
       "reactDom": {
-        "median": 370.39999985694885,
-        "min": 358.2999999523163,
-        "max": 372,
+        "median": 359.80000019073486,
+        "min": 358.2000000476837,
+        "max": 362.30000019073486,
         "n": 9
       },
-      "delta": -0.5383369328670587
+      "delta": -0.5405780993199318
     },
     "smallWarmNav chromium": {
       "redact": {
-        "median": 16.5,
-        "min": 12.700000047683716,
-        "max": 17.700000047683716,
+        "median": 17,
+        "min": 12,
+        "max": 21.90000009536743,
         "n": 9
       },
       "reactDom": {
-        "median": 13.799999952316284,
-        "min": 10.299999952316284,
-        "max": 16.600000143051147,
+        "median": 15.5,
+        "min": 11,
+        "max": 17.399999856948853,
         "n": 9
       },
-      "delta": 0.19565217804443025
+      "delta": 0.09677419354838701
     },
     "smallWarmNav firefox": {
       "redact": {
         "median": 19,
-        "min": 13,
-        "max": 20,
-        "n": 9
-      },
-      "reactDom": {
-        "median": 19,
-        "min": 8,
-        "max": 20,
-        "n": 9
-      },
-      "delta": 0
-    },
-    "smallWarmNav webkit": {
-      "redact": {
-        "median": 18,
-        "min": 15,
+        "min": 16,
         "max": 21,
         "n": 9
       },
       "reactDom": {
-        "median": 17,
-        "min": 15,
+        "median": 18,
+        "min": 8,
         "max": 20,
         "n": 9
       },
-      "delta": 0.05882352941176472
+      "delta": 0.05555555555555558
     },
-    "smallWarmNav chrome": {
+    "smallWarmNav webkit": {
       "redact": {
-        "median": 16.100000143051147,
-        "min": 14.400000095367432,
-        "max": 17.09999990463257,
+        "median": 19,
+        "min": 9,
+        "max": 21,
         "n": 9
       },
       "reactDom": {
-        "median": 14.099999904632568,
-        "min": 11,
-        "max": 15.199999809265137,
+        "median": 13,
+        "min": 8,
+        "max": 18,
         "n": 9
       },
-      "delta": 0.14184398949970745
+      "delta": 0.46153846153846145
+    },
+    "smallWarmNav chrome": {
+      "redact": {
+        "median": 17.399999856948853,
+        "min": 12.799999952316284,
+        "max": 19.700000047683716,
+        "n": 9
+      },
+      "reactDom": {
+        "median": 13.5,
+        "min": 9.100000143051147,
+        "max": 16.200000047683716,
+        "n": 9
+      },
+      "delta": 0.28888887829250764
     }
   },
   "gate": {
     "coldImproves": false,
     "interactionsHold": false,
     "failing": [
-      "coldList/chromium +13% (tolerance 5%)",
-      "coldList/firefox +22% (tolerance 5%)",
-      "coldList/webkit +1% (tolerance 5%)",
-      "coldList/chrome +9% (tolerance 5%)",
-      "suspRequired/chromium +82% (tolerance 5%)",
-      "suspRequired/firefox +118% (tolerance 5%)",
-      "suspRequired/webkit +28% (tolerance 5%)",
-      "suspRequired/chrome +88% (tolerance 5%)",
-      "typePaint/chromium +195% (tolerance 5%)",
-      "typePaint/firefox +275% (tolerance 5%)",
-      "typePaint/webkit +60% (tolerance 5%)",
-      "typePaint/chrome +212% (tolerance 5%)"
+      "coldList/chromium +12% (tolerance 5%)",
+      "coldList/firefox +24% (tolerance 5%)",
+      "coldList/webkit +3% (tolerance 5%)",
+      "coldList/chrome +11% (tolerance 5%)",
+      "suspRequired/chromium +76% (tolerance 5%)",
+      "suspRequired/firefox +116% (tolerance 5%)",
+      "suspRequired/webkit +27% (tolerance 5%)",
+      "suspRequired/chrome +71% (tolerance 5%)",
+      "typePaint/chromium +224% (tolerance 5%)",
+      "typePaint/firefox +472% (tolerance 5%)",
+      "typePaint/webkit +81% (tolerance 5%)",
+      "typePaint/chrome +238% (tolerance 5%)"
     ],
     "shipRedact": false
   }

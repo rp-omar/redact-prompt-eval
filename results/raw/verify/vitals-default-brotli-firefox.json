@@ -15,38 +15,32 @@
         "n": 4
       },
       "list.LCP": {
-        "median": 440,
-        "min": 436,
-        "max": 514,
+        "median": 427,
+        "min": 421,
+        "max": 540,
         "n": 5
       },
       "list.FCP": {
-        "median": 440,
-        "min": 436,
-        "max": 514,
+        "median": 427,
+        "min": 421,
+        "max": 540,
         "n": 5
       },
       "list.INP": {
-        "median": 592,
+        "median": 576,
         "min": 568,
-        "max": 600,
-        "n": 5
-      },
-      "detail.TTFB": {
-        "median": 1,
-        "min": 1,
-        "max": 2,
+        "max": 576,
         "n": 5
       },
       "detail.LCP": {
-        "median": 69,
-        "min": 68,
+        "median": 70,
+        "min": 67,
         "max": 76,
         "n": 5
       },
       "detail.FCP": {
-        "median": 69,
-        "min": 68,
+        "median": 70,
+        "min": 67,
         "max": 76,
         "n": 5
       },
@@ -57,83 +51,89 @@
         "n": 5
       },
       "nav.LCP": {
-        "median": 470,
-        "min": 444,
-        "max": 483,
+        "median": 429,
+        "min": 426,
+        "max": 454,
         "n": 5
       },
       "nav.FCP": {
-        "median": 470,
-        "min": 444,
-        "max": 483,
+        "median": 429,
+        "min": 426,
+        "max": 454,
         "n": 5
       },
       "nav.INP": {
         "median": 24,
-        "min": 24,
+        "min": 8,
         "max": 24,
         "n": 5
+      },
+      "detail.TTFB": {
+        "median": 1,
+        "min": 1,
+        "max": 2,
+        "n": 4
       }
     },
     "react-dom": {
       "list.TTFB": {
         "median": 1,
         "min": 1,
-        "max": 2,
-        "n": 5
+        "max": 1,
+        "n": 4
       },
       "list.LCP": {
-        "median": 377,
-        "min": 359,
-        "max": 382,
+        "median": 356,
+        "min": 350,
+        "max": 391,
         "n": 5
       },
       "list.FCP": {
-        "median": 377,
-        "min": 359,
-        "max": 382,
+        "median": 356,
+        "min": 350,
+        "max": 391,
         "n": 5
       },
       "list.INP": {
         "median": 368,
-        "min": 352,
-        "max": 368,
+        "min": 360,
+        "max": 376,
         "n": 5
       },
       "detail.TTFB": {
         "median": 1,
         "min": 1,
-        "max": 1,
-        "n": 5
+        "max": 2,
+        "n": 4
       },
       "detail.LCP": {
-        "median": 77,
-        "min": 75,
-        "max": 78,
+        "median": 80,
+        "min": 74,
+        "max": 80,
         "n": 5
       },
       "detail.FCP": {
-        "median": 77,
-        "min": 75,
-        "max": 78,
+        "median": 80,
+        "min": 74,
+        "max": 80,
         "n": 5
       },
       "nav.TTFB": {
         "median": 1,
         "min": 1,
-        "max": 2,
-        "n": 5
+        "max": 1,
+        "n": 4
       },
       "nav.LCP": {
-        "median": 378,
-        "min": 366,
-        "max": 382,
+        "median": 355,
+        "min": 346,
+        "max": 379,
         "n": 5
       },
       "nav.FCP": {
-        "median": 378,
-        "min": 366,
-        "max": 382,
+        "median": 355,
+        "min": 346,
+        "max": 379,
         "n": 5
       },
       "nav.INP": {
@@ -150,34 +150,33 @@
       "list.LCP": {
         "target": "a.active.x14ju556.x3nfvp2>img",
         "timeToFirstByte": 1,
-        "resourceLoadDelay": 8,
+        "resourceLoadDelay": 6,
         "resourceLoadDuration": 0,
-        "elementRenderDelay": 440
+        "elementRenderDelay": 414
       },
       "list.FCP": {},
       "list.INP": {
         "target": "input.x1awh872.x1iyjqo2.x1jvydc1.x1kogg8i.x1lr1uin.x1t0vds8.x1xlxyfa.x1y0btm7.xmkeg23",
         "type": "keyboard",
-        "inputDelay": 1,
+        "inputDelay": 0,
         "processingDuration": 0,
-        "presentationDelay": 567
+        "presentationDelay": 576
       },
-      "detail.TTFB": {},
       "detail.LCP": {
         "target": "header.x10dr8xq.x1m2qa86.x1q0q8m5.x1qughib.x4l9tsp.x6s0dn4.x78zum5.xso031l>a.x14ju556.x3nfvp2>img",
         "timeToFirstByte": 1,
-        "resourceLoadDelay": 8,
+        "resourceLoadDelay": 9,
         "resourceLoadDuration": 0,
-        "elementRenderDelay": 59
+        "elementRenderDelay": 66
       },
       "detail.FCP": {},
       "nav.TTFB": {},
       "nav.LCP": {
         "target": "a.active.x14ju556.x3nfvp2>img",
         "timeToFirstByte": 1,
-        "resourceLoadDelay": 9,
+        "resourceLoadDelay": 5,
         "resourceLoadDuration": 0,
-        "elementRenderDelay": 473
+        "elementRenderDelay": 422
       },
       "nav.FCP": {},
       "nav.INP": {
@@ -185,24 +184,25 @@
         "inputDelay": 4,
         "processingDuration": 1,
         "presentationDelay": 19
-      }
+      },
+      "detail.TTFB": {}
     },
     "react-dom": {
       "list.TTFB": {},
       "list.LCP": {
         "target": "a.active.x14ju556.x3nfvp2>img",
-        "timeToFirstByte": 2,
-        "resourceLoadDelay": 5,
+        "timeToFirstByte": 1,
+        "resourceLoadDelay": 7,
         "resourceLoadDuration": 0,
-        "elementRenderDelay": 375
+        "elementRenderDelay": 343
       },
       "list.FCP": {},
       "list.INP": {
         "target": "input.x1awh872.x1iyjqo2.x1jvydc1.x1kogg8i.x1lr1uin.x1t0vds8.x1xlxyfa.x1y0btm7.xmkeg23",
         "type": "keyboard",
         "inputDelay": 0,
-        "processingDuration": 30,
-        "presentationDelay": 330
+        "processingDuration": 39,
+        "presentationDelay": 329
       },
       "detail.TTFB": {},
       "detail.LCP": {
@@ -210,23 +210,23 @@
         "timeToFirstByte": 1,
         "resourceLoadDelay": 7,
         "resourceLoadDuration": 0,
-        "elementRenderDelay": 67
+        "elementRenderDelay": 66
       },
       "detail.FCP": {},
       "nav.TTFB": {},
       "nav.LCP": {
         "target": "a.active.x14ju556.x3nfvp2>img",
-        "timeToFirstByte": 1,
-        "resourceLoadDelay": 8,
+        "timeToFirstByte": 0,
+        "resourceLoadDelay": 0,
         "resourceLoadDuration": 0,
-        "elementRenderDelay": 366
+        "elementRenderDelay": 359
       },
       "nav.FCP": {},
       "nav.INP": {
         "type": "pointer",
-        "inputDelay": 5,
-        "processingDuration": 0,
-        "presentationDelay": 19
+        "inputDelay": 3,
+        "processingDuration": 1,
+        "presentationDelay": 20
       }
     }
   },
@@ -239,46 +239,39 @@
         1
       ],
       "list.LCP": [
-        514,
-        438,
-        436,
-        440,
-        449
+        540,
+        426,
+        427,
+        429,
+        421
       ],
       "list.FCP": [
-        514,
-        438,
-        436,
-        440,
-        449
+        540,
+        426,
+        427,
+        429,
+        421
       ],
       "list.INP": [
         576,
-        600,
-        592,
-        592,
-        568
-      ],
-      "detail.TTFB": [
-        2,
-        1,
-        2,
-        1,
-        1
+        576,
+        568,
+        568,
+        576
       ],
       "detail.LCP": [
-        76,
-        69,
-        68,
         70,
-        68
+        72,
+        70,
+        67,
+        76
       ],
       "detail.FCP": [
-        76,
-        69,
-        68,
         70,
-        68
+        72,
+        70,
+        67,
+        76
       ],
       "nav.TTFB": [
         1,
@@ -288,25 +281,31 @@
         1
       ],
       "nav.LCP": [
-        444,
-        470,
-        480,
-        445,
-        483
+        454,
+        430,
+        426,
+        429,
+        428
       ],
       "nav.FCP": [
-        444,
-        470,
-        480,
-        445,
-        483
+        454,
+        430,
+        426,
+        429,
+        428
       ],
       "nav.INP": [
         24,
-        24,
-        24,
+        8,
+        8,
         24,
         24
+      ],
+      "detail.TTFB": [
+        1,
+        1,
+        2,
+        1
       ]
     },
     "react-dom": {
@@ -314,71 +313,68 @@
         1,
         1,
         1,
-        1,
-        2
-      ],
-      "list.LCP": [
-        379,
-        377,
-        371,
-        359,
-        382
-      ],
-      "list.FCP": [
-        379,
-        377,
-        371,
-        359,
-        382
-      ],
-      "list.INP": [
-        368,
-        352,
-        368,
-        368,
-        360
-      ],
-      "detail.TTFB": [
-        1,
-        1,
-        1,
-        1,
         1
       ],
-      "detail.LCP": [
-        77,
-        77,
-        78,
-        75,
-        75
+      "list.LCP": [
+        391,
+        373,
+        356,
+        350,
+        351
       ],
-      "detail.FCP": [
-        77,
-        77,
-        78,
-        75,
-        75
+      "list.FCP": [
+        391,
+        373,
+        356,
+        350,
+        351
       ],
-      "nav.TTFB": [
-        1,
+      "list.INP": [
+        376,
+        368,
+        376,
+        360,
+        368
+      ],
+      "detail.TTFB": [
         2,
         1,
         1,
         1
       ],
+      "detail.LCP": [
+        75,
+        80,
+        80,
+        80,
+        74
+      ],
+      "detail.FCP": [
+        75,
+        80,
+        80,
+        80,
+        74
+      ],
+      "nav.TTFB": [
+        1,
+        1,
+        1,
+        1
+      ],
       "nav.LCP": [
-        382,
-        378,
-        366,
-        382,
-        375
+        355,
+        379,
+        346,
+        353,
+        359
       ],
       "nav.FCP": [
-        382,
-        378,
-        366,
-        382,
-        375
+        355,
+        379,
+        346,
+        353,
+        359
       ],
       "nav.INP": [
         24,

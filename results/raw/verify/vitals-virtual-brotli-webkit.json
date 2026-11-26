@@ -11,19 +11,19 @@
       "list.TTFB": {
         "median": 1,
         "min": 1,
-        "max": 2,
+        "max": 3,
         "n": 5
       },
       "list.LCP": {
         "median": 88,
-        "min": 80,
-        "max": 148,
+        "min": 76,
+        "max": 152,
         "n": 5
       },
       "list.FCP": {
-        "median": 72,
+        "median": 71,
         "min": 70,
-        "max": 127,
+        "max": 125,
         "n": 5
       },
       "list.INP": {
@@ -39,15 +39,15 @@
         "n": 5
       },
       "detail.LCP": {
-        "median": 71,
-        "min": 70,
-        "max": 76,
+        "median": 70,
+        "min": 69,
+        "max": 71,
         "n": 5
       },
       "detail.FCP": {
-        "median": 71,
-        "min": 70,
-        "max": 76,
+        "median": 70,
+        "min": 69,
+        "max": 71,
         "n": 5
       },
       "nav.TTFB": {
@@ -57,15 +57,15 @@
         "n": 5
       },
       "nav.LCP": {
-        "median": 84,
-        "min": 80,
+        "median": 80,
+        "min": 76,
         "max": 88,
         "n": 5
       },
       "nav.FCP": {
         "median": 71,
-        "min": 70,
-        "max": 75,
+        "min": 69,
+        "max": 74,
         "n": 5
       },
       "nav.INP": {
@@ -83,15 +83,15 @@
         "n": 5
       },
       "list.LCP": {
-        "median": 92,
-        "min": 80,
-        "max": 96,
+        "median": 88,
+        "min": 84,
+        "max": 92,
         "n": 5
       },
       "list.FCP": {
-        "median": 77,
-        "min": 76,
-        "max": 82,
+        "median": 76,
+        "min": 75,
+        "max": 78,
         "n": 5
       },
       "list.INP": {
@@ -103,37 +103,37 @@
       "detail.TTFB": {
         "median": 1,
         "min": 1,
-        "max": 1,
+        "max": 2,
         "n": 5
       },
       "detail.LCP": {
-        "median": 75,
-        "min": 75,
-        "max": 78,
+        "median": 77,
+        "min": 74,
+        "max": 79,
         "n": 5
       },
       "detail.FCP": {
-        "median": 75,
-        "min": 75,
-        "max": 78,
+        "median": 77,
+        "min": 74,
+        "max": 79,
         "n": 5
       },
       "nav.TTFB": {
-        "median": 2,
+        "median": 1,
         "min": 1,
         "max": 2,
         "n": 5
       },
       "nav.LCP": {
-        "median": 84,
+        "median": 88,
         "min": 84,
-        "max": 96,
+        "max": 88,
         "n": 5
       },
       "nav.FCP": {
-        "median": 78,
+        "median": 77,
         "min": 76,
-        "max": 80,
+        "max": 77,
         "n": 5
       },
       "nav.INP": {
@@ -150,8 +150,8 @@
       "list.LCP": {
         "target": "a.active.x14ju556.x3nfvp2>img",
         "timeToFirstByte": 1,
-        "resourceLoadDelay": 4,
-        "resourceLoadDuration": 1,
+        "resourceLoadDelay": 3,
+        "resourceLoadDuration": 2,
         "elementRenderDelay": 78
       },
       "list.FCP": {},
@@ -168,7 +168,50 @@
         "timeToFirstByte": 1,
         "resourceLoadDelay": 0,
         "resourceLoadDuration": 0,
-        "elementRenderDelay": 75
+        "elementRenderDelay": 68
+      },
+      "detail.FCP": {},
+      "nav.TTFB": {},
+      "nav.LCP": {
+        "target": "a.active.x14ju556.x3nfvp2>img",
+        "timeToFirstByte": 1,
+        "resourceLoadDelay": 4,
+        "resourceLoadDuration": 1,
+        "elementRenderDelay": 74
+      },
+      "nav.FCP": {},
+      "nav.INP": {
+        "target": "tbody>tr>td.x1165vuw.x16dsc37.x1q0q8m5.x1t0vds8.xdqyycr.xso031l>a.x1hl2dhg.x1s688f.x1timldr.xt0b8zv",
+        "type": "pointer",
+        "inputDelay": 3,
+        "processingDuration": 0,
+        "presentationDelay": 5
+      }
+    },
+    "react-dom": {
+      "list.TTFB": {},
+      "list.LCP": {
+        "target": "a.active.x14ju556.x3nfvp2>img",
+        "timeToFirstByte": 2,
+        "resourceLoadDelay": 3,
+        "resourceLoadDuration": 2,
+        "elementRenderDelay": 81
+      },
+      "list.FCP": {},
+      "list.INP": {
+        "target": "input.x1awh872.x1iyjqo2.x1jvydc1.x1kogg8i.x1lr1uin.x1t0vds8.x1xlxyfa.x1y0btm7.xmkeg23",
+        "type": "pointer",
+        "inputDelay": 2,
+        "processingDuration": 1,
+        "presentationDelay": 5
+      },
+      "detail.TTFB": {},
+      "detail.LCP": {
+        "target": "main.x1iyjqo2.x1xn8qrt.x4l9tsp>article>dl.x1ghz6dp.x40hh3e.xif65rj.xrvj5dj.xrwz996.xw09woa>dd",
+        "timeToFirstByte": 1,
+        "resourceLoadDelay": 0,
+        "resourceLoadDuration": 0,
+        "elementRenderDelay": 78
       },
       "detail.FCP": {},
       "nav.TTFB": {},
@@ -183,49 +226,6 @@
       "nav.INP": {
         "target": "tbody>tr>td.x1165vuw.x16dsc37.x1q0q8m5.x1t0vds8.xdqyycr.xso031l>a.x1hl2dhg.x1s688f.x1timldr.xt0b8zv",
         "type": "pointer",
-        "inputDelay": 1,
-        "processingDuration": 0,
-        "presentationDelay": 7
-      }
-    },
-    "react-dom": {
-      "list.TTFB": {},
-      "list.LCP": {
-        "target": "a.active.x14ju556.x3nfvp2>img",
-        "timeToFirstByte": 1,
-        "resourceLoadDelay": 4,
-        "resourceLoadDuration": 1,
-        "elementRenderDelay": 90
-      },
-      "list.FCP": {},
-      "list.INP": {
-        "target": "input.x1awh872.x1iyjqo2.x1jvydc1.x1kogg8i.x1lr1uin.x1t0vds8.x1xlxyfa.x1y0btm7.xmkeg23",
-        "type": "pointer",
-        "inputDelay": 3,
-        "processingDuration": 0,
-        "presentationDelay": 13
-      },
-      "detail.TTFB": {},
-      "detail.LCP": {
-        "target": "main.x1iyjqo2.x1xn8qrt.x4l9tsp>article>dl.x1ghz6dp.x40hh3e.xif65rj.xrvj5dj.xrwz996.xw09woa>dd",
-        "timeToFirstByte": 1,
-        "resourceLoadDelay": 0,
-        "resourceLoadDuration": 0,
-        "elementRenderDelay": 76
-      },
-      "detail.FCP": {},
-      "nav.TTFB": {},
-      "nav.LCP": {
-        "target": "a.active.x14ju556.x3nfvp2>img",
-        "timeToFirstByte": 1,
-        "resourceLoadDelay": 4,
-        "resourceLoadDuration": 1,
-        "elementRenderDelay": 78
-      },
-      "nav.FCP": {},
-      "nav.INP": {
-        "target": "tbody>tr>td.x1165vuw.x16dsc37.x1q0q8m5.x1t0vds8.xdqyycr.xso031l>a.x1hl2dhg.x1s688f.x1timldr.xt0b8zv",
-        "type": "pointer",
         "inputDelay": 2,
         "processingDuration": 0,
         "presentationDelay": 6
@@ -235,56 +235,56 @@
   "samples": {
     "redact": {
       "list.TTFB": [
+        3,
+        1,
         2,
-        1,
-        1,
         1,
         1
       ],
       "list.LCP": [
-        148,
-        80,
+        152,
         88,
         88,
+        76,
         84
       ],
       "list.FCP": [
-        127,
-        73,
+        125,
         71,
-        72,
-        70
+        73,
+        70,
+        71
       ],
       "list.INP": [
         16,
         8,
-        8,
+        16,
         8,
         8
       ],
       "detail.TTFB": [
         1,
+        2,
+        2,
         1,
-        2,
-        2,
         1
       ],
       "detail.LCP": [
         71,
-        71,
-        71,
         70,
-        76
+        69,
+        71,
+        69
       ],
       "detail.FCP": [
         71,
-        71,
-        71,
         70,
-        76
+        69,
+        71,
+        69
       ],
       "nav.TTFB": [
-        1,
+        2,
         2,
         1,
         1,
@@ -292,17 +292,17 @@
       ],
       "nav.LCP": [
         80,
-        84,
+        76,
         88,
         84,
-        88
+        80
       ],
       "nav.FCP": [
         71,
-        75,
-        71,
-        70,
-        71
+        74,
+        72,
+        69,
+        70
       ],
       "nav.INP": [
         8,
@@ -315,73 +315,73 @@
     "react-dom": {
       "list.TTFB": [
         1,
-        1,
         2,
         1,
-        1
+        1,
+        2
       ],
       "list.LCP": [
-        80,
-        96,
-        80,
+        84,
+        88,
+        88,
         92,
-        96
+        88
       ],
       "list.FCP": [
         77,
-        79,
-        77,
         76,
-        82
+        75,
+        75,
+        78
       ],
       "list.INP": [
         8,
+        16,
+        16,
         8,
-        8,
-        8,
-        16
+        8
       ],
       "detail.TTFB": [
-        1,
+        2,
         1,
         1,
         1,
         1
       ],
       "detail.LCP": [
-        75,
         78,
-        75,
-        75,
-        77
+        74,
+        76,
+        77,
+        79
       ],
       "detail.FCP": [
-        75,
         78,
-        75,
-        75,
-        77
+        74,
+        76,
+        77,
+        79
       ],
       "nav.TTFB": [
-        2,
         1,
         2,
+        1,
         2,
         1
       ],
       "nav.LCP": [
-        92,
+        88,
+        88,
+        88,
         84,
-        84,
-        96,
-        84
+        88
       ],
       "nav.FCP": [
-        80,
+        77,
         76,
         77,
-        78,
-        78
+        76,
+        77
       ],
       "nav.INP": [
         8,

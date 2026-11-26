@@ -113,13 +113,29 @@ test('bench', async ({ browser, browserName }, testInfo) => {
         const { context, page } = await fresh(browser, target, '/')
         await painted(page, 'row')
         const link = page.locator('[data-testid=row] a').first()
-        await link.hover()
-        await page.waitForFunction(() => {
-          const names = performance.getEntriesByType('resource').map((entry) => entry.name)
-          return ['/activity', '/api/items/1000', 'items._id'].every((part) =>
-            names.some((name) => name.includes(part)),
-          )
-        })
+        // A hover can be missed (seen once in WebKit, virtualised list), and an unbounded wait then
+        // burns the whole one-hour test timeout. Bound it and re-hover, at most three times.
+        for (let attempt = 1; ; attempt++) {
+          await page.mouse.move(0, 0)
+          await link.hover()
+          const preloaded = await page
+            .waitForFunction(
+              () => {
+                const names = performance.getEntriesByType('resource').map((entry) => entry.name)
+                return ['/activity', '/api/items/1000', 'items._id'].every((part) =>
+                  names.some((name) => name.includes(part)),
+                )
+              },
+              undefined,
+              { timeout: 10_000 },
+            )
+            .then(
+              () => true,
+              () => false,
+            )
+          if (preloaded) break
+          if (attempt === 3) throw new Error('hover never preloaded the detail route (3 attempts)')
+        }
         await page.waitForTimeout(250)
         await page.evaluate(() => (window as any).__resetOnClick())
         await page.mouse.down()

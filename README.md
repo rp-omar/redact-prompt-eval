@@ -12,15 +12,15 @@ This holds for the app as built: an unvirtualised 5,000-row list, measured on lo
 
 ## Run 2: verdict under each new condition (new, 2026-11-25)
 
-Run 2 verified the "Not verified" list. Everything in "Redact vs React DOM" below is run 1 and unchanged; the default bundles measured in run 2 are byte-identical to run 1's. Same gate, tolerance max(A/A noise, 5%), 9 runs. Detail: FINDINGS.md V-0 to V-8.
+Rows re-measured 2026-11-26 with Arabic mock names (Safari row not rerun); earlier numbers in git history and FINDINGS. Run 2 verified the "Not verified" list. Everything in "Redact vs React DOM" below is run 1 and unchanged; the default bundles measured in run 2 are byte-identical to run 1's. Same gate, tolerance max(A/A noise, 5%), 9 runs. Detail: FINDINGS.md V-0 to V-8.
 
 | Condition                                                         | Cold entry (Redact vs React DOM) |   Suspense navigation |                 Input latency | Gate            | Verdict                                      |
 | ----------------------------------------------------------------- | -------------------------------: | --------------------: | ----------------------------: | --------------- | -------------------------------------------- |
-| Real Brotli, unthrottled, 4 browsers (incl. installed Chrome 158) |                      +1% to +22% |         +28% to +118% |                 +60% to +275% | fails           | holds: React DOM                             |
-| Real Brotli, slow 4G + 4x CPU, Chromium                           |       4047 vs 4105 ms (−1%, tie) |  981 vs 730 ms (+34%) |         557 vs 168 ms (+231%) | fails           | holds: React DOM                             |
-| Virtualised list, unthrottled, 4 browsers                         |   74–87 vs 79–92 ms (−4% to −9%) |  −11% to +6% (≤ 4 ms) | 7–10 vs 6–9 ms (+12% to +33%) | fails on 1–4 ms | holds on paper; a tie in practice            |
-| Virtualised list, slow 4G + 4x CPU, Chromium                      |            2804 vs 3023 ms (−7%) |         619 vs 621 ms |            16 vs 12 ms (+36%) | fails on 4 ms   | holds on paper; Redact is better in practice |
-| Release Firefox 150.0.1 (WebDriver), unthrottled                  |             493 vs 435 ms (+13%) | 304 vs 111 ms (+174%) |          308 vs 80 ms (+287%) | fails           | holds: React DOM                             |
+| Real Brotli, unthrottled, 4 browsers (incl. installed Chrome 158) |                      +3% to +24% |         +27% to +116% |                 +81% to +472% | fails           | holds: React DOM                             |
+| Real Brotli, slow 4G + 4x CPU, Chromium                           |       3973 vs 4055 ms (−2%, tie) |  962 vs 734 ms (+31%) |         448 vs 120 ms (+273%) | fails           | holds: React DOM                             |
+| Virtualised list, unthrottled, 4 browsers                         |   74–88 vs 80–94 ms (−6% to −9%) |   −3% to +4% (≤ 2 ms) |  6–9 vs 4–7 ms (−9% to +38%) | fails on 1–3 ms | holds on paper; a tie in practice            |
+| Virtualised list, slow 4G + 4x CPU, Chromium                      |            2819 vs 3039 ms (−7%) |         625 vs 616 ms |            15 vs 13 ms (+15%) | fails on 2 ms   | holds on paper; Redact is better in practice |
+| Release Firefox 150.0.1 (WebDriver), unthrottled                  |             479 vs 431 ms (+11%) | 293 vs 118 ms (+148%) |          255 vs 34 ms (+649%) | fails           | holds: React DOM                             |
 | Release Safari 26.5 (WebDriver, 2026-11-26), unthrottled          |              895 vs 883 ms (+1%) |  140 vs 104 ms (+35%) |          111 vs 53 ms (+107%) | fails           | holds: React DOM                             |
 
 - **Unvirtualised list: ship React DOM, under every condition.** Slow 4G does not rescue Redact: the list JSON (108 kB Brotli) outweighs the 38 kB of JS saved, so cold entry is a tie and the interaction gaps stay.

@@ -6,83 +6,83 @@
 | Route-specific startup JS, Brotli, `/items/$id` (budget 50 kB) | 4.3 kB ✓ | 4.3 kB ✓ | −1% |
 | First-view CSS, Brotli, `/` (budget 20 kB) | 1.1 kB ✓ | 1.1 kB ✓ | +0% |
 | First-view CSS, Brotli, `/items/$id` (budget 20 kB) | 1.1 kB ✓ | 1.1 kB ✓ | +0% |
-| Cold entry → usable content (list, 5,000 rows painted), chromium, ms | 382 (369–387) | 337 (328–351) | +13% (A/A noise 1%) |
-| Cold entry → usable content (list, 5,000 rows painted), firefox, ms | 473 (467–506) | 389 (384–405) | +22% (A/A noise 1%) |
-| Cold entry → usable content (list, 5,000 rows painted), webkit, ms | 668 (661–682) | 662 (654–669) | +1% (A/A noise 1%) |
-| Cold entry → usable content (list, 5,000 rows painted), chrome, ms | 424 (412–434) | 391 (377–410) | +9% (A/A noise 0%) |
-| Warm navigation → visible content (preloaded, click → painted), chromium, ms | 132 (125–138) | 65 (63–73) | +103% (A/A noise 0%) |
-| Warm navigation → visible content (preloaded, click → painted), firefox, ms | 218 (210–224) | 74 (63–76) | +195% (A/A noise 3%) |
-| Warm navigation → visible content (preloaded, click → painted), webkit, ms | 89 (77–95) | 59 (57–62) | +51% (A/A noise 0%) |
-| Warm navigation → visible content (preloaded, click → painted), chrome, ms | 141 (133–153) | 72 (64–78) | +97% (A/A noise 7%) |
-| Suspense navigation (cold click → required content painted), chromium, ms | 167 (157–171) | 92 (82–106) | +82% (A/A noise 5%) |
-| Suspense navigation (cold click → required content painted), firefox, ms | 268 (260–277) | 123 (118–133) | +118% (A/A noise 1%) |
-| Suspense navigation (cold click → required content painted), webkit, ms | 148 (137–155) | 116 (111–117) | +28% (A/A noise 0%) |
-| Suspense navigation (cold click → required content painted), chrome, ms | 175 (153–178) | 93 (92–103) | +88% (A/A noise 1%) |
-| Input latency, filter over 5,000 rows (keystroke → rows painted, median key), chromium, ms | 131 (130–135) | 44 (42–45) | +195% (A/A noise 1%) |
-| Input latency, filter over 5,000 rows (keystroke → rows painted, median key), firefox, ms | 287 (281–293) | 77 (74–79) | +275% (A/A noise 1%) |
-| Input latency, filter over 5,000 rows (keystroke → rows painted, median key), webkit, ms | 93 (89–96) | 58 (57–61) | +60% (A/A noise 3%) |
-| Input latency, filter over 5,000 rows (keystroke → rows painted, median key), chrome, ms | 141 (140–144) | 45 (44–48) | +212% (A/A noise 1%) |
+| Cold entry → usable content (list, 5,000 rows painted), chromium, ms | 372 (365–402) | 332 (326–365) | +12% (A/A noise 1%) |
+| Cold entry → usable content (list, 5,000 rows painted), firefox, ms | 476 (452–619) | 384 (374–417) | +24% (A/A noise 1%) |
+| Cold entry → usable content (list, 5,000 rows painted), webkit, ms | 659 (651–746) | 642 (635–714) | +3% (A/A noise 0%) |
+| Cold entry → usable content (list, 5,000 rows painted), chrome, ms | 417 (406–425) | 377 (374–412) | +11% (A/A noise 0%) |
+| Warm navigation → visible content (preloaded, click → painted), chromium, ms | 129 (123–132) | 65 (61–74) | +100% (A/A noise 2%) |
+| Warm navigation → visible content (preloaded, click → painted), firefox, ms | 229 (202–268) | 73 (72–78) | +214% (A/A noise 0%) |
+| Warm navigation → visible content (preloaded, click → painted), webkit, ms | 92 (90–105) | 55 (50–59) | +67% (A/A noise 4%) |
+| Warm navigation → visible content (preloaded, click → painted), chrome, ms | 139 (133–143) | 60 (55–67) | +134% (A/A noise 10%) |
+| Suspense navigation (cold click → required content painted), chromium, ms | 165 (141–171) | 94 (79–101) | +76% (A/A noise 3%) |
+| Suspense navigation (cold click → required content painted), firefox, ms | 264 (240–281) | 122 (117–132) | +116% (A/A noise 1%) |
+| Suspense navigation (cold click → required content painted), webkit, ms | 144 (137–165) | 113 (99–118) | +27% (A/A noise 0%) |
+| Suspense navigation (cold click → required content painted), chrome, ms | 168 (161–175) | 98 (80–101) | +71% (A/A noise 1%) |
+| Input latency, filter over 5,000 rows (keystroke → rows painted, median key), chromium, ms | 117 (115–119) | 36 (34–39) | +224% (A/A noise 3%) |
+| Input latency, filter over 5,000 rows (keystroke → rows painted, median key), firefox, ms | 223 (204–249) | 39 (35–39) | +472% (A/A noise 1%) |
+| Input latency, filter over 5,000 rows (keystroke → rows painted, median key), webkit, ms | 88 (86–91) | 49 (47–50) | +81% (A/A noise 1%) |
+| Input latency, filter over 5,000 rows (keystroke → rows painted, median key), chrome, ms | 122 (121–126) | 36 (34–37) | +238% (A/A noise 1%) |
 
 Timings: median (min–max) in ms over 9 runs per renderer per browser (5 typing runs × 10 keystrokes), production builds under `scripts/serve.mjs` (Brotli) on localhost, renderers interleaved. Browsers: chromium 159.0.8154.6, firefox 159.0, webkit 27.2, chrome 158.0.8127.37. Mock API delays: {"list":30,"item":40,"activity":150,"save":40} ms. Condition: {"variant":"default","serve":"brotli","throttle":null}.
 
 | Extra measure, ms: median (min–max) | Browser | Redact | React DOM | Δ |
 |---|---|---:|---:|---:|
-| Cold entry, list: rows committed to DOM | chromium | 162 (156–167) | 128 (125–134) | +26% |
-| Cold entry, list: rows committed to DOM | firefox | 300 (297–318) | 222 (219–231) | +35% |
-| Cold entry, list: rows committed to DOM | webkit | 180 (177–186) | 157 (155–164) | +15% |
-| Cold entry, list: rows committed to DOM | chrome | 204 (194–205) | 169 (165–180) | +21% |
-| Cold entry, detail: required content painted | chromium | 74 (73–74) | 76 (74–78) | −2% |
-| Cold entry, detail: required content painted | firefox | 88 (85–95) | 96 (88–101) | −8% |
-| Cold entry, detail: required content painted | webkit | 77 (76–81) | 83 (82–84) | −7% |
-| Cold entry, detail: required content painted | chrome | 77 (69–81) | 85 (79–90) | −10% |
-| Cold entry, detail: secondary panel painted | chromium | 188 (171–189) | 391 (388–391) | −52% |
-| Cold entry, detail: secondary panel painted | firefox | 187 (184–194) | 397 (387–402) | −53% |
-| Cold entry, detail: secondary panel painted | webkit | 184 (183–191) | 388 (386–391) | −53% |
-| Cold entry, detail: secondary panel painted | chrome | 183 (174–190) | 386 (378–392) | −53% |
-| Suspense navigation: secondary panel painted | chromium | 178 (162–186) | 392 (371–404) | −55% |
-| Suspense navigation: secondary panel painted | firefox | 276 (262–282) | 413 (403–420) | −33% |
-| Suspense navigation: secondary panel painted | webkit | 165 (160–175) | 417 (413–421) | −60% |
-| Suspense navigation: secondary panel painted | chrome | 189 (160–193) | 389 (387–402) | −51% |
-| Secondary panel: data received → committed | chromium | 7.6 (0.6–13) | 219 (212–225) | −97% |
-| Secondary panel: data received → committed | firefox | 101 (89–111) | 229 (221–240) | −56% |
-| Secondary panel: data received → committed | webkit | 1.0 (1.0–2.0) | 250 (246–253) | −100% |
-| Secondary panel: data received → committed | chrome | 16 (0.8–20) | 221 (221–224) | −93% |
-| Warm navigation: secondary panel painted | chromium | 132 (126–138) | 65 (63–73) | +103% |
-| Warm navigation: secondary panel painted | firefox | 218 (210–224) | 74 (63–76) | +195% |
-| Warm navigation: secondary panel painted | webkit | 89 (77–95) | 59 (57–62) | +51% |
-| Warm navigation: secondary panel painted | chrome | 141 (133–154) | 72 (64–78) | +97% |
-| Typing: keystroke → rows committed (median key) | chromium | 116 (113–118) | 12 (12–12) | +864% |
-| Typing: keystroke → rows committed (median key) | firefox | 192 (187–194) | 22 (21–26) | +770% |
-| Typing: keystroke → rows committed (median key) | webkit | 73 (71–79) | 15 (15–16) | +387% |
-| Typing: keystroke → rows committed (median key) | chrome | 123 (119–125) | 14 (12–15) | +767% |
-| Typing: slowest keystroke → painted | chromium | 313 (310–316) | 151 (145–155) | +107% |
-| Typing: slowest keystroke → painted | firefox | 583 (577–595) | 354 (352–366) | +65% |
-| Typing: slowest keystroke → painted | webkit | 481 (475–496) | 413 (411–418) | +16% |
-| Typing: slowest keystroke → painted | chrome | 333 (330–366) | 222 (215–233) | +50% |
-| Typing, useDeferredValue: keystroke → rows painted (median key) | chromium | 160 (158–168) | 56 (55–58) | +186% |
-| Typing, useDeferredValue: keystroke → rows painted (median key) | firefox | 280 (256–301) | 83 (80–87) | +239% |
-| Typing, useDeferredValue: keystroke → rows painted (median key) | webkit | 96 (91–98) | 77 (75–78) | +24% |
-| Typing, useDeferredValue: keystroke → rows painted (median key) | chrome | 169 (167–174) | 58 (56–62) | +192% |
-| Typing, useDeferredValue: keystroke → next frame (median key) | chromium | 160 (158–167) | 19 (19–22) | +732% |
-| Typing, useDeferredValue: keystroke → next frame (median key) | firefox | 280 (256–301) | 17 (16–17) | +1597% |
-| Typing, useDeferredValue: keystroke → next frame (median key) | webkit | 96 (91–98) | 25 (25–25) | +282% |
-| Typing, useDeferredValue: keystroke → next frame (median key) | chrome | 169 (167–174) | 23 (20–24) | +624% |
-| Typing, useDeferredValue: slowest keystroke → next frame | chromium | 255 (247–265) | 51 (48–66) | +405% |
-| Typing, useDeferredValue: slowest keystroke → next frame | firefox | 593 (586–617) | 85 (30–243) | +598% |
-| Typing, useDeferredValue: slowest keystroke → next frame | webkit | 469 (465–483) | 80 (78–82) | +486% |
-| Typing, useDeferredValue: slowest keystroke → next frame | chrome | 288 (285–297) | 50 (49–70) | +474% |
-| Navigation from a small page (/about), cold: required content painted | chromium | 64 (63–66) | 65 (62–77) | −1% |
-| Navigation from a small page (/about), cold: required content painted | firefox | 63 (59–71) | 63 (57–75) | +0% |
-| Navigation from a small page (/about), cold: required content painted | webkit | 63 (54–65) | 65 (59–67) | −3% |
-| Navigation from a small page (/about), cold: required content painted | chrome | 64 (58–71) | 62 (58–73) | +2% |
-| Navigation from a small page (/about), cold: secondary panel painted | chromium | 177 (163–178) | 372 (369–372) | −52% |
-| Navigation from a small page (/about), cold: secondary panel painted | firefox | 166 (165–175) | 367 (361–370) | −55% |
-| Navigation from a small page (/about), cold: secondary panel painted | webkit | 170 (166–173) | 370 (365–377) | −54% |
-| Navigation from a small page (/about), cold: secondary panel painted | chrome | 171 (163–177) | 370 (358–372) | −54% |
-| Navigation from a small page (/about), preloaded: required content painted | chromium | 17 (13–18) | 14 (10–17) | +20% |
-| Navigation from a small page (/about), preloaded: required content painted | firefox | 19 (13–20) | 19 (8.0–20) | +0% |
-| Navigation from a small page (/about), preloaded: required content painted | webkit | 18 (15–21) | 17 (15–20) | +6% |
-| Navigation from a small page (/about), preloaded: required content painted | chrome | 16 (14–17) | 14 (11–15) | +14% |
+| Cold entry, list: rows committed to DOM | chromium | 159 (155–168) | 127 (125–137) | +26% |
+| Cold entry, list: rows committed to DOM | firefox | 300 (288–402) | 219 (207–237) | +37% |
+| Cold entry, list: rows committed to DOM | webkit | 175 (171–183) | 154 (153–171) | +14% |
+| Cold entry, list: rows committed to DOM | chrome | 197 (195–200) | 165 (163–177) | +20% |
+| Cold entry, detail: required content painted | chromium | 74 (73–75) | 74 (74–77) | −0% |
+| Cold entry, detail: required content painted | firefox | 90 (83–95) | 96 (84–100) | −6% |
+| Cold entry, detail: required content painted | webkit | 76 (73–81) | 80 (78–87) | −5% |
+| Cold entry, detail: required content painted | chrome | 81 (68–84) | 81 (78–87) | −0% |
+| Cold entry, detail: secondary panel painted | chromium | 173 (171–189) | 390 (375–391) | −56% |
+| Cold entry, detail: secondary panel painted | firefox | 189 (183–199) | 392 (376–398) | −52% |
+| Cold entry, detail: secondary panel painted | webkit | 182 (179–190) | 385 (383–390) | −53% |
+| Cold entry, detail: secondary panel painted | chrome | 179 (175–182) | 383 (379–398) | −53% |
+| Suspense navigation: secondary panel painted | chromium | 176 (158–186) | 389 (380–402) | −55% |
+| Suspense navigation: secondary panel painted | firefox | 276 (243–291) | 408 (399–420) | −32% |
+| Suspense navigation: secondary panel painted | webkit | 167 (161–174) | 413 (399–422) | −60% |
+| Suspense navigation: secondary panel painted | chrome | 176 (166–193) | 386 (380–400) | −54% |
+| Secondary panel: data received → committed | chromium | 5.0 (0.5–12) | 219 (211–223) | −98% |
+| Secondary panel: data received → committed | firefox | 95 (72–114) | 228 (221–242) | −58% |
+| Secondary panel: data received → committed | webkit | 2.0 (1.0–3.0) | 245 (235–252) | −99% |
+| Secondary panel: data received → committed | chrome | 8.0 (2.4–13) | 220 (210–223) | −96% |
+| Warm navigation: secondary panel painted | chromium | 129 (123–132) | 65 (61–74) | +100% |
+| Warm navigation: secondary panel painted | firefox | 229 (202–268) | 73 (72–78) | +214% |
+| Warm navigation: secondary panel painted | webkit | 92 (90–105) | 55 (50–59) | +67% |
+| Warm navigation: secondary panel painted | chrome | 139 (133–143) | 60 (55–67) | +134% |
+| Typing: keystroke → rows committed (median key) | chromium | 106 (104–106) | 11 (9.8–11) | +906% |
+| Typing: keystroke → rows committed (median key) | firefox | 177 (163–186) | 21 (19–21) | +761% |
+| Typing: keystroke → rows committed (median key) | webkit | 73 (70–75) | 11 (11–12) | +559% |
+| Typing: keystroke → rows committed (median key) | chrome | 108 (107–110) | 12 (12–13) | +781% |
+| Typing: slowest keystroke → painted | chromium | 294 (290–316) | 213 (211–222) | +38% |
+| Typing: slowest keystroke → painted | firefox | 585 (576–606) | 359 (354–374) | +63% |
+| Typing: slowest keystroke → painted | webkit | 567 (547–588) | 485 (478–504) | +17% |
+| Typing: slowest keystroke → painted | chrome | 328 (318–336) | 251 (242–261) | +31% |
+| Typing, useDeferredValue: keystroke → rows painted (median key) | chromium | 148 (146–159) | 44 (41–47) | +233% |
+| Typing, useDeferredValue: keystroke → rows painted (median key) | firefox | 261 (251–264) | 42 (38–46) | +521% |
+| Typing, useDeferredValue: keystroke → rows painted (median key) | webkit | 93 (89–104) | 57 (56–60) | +64% |
+| Typing, useDeferredValue: keystroke → rows painted (median key) | chrome | 159 (154–167) | 45 (44–48) | +249% |
+| Typing, useDeferredValue: keystroke → next frame (median key) | chromium | 148 (146–159) | 17 (17–18) | +753% |
+| Typing, useDeferredValue: keystroke → next frame (median key) | firefox | 261 (251–264) | 15 (14–16) | +1700% |
+| Typing, useDeferredValue: keystroke → next frame (median key) | webkit | 93 (89–104) | 21 (20–22) | +351% |
+| Typing, useDeferredValue: keystroke → next frame (median key) | chrome | 159 (154–167) | 18 (17–21) | +805% |
+| Typing, useDeferredValue: slowest keystroke → next frame | chromium | 258 (252–277) | 64 (43–66) | +304% |
+| Typing, useDeferredValue: slowest keystroke → next frame | firefox | 606 (584–619) | 123 (121–128) | +393% |
+| Typing, useDeferredValue: slowest keystroke → next frame | webkit | 537 (519–566) | 82 (79–113) | +555% |
+| Typing, useDeferredValue: slowest keystroke → next frame | chrome | 292 (288–304) | 65 (65–67) | +349% |
+| Navigation from a small page (/about), cold: required content painted | chromium | 67 (60–67) | 62 (56–74) | +7% |
+| Navigation from a small page (/about), cold: required content painted | firefox | 65 (61–72) | 62 (53–66) | +5% |
+| Navigation from a small page (/about), cold: required content painted | webkit | 65 (59–84) | 65 (59–67) | +0% |
+| Navigation from a small page (/about), cold: required content painted | chrome | 68 (57–71) | 61 (58–65) | +12% |
+| Navigation from a small page (/about), cold: secondary panel painted | chromium | 178 (161–180) | 370 (354–373) | −52% |
+| Navigation from a small page (/about), cold: secondary panel painted | firefox | 169 (167–178) | 363 (352–370) | −53% |
+| Navigation from a small page (/about), cold: secondary panel painted | webkit | 173 (165–179) | 369 (363–374) | −53% |
+| Navigation from a small page (/about), cold: secondary panel painted | chrome | 165 (162–167) | 360 (358–362) | −54% |
+| Navigation from a small page (/about), preloaded: required content painted | chromium | 17 (12–22) | 16 (11–17) | +10% |
+| Navigation from a small page (/about), preloaded: required content painted | firefox | 19 (16–21) | 18 (8.0–20) | +6% |
+| Navigation from a small page (/about), preloaded: required content painted | webkit | 19 (9.0–21) | 13 (8.0–18) | +46% |
+| Navigation from a small page (/about), preloaded: required content painted | chrome | 17 (13–20) | 14 (9.1–16) | +29% |
 
 Gate: cold entry improves = false; interactions hold = false; ship Redact = false.
-Failing: coldList/chromium +13% (tolerance 5%); coldList/firefox +22% (tolerance 5%); coldList/webkit +1% (tolerance 5%); coldList/chrome +9% (tolerance 5%); suspRequired/chromium +82% (tolerance 5%); suspRequired/firefox +118% (tolerance 5%); suspRequired/webkit +28% (tolerance 5%); suspRequired/chrome +88% (tolerance 5%); typePaint/chromium +195% (tolerance 5%); typePaint/firefox +275% (tolerance 5%); typePaint/webkit +60% (tolerance 5%); typePaint/chrome +212% (tolerance 5%).
+Failing: coldList/chromium +12% (tolerance 5%); coldList/firefox +24% (tolerance 5%); coldList/webkit +3% (tolerance 5%); coldList/chrome +11% (tolerance 5%); suspRequired/chromium +76% (tolerance 5%); suspRequired/firefox +116% (tolerance 5%); suspRequired/webkit +27% (tolerance 5%); suspRequired/chrome +71% (tolerance 5%); typePaint/chromium +224% (tolerance 5%); typePaint/firefox +472% (tolerance 5%); typePaint/webkit +81% (tolerance 5%); typePaint/chrome +238% (tolerance 5%).

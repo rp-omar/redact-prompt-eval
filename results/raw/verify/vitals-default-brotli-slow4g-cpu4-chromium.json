@@ -9,21 +9,21 @@
   "medians": {
     "redact": {
       "list.TTFB": {
-        "median": 563.2000000476837,
-        "min": 563.0999999046326,
-        "max": 567.6000001430511,
+        "median": 563.1000001430511,
+        "min": 563,
+        "max": 566.7999999523163,
         "n": 5
       },
       "list.FCP": {
-        "median": 3972,
-        "min": 3928,
-        "max": 4188,
+        "median": 3944,
+        "min": 3924,
+        "max": 4128,
         "n": 5
       },
       "list.LCP": {
-        "median": 3972,
-        "min": 3928,
-        "max": 4188,
+        "median": 3944,
+        "min": 3924,
+        "max": 4128,
         "n": 5
       },
       "list.CLS": {
@@ -33,27 +33,27 @@
         "n": 5
       },
       "list.INP": {
-        "median": 744,
-        "min": 712,
-        "max": 776,
+        "median": 776,
+        "min": 736,
+        "max": 800,
         "n": 5
       },
       "detail.TTFB": {
         "median": 563.0999999046326,
-        "min": 563.0999999046326,
-        "max": 563.5999999046326,
+        "min": 563,
+        "max": 563.2999999523163,
         "n": 5
       },
       "detail.FCP": {
         "median": 2140,
         "min": 2136,
-        "max": 2168,
+        "max": 2152,
         "n": 5
       },
       "detail.LCP": {
         "median": 2140,
         "min": 2136,
-        "max": 2168,
+        "max": 2152,
         "n": 5
       },
       "detail.CLS": {
@@ -63,21 +63,21 @@
         "n": 5
       },
       "nav.TTFB": {
-        "median": 563.0999999046326,
+        "median": 563.1000001430511,
         "min": 563.0999999046326,
         "max": 563.2000000476837,
         "n": 5
       },
       "nav.FCP": {
-        "median": 3948,
-        "min": 3924,
-        "max": 4024,
+        "median": 3960,
+        "min": 3904,
+        "max": 4032,
         "n": 5
       },
       "nav.LCP": {
-        "median": 3948,
-        "min": 3924,
-        "max": 4024,
+        "median": 3960,
+        "min": 3904,
+        "max": 4032,
         "n": 5
       },
       "nav.CLS": {
@@ -88,8 +88,8 @@
       },
       "nav.INP": {
         "median": 80,
-        "min": 80,
-        "max": 104,
+        "min": 72,
+        "max": 136,
         "n": 5
       }
     },
@@ -101,15 +101,15 @@
         "n": 5
       },
       "list.FCP": {
-        "median": 4044,
-        "min": 4016,
-        "max": 4136,
+        "median": 4064,
+        "min": 3984,
+        "max": 4096,
         "n": 5
       },
       "list.LCP": {
-        "median": 4044,
-        "min": 4016,
-        "max": 4136,
+        "median": 4064,
+        "min": 3984,
+        "max": 4096,
         "n": 5
       },
       "list.CLS": {
@@ -119,27 +119,27 @@
         "n": 5
       },
       "list.INP": {
-        "median": 208,
-        "min": 200,
-        "max": 256,
+        "median": 232,
+        "min": 232,
+        "max": 248,
         "n": 5
       },
       "detail.TTFB": {
-        "median": 563.1999998092651,
+        "median": 563.2000000476837,
         "min": 563.0999999046326,
         "max": 563.2000000476837,
         "n": 5
       },
       "detail.FCP": {
-        "median": 2368,
+        "median": 2364,
         "min": 2356,
-        "max": 2376,
+        "max": 2368,
         "n": 5
       },
       "detail.LCP": {
-        "median": 2368,
+        "median": 2364,
         "min": 2356,
-        "max": 2376,
+        "max": 2368,
         "n": 5
       },
       "detail.CLS": {
@@ -150,20 +150,20 @@
       },
       "nav.TTFB": {
         "median": 563.1000001430511,
-        "min": 563.0999999046326,
-        "max": 563.2999999523163,
+        "min": 563,
+        "max": 563.2000000476837,
         "n": 5
       },
       "nav.FCP": {
-        "median": 4044,
-        "min": 3984,
-        "max": 4096,
+        "median": 4080,
+        "min": 3996,
+        "max": 4136,
         "n": 5
       },
       "nav.LCP": {
-        "median": 4044,
-        "min": 3984,
-        "max": 4096,
+        "median": 4080,
+        "min": 3996,
+        "max": 4136,
         "n": 5
       },
       "nav.CLS": {
@@ -173,9 +173,9 @@
         "n": 5
       },
       "nav.INP": {
-        "median": 96,
+        "median": 80,
         "min": 80,
-        "max": 120,
+        "max": 96,
         "n": 5
       }
     }
@@ -186,44 +186,44 @@
       "list.FCP": {},
       "list.LCP": {
         "target": "a.active.x14ju556.x3nfvp2>img",
-        "timeToFirstByte": 563.2000000476837,
-        "resourceLoadDelay": 16.699999809265137,
-        "resourceLoadDuration": 571.7000000476837,
-        "elementRenderDelay": 2776.4000000953674
+        "timeToFirstByte": 563,
+        "resourceLoadDelay": 16.200000047683716,
+        "resourceLoadDuration": 572.5,
+        "elementRenderDelay": 2772.2999999523163
       },
       "list.CLS": {},
       "list.INP": {
         "target": "input.x1awh872.x1iyjqo2.x1jvydc1.x1kogg8i.x1lr1uin.x1t0vds8.x1xlxyfa.x1y0btm7.xmkeg23",
         "type": "keyboard",
-        "inputDelay": 0.09999990463256836,
-        "processingDuration": 628.9000000953674,
-        "presentationDelay": 107
+        "inputDelay": 0.20000004768371582,
+        "processingDuration": 640.5,
+        "presentationDelay": 111.29999995231628
       },
       "detail.TTFB": {},
       "detail.FCP": {},
       "detail.LCP": {
         "target": "main.x1iyjqo2.x1xn8qrt.x4l9tsp>article>dl.x1ghz6dp.x40hh3e.xif65rj.xrvj5dj.xrwz996.xw09woa>dd",
-        "timeToFirstByte": 563.0999999046326,
+        "timeToFirstByte": 563,
         "resourceLoadDelay": 0,
         "resourceLoadDuration": 0,
-        "elementRenderDelay": 1572.9000000953674
+        "elementRenderDelay": 1577
       },
       "detail.CLS": {},
       "nav.TTFB": {},
       "nav.FCP": {},
       "nav.LCP": {
         "target": "a.active.x14ju556.x3nfvp2>img",
-        "timeToFirstByte": 563.0999999046326,
-        "resourceLoadDelay": 15.5,
-        "resourceLoadDuration": 565.4000000953674,
-        "elementRenderDelay": 2820
+        "timeToFirstByte": 563.2000000476837,
+        "resourceLoadDelay": 16.700000047683716,
+        "resourceLoadDuration": 571.6999998092651,
+        "elementRenderDelay": 2752.4000000953674
       },
       "nav.CLS": {},
       "nav.INP": {
         "type": "pointer",
-        "inputDelay": 5.299999952316284,
-        "processingDuration": 60.59999990463257,
-        "presentationDelay": 14.100000143051147
+        "inputDelay": 4.6000001430511475,
+        "processingDuration": 57.89999985694885,
+        "presentationDelay": 17.5
       }
     },
     "react-dom": {
@@ -231,69 +231,69 @@
       "list.FCP": {},
       "list.LCP": {
         "target": "a.active.x14ju556.x3nfvp2>img",
-        "timeToFirstByte": 563.1000001430511,
-        "resourceLoadDelay": 18.5,
-        "resourceLoadDuration": 571.3999998569489,
-        "elementRenderDelay": 2887
+        "timeToFirstByte": 563.0999999046326,
+        "resourceLoadDelay": 14.599999904632568,
+        "resourceLoadDuration": 565.9000000953674,
+        "elementRenderDelay": 2840.4000000953674
       },
       "list.CLS": {},
       "list.INP": {
         "target": "input.x1awh872.x1iyjqo2.x1jvydc1.x1kogg8i.x1lr1uin.x1t0vds8.x1xlxyfa.x1y0btm7.xmkeg23",
         "type": "keyboard",
-        "inputDelay": 0.10000014305114746,
-        "processingDuration": 196.09999990463257,
-        "presentationDelay": 3.799999952316284
+        "inputDelay": 0.7000000476837158,
+        "processingDuration": 97,
+        "presentationDelay": 134.29999995231628
       },
       "detail.TTFB": {},
       "detail.FCP": {},
       "detail.LCP": {
         "target": "main.x1iyjqo2.x1xn8qrt.x4l9tsp>article>dl.x1ghz6dp.x40hh3e.xif65rj.xrvj5dj.xrwz996.xw09woa>dd",
-        "timeToFirstByte": 563.1999998092651,
+        "timeToFirstByte": 563.0999999046326,
         "resourceLoadDelay": 0,
         "resourceLoadDuration": 0,
-        "elementRenderDelay": 1808.8000001907349
+        "elementRenderDelay": 1792.9000000953674
       },
       "detail.CLS": {},
       "nav.TTFB": {},
       "nav.FCP": {},
       "nav.LCP": {
         "target": "a.active.x14ju556.x3nfvp2>img",
-        "timeToFirstByte": 563.1000001430511,
-        "resourceLoadDelay": 16.199999809265137,
-        "resourceLoadDuration": 572.1000001430511,
-        "elementRenderDelay": 2892.5999999046326
+        "timeToFirstByte": 563.1999998092651,
+        "resourceLoadDelay": 14.800000190734863,
+        "resourceLoadDuration": 565.6999998092651,
+        "elementRenderDelay": 2936.300000190735
       },
       "nav.CLS": {},
       "nav.INP": {
         "type": "pointer",
-        "inputDelay": 6.599999904632568,
-        "processingDuration": 66.20000004768372,
-        "presentationDelay": 15.200000047683716
+        "inputDelay": 6.8999998569488525,
+        "processingDuration": 60.799999952316284,
+        "presentationDelay": 12.300000190734863
       }
     }
   },
   "samples": {
     "redact": {
       "list.TTFB": [
-        567.6000001430511,
+        566.7999999523163,
+        563.1000001430511,
         563.0999999046326,
-        563.2000000476837,
         563.1999998092651,
-        563.2000000476837
+        563
       ],
       "list.FCP": [
-        4188,
-        3964,
-        4032,
-        3972,
-        3928
+        4040,
+        3936,
+        4128,
+        3944,
+        3924
       ],
       "list.LCP": [
-        4188,
-        3964,
-        4032,
-        3972,
-        3928
+        4040,
+        3936,
+        4128,
+        3944,
+        3924
       ],
       "list.CLS": [
         0,
@@ -304,31 +304,31 @@
       ],
       "list.INP": [
         776,
-        744,
-        744,
-        712,
-        736
+        792,
+        736,
+        800,
+        752
       ],
       "detail.TTFB": [
-        563.5999999046326,
+        563,
+        563.2999999523163,
         563.0999999046326,
         563.0999999046326,
-        563.0999999046326,
-        563.0999999046326
+        563
       ],
       "detail.FCP": [
-        2168,
+        2152,
         2136,
-        2140,
         2144,
-        2136
+        2140,
+        2140
       ],
       "detail.LCP": [
-        2168,
+        2152,
         2136,
-        2140,
         2144,
-        2136
+        2140,
+        2140
       ],
       "detail.CLS": [
         0,
@@ -338,25 +338,25 @@
         0
       ],
       "nav.TTFB": [
-        563.2000000476837,
+        563.0999999046326,
         563.0999999046326,
         563.2000000476837,
-        563.0999999046326,
-        563.0999999046326
+        563.1000001430511,
+        563.2000000476837
       ],
       "nav.FCP": [
-        4024,
-        3948,
-        3936,
-        3924,
-        3964
+        3940,
+        4008,
+        4032,
+        3960,
+        3904
       ],
       "nav.LCP": [
-        4024,
-        3948,
-        3936,
-        3924,
-        3964
+        3940,
+        4008,
+        4032,
+        3960,
+        3904
       ],
       "nav.CLS": [
         0,
@@ -366,34 +366,34 @@
         0
       ],
       "nav.INP": [
-        104,
         80,
-        104,
-        80,
+        136,
+        88,
+        72,
         80
       ]
     },
     "react-dom": {
       "list.TTFB": [
+        563.2000000476837,
         563.1000001430511,
+        563.2000000476837,
         563.0999999046326,
-        563.2000000476837,
-        563.2000000476837,
-        563.1000001430511
+        563.0999999046326
       ],
       "list.FCP": [
-        4136,
-        4088,
-        4016,
-        4044,
-        4040
+        4064,
+        3996,
+        4096,
+        4064,
+        3984
       ],
       "list.LCP": [
-        4136,
-        4088,
-        4016,
-        4044,
-        4040
+        4064,
+        3996,
+        4096,
+        4064,
+        3984
       ],
       "list.CLS": [
         0,
@@ -403,32 +403,32 @@
         0
       ],
       "list.INP": [
-        256,
-        224,
-        208,
-        200,
-        200
+        248,
+        240,
+        232,
+        232,
+        232
       ],
       "detail.TTFB": [
         563.2000000476837,
-        563.0999999046326,
-        563.1999998092651,
-        563.0999999046326,
-        563.1999998092651
+        563.2000000476837,
+        563.2000000476837,
+        563.1000001430511,
+        563.0999999046326
       ],
       "detail.FCP": [
+        2368,
+        2364,
         2356,
         2364,
-        2368,
-        2376,
-        2372
+        2356
       ],
       "detail.LCP": [
+        2368,
+        2364,
         2356,
         2364,
-        2368,
-        2376,
-        2372
+        2356
       ],
       "detail.CLS": [
         0,
@@ -438,25 +438,25 @@
         0
       ],
       "nav.TTFB": [
+        563.1000001430511,
         563.0999999046326,
-        563.0999999046326,
-        563.2999999523163,
         563.2000000476837,
-        563.1000001430511
+        563,
+        563.1999998092651
       ],
       "nav.FCP": [
-        4096,
-        4088,
-        3984,
-        4032,
-        4044
+        4136,
+        4064,
+        3996,
+        4116,
+        4080
       ],
       "nav.LCP": [
-        4096,
-        4088,
-        3984,
-        4032,
-        4044
+        4136,
+        4064,
+        3996,
+        4116,
+        4080
       ],
       "nav.CLS": [
         0,
@@ -467,10 +467,10 @@
       ],
       "nav.INP": [
         96,
+        88,
         80,
-        104,
-        120,
-        88
+        80,
+        80
       ]
     }
   }
