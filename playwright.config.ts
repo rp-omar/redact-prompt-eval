@@ -27,7 +27,9 @@ export default defineConfig({
   retries: 0,
   timeout: 60 * 60_000,
   reporter: [['list']],
-  use: { viewport: { width: 1280, height: 800 } },
+  // CI only: keep a trace of a failed test so an intermittent failure leaves evidence. Off
+  // locally because tracing would distort the benchmark timings.
+  use: { viewport: { width: 1280, height: 800 }, trace: process.env.CI ? 'retain-on-failure' : 'off' },
   projects: [
     { name: 'chromium', use: { ...devices['Desktop Chrome'], viewport: { width: 1280, height: 800 } } },
     { name: 'firefox', use: { ...devices['Desktop Firefox'], viewport: { width: 1280, height: 800 } } },
